@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "Bash(pip *)",
+      "Bash(python *)",
+      "Bash(py *)",
+      "Bash(python3 *)",
+      "Bash(pytest *)",
+      "Bash(jupyter *)",
+      "Bash(mkdir *)",
+      "Bash(git *)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)"
+    ]
+  }
+}
