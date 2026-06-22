@@ -18,7 +18,7 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
    generación de informes, servido como app (API + dashboard).
 
 ## Stack
-- Python 3.14 (.venv); 3.11 no disponible en la máquina — revaluar en F2 si PyTorch lo requiere
+- Python 3.12 (.venv) — compatible con PyTorch; pandas 2.2.x (pandas 3.x bloqueado por WDAC en esta máquina)
 - PyTorch, HuggingFace Transformers, scikit-learn, pandas, numpy
 - sentence-transformers + FAISS para RAG
 - LLM vía API (NUNCA local) para extracción de eventos y síntesis
