@@ -1,0 +1,65 @@
+{
+  "corpus_config": "sentences_allagree",
+  "n_total": 2264,
+  "n_unique": 2259,
+  "n_exact_duplicates": 5,
+  "n_nulls_or_empty": 0,
+  "class_counts": {
+    "negative": 303,
+    "neutral": 1391,
+    "positive": 570
+  },
+  "class_pct": {
+    "negative": 13.4,
+    "neutral": 61.4,
+    "positive": 25.2
+  },
+  "word_count_global": {
+    "mean": 22.4,
+    "median": 21.0,
+    "std": 10.1,
+    "min": 2,
+    "max": 81
+  },
+  "char_count_global": {
+    "mean": 122.0,
+    "median": 111.0,
+    "std": 56.2,
+    "min": 9,
+    "max": 315
+  },
+  "config_comparison": {
+    "sentences_allagree": {
+      "total": 2264,
+      "unique": 2259,
+      "duplicates": 5,
+      "negative": 303,
+      "neutral": 1391,
+      "positive": 570
+    },
+    "sentences_75agree": {
+      "total": 3453,
+      "unique": 3448,
+      "duplicates": 5,
+      "negative": 420,
+      "neutral": 2146,
+      "positive": 887
+    },
+    "sentences_66agree": {
+      "total": 4217,
+      "unique": 4211,
+      "duplicates": 6,
+      "negative": 514,
+      "neutral": 2535,
+      "positive": 1168
+    },
+    "sentences_50agree": {
+      "total": 4846,
+      "unique": 4838,
+      "duplicates": 8,
+      "negative": 604,
+      "neutral": 2879,
+      "positive": 1363
+    }
+  }
+}

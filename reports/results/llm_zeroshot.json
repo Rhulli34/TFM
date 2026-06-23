@@ -1,0 +1,35 @@
+{
+  "model": "gpt-4o-mini",
+  "approach": "zero-shot",
+  "temperature": 0,
+  "n_test": 339,
+  "n_unknown": 0,
+  "cost_usd": 0.0108,
+  "total_input_tokens": 63976,
+  "total_output_tokens": 2034,
+  "elapsed_s": 266.8,
+  "test": {
+    "macro_f1": 0.9631,
+    "accuracy": 0.9646,
+    "per_class": {
+      "negative": {
+        "precision": 0.9583,
+        "recall": 1.0,
+        "f1": 0.9787,
+        "support": 46
+      },
+      "neutral": {
+        "precision": 0.9623,
+        "recall": 0.9808,
+        "f1": 0.9714,
+        "support": 208
+      },
+      "positive": {
+        "precision": 0.9747,
+        "recall": 0.9059,
+        "f1": 0.939,
+        "support": 85
+      }
+    }
+  }
+}

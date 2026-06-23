@@ -1,0 +1,116 @@
+{
+  "winner": "LinearSVC",
+  "tfidf": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "sublinear_tf": true,
+    "min_df": 2,
+    "vocab_size": 5208
+  },
+  "classifiers": {
+    "LogisticRegression": {
+      "best_c": 5.0,
+      "val": {
+        "macro_f1": 0.8879,
+        "accuracy": 0.9233,
+        "per_class": {
+          "negative": {
+            "precision": 0.8571,
+            "recall": 0.8,
+            "f1": 0.8276,
+            "support": 45
+          },
+          "neutral": {
+            "precision": 0.9709,
+            "recall": 0.9615,
+            "f1": 0.9662,
+            "support": 208
+          },
+          "positive": {
+            "precision": 0.8462,
+            "recall": 0.8953,
+            "f1": 0.8701,
+            "support": 86
+          }
+        }
+      },
+      "test": {
+        "macro_f1": 0.8547,
+        "accuracy": 0.8909,
+        "per_class": {
+          "negative": {
+            "precision": 0.8333,
+            "recall": 0.7609,
+            "f1": 0.7955,
+            "support": 46
+          },
+          "neutral": {
+            "precision": 0.9245,
+            "recall": 0.9423,
+            "f1": 0.9333,
+            "support": 208
+          },
+          "positive": {
+            "precision": 0.8353,
+            "recall": 0.8353,
+            "f1": 0.8353,
+            "support": 85
+          }
+        }
+      }
+    },
+    "LinearSVC": {
+      "best_c": 0.5,
+      "val": {
+        "macro_f1": 0.8958,
+        "accuracy": 0.9263,
+        "per_class": {
+          "negative": {
+            "precision": 0.9231,
+            "recall": 0.8,
+            "f1": 0.8571,
+            "support": 45
+          },
+          "neutral": {
+            "precision": 0.9619,
+            "recall": 0.9712,
+            "f1": 0.9665,
+            "support": 208
+          },
+          "positive": {
+            "precision": 0.8444,
+            "recall": 0.8837,
+            "f1": 0.8636,
+            "support": 86
+          }
+        }
+      },
+      "test": {
+        "macro_f1": 0.8561,
+        "accuracy": 0.8909,
+        "per_class": {
+          "negative": {
+            "precision": 0.875,
+            "recall": 0.7609,
+            "f1": 0.814,
+            "support": 46
+          },
+          "neutral": {
+            "precision": 0.905,
+            "recall": 0.9615,
+            "f1": 0.9324,
+            "support": 208
+          },
+          "positive": {
+            "precision": 0.859,
+            "recall": 0.7882,
+            "f1": 0.8221,
+            "support": 85
+          }
+        }
+      }
+    }
+  }
+}

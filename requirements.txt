@@ -1,8 +1,10 @@
-torch
-transformers
-datasets
+torch==2.11.0+cu128  # RTX 5060 (Blackwell sm_120); --index-url https://download.pytorch.org/whl/cu128
+transformers==5.12.1
+accelerate==1.14.0
+evaluate==0.4.6
+datasets==3.6.0
 scikit-learn
-pandas
+pandas==2.2.3
 numpy
 sentence-transformers
 faiss-cpu
@@ -19,3 +21,4 @@ shap
 jupyter
 duckdb
 anthropic
+openai

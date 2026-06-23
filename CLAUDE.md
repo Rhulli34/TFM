@@ -21,7 +21,7 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
 - Python 3.12 (.venv) — compatible con PyTorch; pandas 2.2.x (pandas 3.x bloqueado por WDAC en esta máquina)
 - PyTorch, HuggingFace Transformers, scikit-learn, pandas, numpy
 - sentence-transformers + FAISS para RAG
-- LLM vía API (NUNCA local) para extracción de eventos y síntesis
+- LLM vía API (NUNCA local) para extracción de eventos y síntesis — OpenAI gpt-4o-mini (OPENAI_API_KEY en .env)
 - FastAPI + Streamlit + Docker
 - Datos: Financial PhraseBank v1.0 (corpus, descargado vía hf_hub_download como zip) + noticias vía Finnhub company-news API + precios vía yfinance + filings EDGAR
 - datasets pinneado a 3.6.0 (v5 rompió el loading script de financial_phrasebank)
@@ -37,11 +37,14 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
 - reports/          figuras y resultados (alimentan la memoria y el vídeo)
 - docs/             decisiones.md (log cronológico) + la memoria (al FINAL)
 
-## Plan por fases (ESTADO ACTUAL: FASE 1)
+## Plan por fases (ESTADO ACTUAL: FASE 3)
 - F0 Cimientos: entorno, estructura, fuentes conectadas  ✓ COMPLETADA
-- F1 Datos + EDA del corpus
-- F2 Modelado y comparativa (baseline vs fine-tune vs zero-shot)  <- fase clave
-- F3 Ingesta en vivo + histórico
+- F1 Datos + EDA del corpus  ✓ COMPLETADA
+- F2 Modelado y comparativa (baseline vs fine-tune vs zero-shot)  ✓ COMPLETADA
+  - Baseline (TF-IDF + LinearSVC): macro-F1=0.856 en test
+  - Transformer fine-tune (deberta-v3-base): macro-F1=0.981 en test
+  - LLM zero-shot (gpt-4o-mini): macro-F1=0.963 en test, $0.011/339 frases
+- F3 Ingesta en vivo + histórico  <- siguiente
 - F4 Eventos + RAG + briefing
 - F5 Backtest de alerta temprana
 - F6 App + despliegue

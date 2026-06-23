@@ -1,0 +1,68 @@
+{
+  "base_model": "microsoft/deberta-v3-base",
+  "hyperparams": {
+    "max_length": 128,
+    "num_epochs": 10,
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "grad_accum_steps": 1,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "bf16": false,
+    "fp16": false
+  },
+  "class_weights": {
+    "negative": 2.4858,
+    "neutral": 0.5433,
+    "positive": 1.3208
+  },
+  "training_time_min": 3.0,
+  "val": {
+    "macro_f1": 0.9928,
+    "accuracy": 0.9941,
+    "per_class": {
+      "negative": {
+        "precision": 0.9783,
+        "recall": 1.0,
+        "f1": 0.989,
+        "support": 45
+      },
+      "neutral": {
+        "precision": 1.0,
+        "recall": 0.9904,
+        "f1": 0.9952,
+        "support": 208
+      },
+      "positive": {
+        "precision": 0.9885,
+        "recall": 1.0,
+        "f1": 0.9942,
+        "support": 86
+      }
+    }
+  },
+  "test": {
+    "macro_f1": 0.9806,
+    "accuracy": 0.9853,
+    "per_class": {
+      "negative": {
+        "precision": 0.9583,
+        "recall": 1.0,
+        "f1": 0.9787,
+        "support": 46
+      },
+      "neutral": {
+        "precision": 0.9952,
+        "recall": 0.9904,
+        "f1": 0.9928,
+        "support": 208
+      },
+      "positive": {
+        "precision": 0.9762,
+        "recall": 0.9647,
+        "f1": 0.9704,
+        "support": 85
+      }
+    }
+  }
+}
