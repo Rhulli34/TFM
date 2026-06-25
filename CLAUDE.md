@@ -37,15 +37,24 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
 - reports/          figuras y resultados (alimentan la memoria y el vídeo)
 - docs/             decisiones.md (log cronológico) + la memoria (al FINAL)
 
-## Plan por fases (ESTADO ACTUAL: FASE 3)
+## Plan por fases (ESTADO ACTUAL: FASE 5)
 - F0 Cimientos: entorno, estructura, fuentes conectadas  ✓ COMPLETADA
 - F1 Datos + EDA del corpus  ✓ COMPLETADA
 - F2 Modelado y comparativa (baseline vs fine-tune vs zero-shot)  ✓ COMPLETADA
   - Baseline (TF-IDF + LinearSVC): macro-F1=0.856 en test
   - Transformer fine-tune (deberta-v3-base): macro-F1=0.981 en test
   - LLM zero-shot (gpt-4o-mini): macro-F1=0.963 en test, $0.011/339 frases
-- F3 Ingesta en vivo + histórico  <- siguiente
-- F4 Eventos + RAG + briefing
+- F3 Ingesta en vivo + histórico  ✓ COMPLETADA
+  - 10 tickers (AAPL,NVDA,MSFT,AMZN,META,GOOGL,TSLA,JPM,XOM,PFE)
+  - 27.266 artículos únicos + precios en data/processed/radar.db (SQLite)
+  - Sentimiento clasificado con DeBERTa-v3-base (F2) en batch, GPU
+  - Nota: GS y QCOM también en la BD (ingesta previa), no se borran
+- F4 Eventos + RAG + briefing  ✓ COMPLETADA
+  - events.py: extracción con gpt-4o-mini, batch=10, 8 event types → tabla events en SQLite
+  - retrieval.py: all-MiniLM-L6-v2 + FAISS IndexFlatIP (cosine similarity)
+  - briefing.py: pipeline completo → markdown guardado en reports/briefings/
+  - scripts/run_briefing.py: CLI — python scripts/run_briefing.py TICKER [--days N]
+- F5 Backtest de alerta temprana  <- siguiente
 - F5 Backtest de alerta temprana
 - F6 App + despliegue
 - F7 Vídeo beca

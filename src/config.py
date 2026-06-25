@@ -27,8 +27,11 @@ RESULTS_DIR = REPORTS_DIR / "results"
 # Models
 MODELS_DIR = ROOT_DIR / "models"
 
-# Tickers used throughout the project
-DEFAULT_TICKERS = ["AAPL", "NVDA", "QCOM"]
+# Portfolio: 10 liquid US large-caps with good Finnhub news coverage
+DEFAULT_TICKERS = [
+    "AAPL", "NVDA", "MSFT", "AMZN", "META",
+    "GOOGL", "TSLA", "JPM", "XOM", "PFE",
+]
 
 # Finnhub base URL
 FINNHUB_BASE_URL = "https://finnhub.io/api/v1"
