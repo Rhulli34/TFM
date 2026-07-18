@@ -1,0 +1,48 @@
+# ── Version control ───────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Python artefacts ──────────────────────────────────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# ── Secrets (never bake credentials into the image) ───────────────────────────
+.env
+*.env.local
+
+# ── Dev-only directories ──────────────────────────────────────────────────────
+notebooks/
+tests/
+scripts/
+docs/
+
+# ── Data ─────────────────────────────────────────────────────────────────────
+# Exclude everything in data/ EXCEPT the SQLite DB snapshot, which is baked into
+# the image for self-contained deployment (e.g., HF Spaces has no host volumes).
+# docker-compose.yml can mount a fresher local copy on top for dev.
+data/
+!data/processed/radar.db
+
+# ── Reports (generated at runtime; mount reports/briefings/ if persistence is needed)
+reports/
+
+# ── Training model artefacts (not needed for inference) ───────────────────────
+# These three files account for ~1.2 GB and are only read during training.
+models/deberta-v3-base-finetuned/checkpoint-198/optimizer.pt
+models/deberta-v3-base-finetuned/checkpoint-198/scheduler.pt
+models/deberta-v3-base-finetuned/checkpoint-198/rng_state.pth
+# Metadata files that are also training-only
+models/deberta-v3-base-finetuned/checkpoint-198/trainer_state.json
+models/deberta-v3-base-finetuned/checkpoint-198/training_args.bin
+# Baseline classifier (not used by the API)
+models/baseline_linearsvc.joblib
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.DS_Store
+.claude/
+CLAUDE.md
+CLAUDE.local.md

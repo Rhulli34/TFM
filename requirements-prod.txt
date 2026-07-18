@@ -1,0 +1,29 @@
+# Runtime dependencies for the Financial News Radar container.
+#
+# torch is installed separately in the Dockerfile using --index-url for the
+# CPU wheel, so it is intentionally absent here.  Fine-tuning is already done;
+# the container only classifies a handful of texts per API call, which CPU
+# handles in well under a second.
+#
+# Packages not needed at runtime (excluded to keep the image lean):
+#   torch           – installed via CPU wheel in Dockerfile
+#   datasets        – training/evaluation only
+#   evaluate        – training/evaluation only
+#   jupyter         – dev only
+#   streamlit/plotly – replaced by the vanilla HTML+CSS+JS frontend
+#   matplotlib/seaborn/shap – analysis/visualisation only
+#   duckdb          – we use SQLite in production
+#   anthropic       – we use the OpenAI SDK
+#   yfinance        – DB is pre-populated; no live price ingestion in prod
+transformers==5.12.1
+accelerate==1.14.0
+scikit-learn
+pandas==2.2.3
+numpy
+sentence-transformers
+faiss-cpu
+requests
+python-dotenv
+fastapi
+uvicorn
+openai

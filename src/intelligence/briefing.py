@@ -97,14 +97,21 @@ def generate_briefing(
     from_str = from_date.isoformat()
     to_str = to_date.isoformat()
 
-    # ── 1. Fetch window articles ──────────────────────────────────────────────
-    articles = query_news_window(ticker, from_str, to_str, db_path)
+    # ── 1. Fetch window articles (is_relevant=1 only) ────────────────────────
+    # Filtering here prevents irrelevant articles (e.g. Finnhub generic market
+    # news attributed to multiple tickers) from generating spurious events.
+    all_articles = query_news_window(ticker, from_str, to_str, db_path)
+    articles = [a for a in all_articles if a.get("is_relevant") == 1]
     if not articles:
         return (
             f"# Financial News Briefing: {ticker}\n\n"
-            f"No news found for {from_str} to {to_str}."
+            f"No relevant news found for {from_str} to {to_str}."
         )
-    print(f"  {len(articles)} articles in window [{from_str} -> {to_str}]", flush=True)
+    print(
+        f"  {len(articles)} relevant articles in window "
+        f"[{from_str} -> {to_str}] ({len(all_articles)} total)",
+        flush=True,
+    )
 
     # ── 2. Event extraction ───────────────────────────────────────────────────
     print("  Extracting events...", flush=True)

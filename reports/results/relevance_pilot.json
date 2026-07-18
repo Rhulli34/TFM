@@ -1,0 +1,314 @@
+{
+  "description": "LLM pilot: 50 randomly sampled keyword=0 articles (5 per ticker), evaluated by gpt-4o-mini",
+  "decision": "No se hara el LLM pass completo. Razon: 0/50 rescatados en el piloto. El filtro keyword captura el recall util del dataset. Articulos keyword=0 son genericamente noticias de mercado o de otras empresas, no referencias implicitas a la empresa objetivo.",
+  "n_piloted": 50,
+  "n_rescued": 0,
+  "total_dubious_keyword0": 11114,
+  "pilot_cost_usd": 0.00107,
+  "avg_input_tokens_per_article": 93.4,
+  "avg_output_tokens_per_article": 12.4,
+  "extrapolated_full_pass_cost_usd": 0.2384,
+  "rescue_rate_pilot": 0.0,
+  "articles": [
+    {
+      "id": "4f2a04f2b18cc9d9",
+      "ticker": "AAPL",
+      "headline": "Bitcoin price rebounds after Nvidia earnings and ETF inflows",
+      "llm_relevant": false
+    },
+    {
+      "id": "78a9d06a996bb193",
+      "ticker": "AAPL",
+      "headline": "Market Outlook 2026: Technology, Precious Metals, And Commodities",
+      "llm_relevant": false
+    },
+    {
+      "id": "8114ca38773a70f8",
+      "ticker": "AAPL",
+      "headline": "Intel, Boeing Rally As Silver Hits $46 And Bitcoin Slips Below $110,000: What's Moving Markets Friday?",
+      "llm_relevant": false
+    },
+    {
+      "id": "a0ded99837913594",
+      "ticker": "AAPL",
+      "headline": "3 Mega-Cap Stocks with Exciting Potential",
+      "llm_relevant": false
+    },
+    {
+      "id": "a38932b6b3599661",
+      "ticker": "AAPL",
+      "headline": "What Moved Markets This Week",
+      "llm_relevant": false
+    },
+    {
+      "id": "0e7c20de64d70079",
+      "ticker": "AMZN",
+      "headline": "US Equity Indexes Fall Amid Surge in Crude Oil Prices, Dissent in Fed Policy Highest in Over 3 Decades",
+      "llm_relevant": false
+    },
+    {
+      "id": "4158a8df48991f85",
+      "ticker": "AMZN",
+      "headline": "NiSource: A Utility AI Winner Worth Buying On Pullbacks",
+      "llm_relevant": false
+    },
+    {
+      "id": "4de9fc0ea4d48e0b",
+      "ticker": "AMZN",
+      "headline": "Dow's 270-point rally highlighted by gains for shares of Boeing, IBM",
+      "llm_relevant": false
+    },
+    {
+      "id": "d3246001bc0e7bc8",
+      "ticker": "AMZN",
+      "headline": "Affirm (AFRM) Expands Partnerships Driving Fintech Growth",
+      "llm_relevant": false
+    },
+    {
+      "id": "e84d3229ea6e307c",
+      "ticker": "AMZN",
+      "headline": "Veriff Report: As Fraud Soars Across Industries, “Fraud Tax” May Become Unsustainable for E-commerce and Marketplace Platforms",
+      "llm_relevant": false
+    },
+    {
+      "id": "0582bad19ea6ef58",
+      "ticker": "GOOGL",
+      "headline": "Should You Buy Snowflake Stock Before Dec. 3? The Answer Might Surprise You.",
+      "llm_relevant": false
+    },
+    {
+      "id": "16286ce557ad0793",
+      "ticker": "GOOGL",
+      "headline": "What is the Next NVIDIA (NVDA)? Brad Gerstner Answers",
+      "llm_relevant": false
+    },
+    {
+      "id": "4836a2431b7917f5",
+      "ticker": "GOOGL",
+      "headline": "Intel Stock Will Trade At This Price in 2028",
+      "llm_relevant": false
+    },
+    {
+      "id": "d088a665df7bb13f",
+      "ticker": "GOOGL",
+      "headline": "iVision Tech Shares Rocket Nearly 30% after Macron Appears at Davos in Henry Jullien Shades",
+      "llm_relevant": false
+    },
+    {
+      "id": "fc7a3afa015d27d7",
+      "ticker": "GOOGL",
+      "headline": "Enterprises prefer Anthropic’s AI models over anyone else’s, including OpenAI’s",
+      "llm_relevant": false
+    },
+    {
+      "id": "032cabea2fda30e4",
+      "ticker": "JPM",
+      "headline": "SK Hynix's $29 Billion Nasdaq Listing Would Be the Biggest ADR Ever",
+      "llm_relevant": false
+    },
+    {
+      "id": "10b240faad13fc4d",
+      "ticker": "JPM",
+      "headline": "Lingering mysteries from Berkshire's portfolio update",
+      "llm_relevant": false
+    },
+    {
+      "id": "14ff64f0f341c845",
+      "ticker": "JPM",
+      "headline": "Sector Update: Financial",
+      "llm_relevant": false
+    },
+    {
+      "id": "15b0a4ec6a5481db",
+      "ticker": "JPM",
+      "headline": "FDVV: Compelling Choice For Retirees That Want Income And Growth",
+      "llm_relevant": false
+    },
+    {
+      "id": "6d0a53a2f7196830",
+      "ticker": "JPM",
+      "headline": "Goldman Poised for a Major M&A Milestone This Year: What's Driving?",
+      "llm_relevant": false
+    },
+    {
+      "id": "26b37b16f9704bdd",
+      "ticker": "META",
+      "headline": "Will Nvidia Beat Earnings Estimates? 84% Of Benzinga Readers Say This",
+      "llm_relevant": false
+    },
+    {
+      "id": "29cdc2162d998a02",
+      "ticker": "META",
+      "headline": "AI part of another tech layoff as Wix CEO announces 20% workforce cut",
+      "llm_relevant": false
+    },
+    {
+      "id": "6e13bb1fe7883754",
+      "ticker": "META",
+      "headline": "What Moved Markets This Week",
+      "llm_relevant": false
+    },
+    {
+      "id": "85eb792618f2bd16",
+      "ticker": "META",
+      "headline": "The 180-Day Lease Holding Up SpaceX's $2 Trillion IPO",
+      "llm_relevant": false
+    },
+    {
+      "id": "a5b06ddf0086431c",
+      "ticker": "META",
+      "headline": "Tech stocks today: Nvidia stock rises as guidance signals AI boom alive and well",
+      "llm_relevant": false
+    },
+    {
+      "id": "127a142a2a0b1d38",
+      "ticker": "MSFT",
+      "headline": "CoreWeave stock soars after $14.2 billion Meta computing deal",
+      "llm_relevant": false
+    },
+    {
+      "id": "2205dfbefc655771",
+      "ticker": "MSFT",
+      "headline": "Hyperscalers to Spend Over $500 Billion on AI in 2026: Here Are the 3 Stocks to Buy",
+      "llm_relevant": false
+    },
+    {
+      "id": "335fb97cf087f18d",
+      "ticker": "MSFT",
+      "headline": "Nasdaq Jumps 600 Points Amid Fed Dovish Signals: Fear & Greed Index Remains In 'Extreme Fear' Zone",
+      "llm_relevant": false
+    },
+    {
+      "id": "636adb2e312c1835",
+      "ticker": "MSFT",
+      "headline": "Trump administration to loan $17 billion to speed deployment of 10 big nuclear reactors in U.S.",
+      "llm_relevant": false
+    },
+    {
+      "id": "b6a415589d54898f",
+      "ticker": "MSFT",
+      "headline": "Stocks Turn Lower as Big Tech Names Struggle",
+      "llm_relevant": false
+    },
+    {
+      "id": "475889950e5c96db",
+      "ticker": "NVDA",
+      "headline": "Why BellRing Brands (BRBR) Shares Are Falling Today",
+      "llm_relevant": false
+    },
+    {
+      "id": "8ace9c48abb7f06b",
+      "ticker": "NVDA",
+      "headline": "Got $10,000? This Is Exactly How I'd Split It Across These 5 AI Stocks Right Now",
+      "llm_relevant": false
+    },
+    {
+      "id": "c346fd90d0144136",
+      "ticker": "NVDA",
+      "headline": "Should You Buy Alphabet Stock Now or Wait for a Dip?",
+      "llm_relevant": false
+    },
+    {
+      "id": "dd7f801d14310cc8",
+      "ticker": "NVDA",
+      "headline": "These Were the Best and Worst S&P 500 Stocks in January",
+      "llm_relevant": false
+    },
+    {
+      "id": "f4481c309c80321c",
+      "ticker": "NVDA",
+      "headline": "China Mandates 50% Domestic Gear For New Chip Capacity",
+      "llm_relevant": false
+    },
+    {
+      "id": "26b512261b6f3c36",
+      "ticker": "PFE",
+      "headline": "S&P 500 Hits New High As Oil Prices Fall: Investor Sentiment Improves, Fear Index Remains In 'Greed' Zone",
+      "llm_relevant": false
+    },
+    {
+      "id": "294f0f5a305a743d",
+      "ticker": "PFE",
+      "headline": "Microsoft Q4 Earnings & Revenues Beat on Cloud Business Expansion",
+      "llm_relevant": false
+    },
+    {
+      "id": "2e85630ffa01e763",
+      "ticker": "PFE",
+      "headline": "Heidi Hunter Appointed New Vice Chair of the Board of Directors of Bavarian Nordic",
+      "llm_relevant": false
+    },
+    {
+      "id": "3d5281bad9120c42",
+      "ticker": "PFE",
+      "headline": "Is Bristol Myers Squibb a Buy, Sell, or Hold in 2026?",
+      "llm_relevant": false
+    },
+    {
+      "id": "af5bf7b983dd13d7",
+      "ticker": "PFE",
+      "headline": "Pharma ETFs in Spotlight Following Robust Q3 Earnings Results",
+      "llm_relevant": false
+    },
+    {
+      "id": "0c89db5a4b6a2179",
+      "ticker": "TSLA",
+      "headline": "$1B Crypto Plan Announced as Jiuzi Shares Spike to 55.5%",
+      "llm_relevant": false
+    },
+    {
+      "id": "2756cd5421b09fb0",
+      "ticker": "TSLA",
+      "headline": "Most big cryptocurrencies climb on Ethereum, Cardano increases",
+      "llm_relevant": false
+    },
+    {
+      "id": "38dc1690c847ce6e",
+      "ticker": "TSLA",
+      "headline": "Big Tech stocks mostly rise, helping to drive S&P 500 higher",
+      "llm_relevant": false
+    },
+    {
+      "id": "9970701df16ea797",
+      "ticker": "TSLA",
+      "headline": "Is This Retail Bond's 8.25% APY Too Good To Be True?",
+      "llm_relevant": false
+    },
+    {
+      "id": "bd20d57adfd65af6",
+      "ticker": "TSLA",
+      "headline": "Investors seem complacent on oil prices, says Trivariate's Adam Parker",
+      "llm_relevant": false
+    },
+    {
+      "id": "05d09591e447ae59",
+      "ticker": "XOM",
+      "headline": "GS Large Cap Value Fund Q3: Positioning For Sustained Momentum And Long-Term Growth",
+      "llm_relevant": false
+    },
+    {
+      "id": "0fe92988c24b2d67",
+      "ticker": "XOM",
+      "headline": "Imperial Oil to Axe 20% of Workforce on Glut Predictions",
+      "llm_relevant": false
+    },
+    {
+      "id": "407d5cff657a649d",
+      "ticker": "XOM",
+      "headline": "Chevron Cuts Layers, Eyes Guyana and Growth",
+      "llm_relevant": false
+    },
+    {
+      "id": "86ab6f198beeb09a",
+      "ticker": "XOM",
+      "headline": "Why Hormuz and trade tensions could revive in 2027",
+      "llm_relevant": false
+    },
+    {
+      "id": "d58d999f0d58e53d",
+      "ticker": "XOM",
+      "headline": "Oil Price Rises Amid U.S.-Iran Tension. These Stocks Are Gaining.",
+      "llm_relevant": false
+    }
+  ]
+}

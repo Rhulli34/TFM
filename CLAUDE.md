@@ -37,7 +37,7 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
 - reports/          figuras y resultados (alimentan la memoria y el vídeo)
 - docs/             decisiones.md (log cronológico) + la memoria (al FINAL)
 
-## Plan por fases (ESTADO ACTUAL: FASE 5)
+## Plan por fases (ESTADO ACTUAL: FASE 6)
 - F0 Cimientos: entorno, estructura, fuentes conectadas  ✓ COMPLETADA
 - F1 Datos + EDA del corpus  ✓ COMPLETADA
 - F2 Modelado y comparativa (baseline vs fine-tune vs zero-shot)  ✓ COMPLETADA
@@ -54,9 +54,47 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
   - retrieval.py: all-MiniLM-L6-v2 + FAISS IndexFlatIP (cosine similarity)
   - briefing.py: pipeline completo → markdown guardado en reports/briefings/
   - scripts/run_briefing.py: CLI — python scripts/run_briefing.py TICKER [--days N]
-- F5 Backtest de alerta temprana  <- siguiente
-- F5 Backtest de alerta temprana
-- F6 App + despliegue
+- F5 Backtest de alerta temprana  ✓ COMPLETADA
+  - signal.py: señal diaria neta (raw + weighted + MA3/MA5), solo is_relevant=1
+  - returns.py: retornos forward log a t+1, t+3, t+5 desde precios
+  - notebooks/04_backtest.ipynb: lead-lag, event study, caso de estudio TSLA+NVDA
+  - Hallazgo clave: señal REACTIVA, no predictiva (correlación máx. en lag=-1)
+  - Valor del sistema: cualitativo (flagging de noticias negativas), no cuantitativo
+  - Resultados en reports/results/backtest.json, figuras en reports/figures/
+- F6 App + despliegue  ← EN CURSO
+  - F6.1 Backend FastAPI ✓: settings.py (dev/prod), api.py (5 endpoints)
+    - GET /health, /catalog, /portfolio?tickers=, /company/{ticker}, /company/{ticker}/briefing
+    - Catálogo dinámico: cualquier ticker con is_relevant=1 en BD aparece automáticamente
+    - Alertas: net_sentiment_7d < -0.3 OR evento legal material (is_relevant=1)
+    - uvicorn src.app.api:app --reload
+  - F6.2 Frontend a medida ✓: src/app/frontend/ (HTML+CSS+JS vanilla), servido desde FastAPI
+    - index.html + styles.css (design system Stripe/Linear: Inter, blanco, acento #635BFF)
+    - app.js: fetch a API relativa, estado en JS puro, sin framework
+    - Vista de cartera: stat cards, segmented control 7/14/30d, chips de filtro, grid 5-col,
+      tarjetas con gauge centrado en 0, borde izq. rojo en alertas, last-updated en header
+    - Selección vacía → estado vacío explícito (no repobla); tooltip dark en badge de alerta
+    - /portfolio acepta ?days=N (1-30); etiquetas dinámicas en tarjetas y stats
+    - Escala de color: dead zone ±0.03 (antes ±0.1); -0.07 muestra rojo, no gris
+    - Drill-down: 4 tabs (Sentimiento/Noticias/Eventos/Informe), Chart.js (CDN)
+    - Pestaña Eventos condicional: se oculta si la empresa no tiene eventos; visible si los tiene
+    - api.py sirve GET / → index.html + mount /static → frontend/
+    - Arranque único: uvicorn src.app.api:app --reload (puerto 8000, todo junto)
+  - F6.2 ✓ COMPLETADA
+  - F6.3 Docker Compose ✓ COMPLETADA
+    - Dockerfile: python:3.12-slim, torch CPU (inferencia, no GPU en prod), modelo DeBERTa sin artefactos de entrenamiento
+    - .dockerignore: excluye data/ excepto data/processed/radar.db (baked-in), reports/, notebooks/, optimizer/scheduler/rng (.pt), baseline joblib
+    - docker-compose.yml: monta radar.db:ro (override dev) + reports/briefings, env_file .env, healthcheck
+    - requirements-prod.txt: sin torch (se instala aparte con CPU wheel), sin streamlit/jupyter/datasets
+    - settings.py: docstring actualizado (sin referencia a Streamlit, CORS abierto en ambos modos)
+    - README.md: sección Docker con build/run y tabla de variables de entorno
+  - F6.4 Snapshot autocontenido + HF Spaces ✓ COMPLETADA
+    - radar.db (19 MB) baked-in; usuario no-root UID 1000; puerto 7860 (HF Spaces)
+    - WORKDIR /home/user/app; CMD: uvicorn 0.0.0.0:${PORT:-7860}
+    - docker-compose.yml: porta ${PORT:-7860}, volúmenes apuntan a /home/user/app/…
+    - README.md: frontmatter YAML HF Spaces (title, emoji, sdk: docker, app_port: 7860)
+    - api.py: briefing captura EnvironmentError → HTTP 503 (arranca sin OPENAI_API_KEY)
+    - Frontend: subtitle "Monitorización de sentimiento…"; header "Demo · datos hasta <fecha>"
+    - Tamaño imagen: 3.57 GB (torch CPU 920 MB + deps 648 MB + DeBERTa 754 MB + radar.db 19 MB)
 - F7 Vídeo beca
 - F8 Documentación
 Trabaja UNA fase cada vez. No saltes de fase sin cerrar el hito de la actual.

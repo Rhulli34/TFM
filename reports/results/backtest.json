@@ -1,0 +1,219 @@
+{
+  "description": "F5 Backtest de alerta temprana: sentimiento noticias vs. retornos de precio",
+  "dataset": {
+    "tickers": [
+      "AAPL",
+      "NVDA",
+      "MSFT",
+      "AMZN",
+      "META",
+      "GOOGL",
+      "TSLA",
+      "JPM",
+      "XOM",
+      "PFE"
+    ],
+    "n_ticker_days": 2510,
+    "date_min": "2025-06-25",
+    "date_max": "2026-06-24",
+    "n_relevant_articles": 11512,
+    "days_with_news": 951
+  },
+  "lead_lag": {
+    "signal": "raw_ma5",
+    "description": "corr(signal[t], daily_ret[t+k]) pooled 10 tickers",
+    "lags": [
+      {
+        "lag": -5,
+        "corr": 0.06213,
+        "pval": 0.00209,
+        "n": 2450
+      },
+      {
+        "lag": -4,
+        "corr": 0.0756,
+        "pval": 0.00017,
+        "n": 2460
+      },
+      {
+        "lag": -3,
+        "corr": 0.07173,
+        "pval": 0.00036,
+        "n": 2470
+      },
+      {
+        "lag": -2,
+        "corr": 0.0543,
+        "pval": 0.00684,
+        "n": 2480
+      },
+      {
+        "lag": -1,
+        "corr": 0.03535,
+        "pval": 0.07782,
+        "n": 2490
+      },
+      {
+        "lag": 0,
+        "corr": 0.00393,
+        "pval": 0.84442,
+        "n": 2500
+      },
+      {
+        "lag": 1,
+        "corr": -0.01294,
+        "pval": 0.51787,
+        "n": 2500
+      },
+      {
+        "lag": 2,
+        "corr": -0.0133,
+        "pval": 0.50698,
+        "n": 2490
+      },
+      {
+        "lag": 3,
+        "corr": -0.01103,
+        "pval": 0.58302,
+        "n": 2480
+      },
+      {
+        "lag": 4,
+        "corr": -0.00946,
+        "pval": 0.63837,
+        "n": 2470
+      },
+      {
+        "lag": 5,
+        "corr": -0.01002,
+        "pval": 0.61931,
+        "n": 2460
+      }
+    ],
+    "best_predictive_lag": 4,
+    "best_predictive_corr": -0.00946,
+    "lag0_corr": 0.00393
+  },
+  "event_study_pooled": [
+    {
+      "ticker": "POOL",
+      "horizon": 1,
+      "neg_signal_days": 1321,
+      "other_days": 1179,
+      "ret_neg_bps": 7.2,
+      "ret_other_bps": 5.1,
+      "diff_bps": 2.1,
+      "pval": 0.782,
+      "significant": false
+    },
+    {
+      "ticker": "POOL",
+      "horizon": 3,
+      "neg_signal_days": 1317,
+      "other_days": 1163,
+      "ret_neg_bps": 22.8,
+      "ret_other_bps": 14.7,
+      "diff_bps": 8.1,
+      "pval": 0.538,
+      "significant": false
+    },
+    {
+      "ticker": "POOL",
+      "horizon": 5,
+      "neg_signal_days": 1304,
+      "other_days": 1156,
+      "ret_neg_bps": 39.9,
+      "ret_other_bps": 26.4,
+      "diff_bps": 13.5,
+      "pval": 0.422,
+      "significant": false
+    }
+  ],
+  "event_study_by_ticker_h1": [
+    {
+      "ticker": "JPM",
+      "neg_signal_days": 92,
+      "ret_neg_bps": -13.2,
+      "ret_other_bps": 19.0,
+      "diff_bps": -32.2,
+      "pval": 0.09
+    },
+    {
+      "ticker": "MSFT",
+      "neg_signal_days": 161,
+      "ret_neg_bps": -19.7,
+      "ret_other_bps": 3.0,
+      "diff_bps": -22.7,
+      "pval": 0.282
+    },
+    {
+      "ticker": "AMZN",
+      "neg_signal_days": 159,
+      "ret_neg_bps": -2.7,
+      "ret_other_bps": 15.6,
+      "diff_bps": -18.3,
+      "pval": 0.507
+    },
+    {
+      "ticker": "AAPL",
+      "neg_signal_days": 147,
+      "ret_neg_bps": 12.5,
+      "ret_other_bps": 19.0,
+      "diff_bps": -6.5,
+      "pval": 0.725
+    },
+    {
+      "ticker": "NVDA",
+      "neg_signal_days": 165,
+      "ret_neg_bps": 10.0,
+      "ret_other_bps": 10.6,
+      "diff_bps": -0.6,
+      "pval": 0.985
+    },
+    {
+      "ticker": "GOOGL",
+      "neg_signal_days": 161,
+      "ret_neg_bps": 31.4,
+      "ret_other_bps": 22.6,
+      "diff_bps": 8.8,
+      "pval": 0.71
+    },
+    {
+      "ticker": "PFE",
+      "neg_signal_days": 51,
+      "ret_neg_bps": 12.2,
+      "ret_other_bps": -0.2,
+      "diff_bps": 12.4,
+      "pval": 0.61
+    },
+    {
+      "ticker": "XOM",
+      "neg_signal_days": 51,
+      "ret_neg_bps": 22.6,
+      "ret_other_bps": 7.5,
+      "diff_bps": 15.1,
+      "pval": 0.523
+    },
+    {
+      "ticker": "META",
+      "neg_signal_days": 162,
+      "ret_neg_bps": -0.3,
+      "ret_other_bps": -26.3,
+      "diff_bps": 25.9,
+      "pval": 0.411
+    },
+    {
+      "ticker": "TSLA",
+      "neg_signal_days": 172,
+      "ret_neg_bps": 23.6,
+      "ret_other_bps": -34.6,
+      "diff_bps": 58.2,
+      "pval": 0.135
+    }
+  ],
+  "figures": [
+    "reports/figures/backtest_leadlag.png",
+    "reports/figures/backtest_eventstudy.png",
+    "reports/figures/backtest_casestudy.png"
+  ]
+}

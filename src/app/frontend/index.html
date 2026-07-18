@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial News Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div id="app">
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="header-brand">
+          <svg class="brand-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="9" stroke="#635BFF" stroke-width="1.5"/>
+            <path d="M5 10h2l2-4 2 8 2-4h2" stroke="#635BFF" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-name">Financial News Radar</span>
+        </div>
+        <span class="brand-sub">Portfolio Intelligence · UCM TFM</span>
+        <span class="header-meta" id="last-updated"></span>
+      </div>
+    </header>
+
+    <!-- ── Portfolio view ───────────────────────────────────────────── -->
+    <main id="view-portfolio" class="view container">
+
+      <div class="page-title-row">
+        <div>
+          <h1 class="page-title">Vista de cartera</h1>
+          <p class="page-subtitle">Monitorización de sentimiento y detección de alertas sobre noticias financieras</p>
+        </div>
+      </div>
+
+      <div class="stats-row" id="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Empresas monitorizadas</div>
+          <div class="stat-value" id="stat-companies">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Alertas activas</div>
+          <div class="stat-value" id="stat-alerts">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label" id="stat-sentiment-label">Sentimiento medio 7d</div>
+          <div class="stat-value" id="stat-sentiment">—</div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <span class="filter-label">Cartera</span>
+        <div class="chip-group" id="chip-group"></div>
+        <button class="btn-text" id="btn-all">Todos</button>
+        <button class="btn-text" id="btn-none">Ninguno</button>
+        <div class="period-control">
+          <button class="period-btn period-active" data-days="7">7d</button>
+          <button class="period-btn" data-days="14">14d</button>
+          <button class="period-btn" data-days="30">30d</button>
+        </div>
+      </div>
+
+      <div class="company-grid" id="company-grid">
+        <div class="loading-state" id="grid-loading">
+          <div class="spinner"></div>
+          <span>Cargando cartera…</span>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ── Company detail view ──────────────────────────────────────── -->
+    <main id="view-detail" class="view container hidden">
+
+      <div class="detail-topbar">
+        <button class="btn-back" id="btn-back">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Volver a cartera
+        </button>
+      </div>
+
+      <div id="detail-header"></div>
+
+      <div class="tabs-nav" id="tabs-nav">
+        <button class="tab-btn active" data-tab="sentiment">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="margin-right:5px">
+            <rect x="1" y="6" width="2" height="6" rx="1" fill="currentColor"/>
+            <rect x="5" y="3" width="2" height="9" rx="1" fill="currentColor"/>
+            <rect x="9" y="1" width="2" height="11" rx="1" fill="currentColor"/>
+          </svg>
+          Sentimiento
+        </button>
+        <button class="tab-btn" data-tab="news">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="margin-right:5px">
+            <rect x="1" y="1" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M3.5 4h6M3.5 6.5h6M3.5 9h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+          Noticias
+        </button>
+        <button class="tab-btn" data-tab="events">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="margin-right:5px">
+            <path d="M6.5 1.5L8 5h3.5l-2.8 2 1 3.5L6.5 8.5 3.3 10.5l1-3.5L1.5 5H5L6.5 1.5z"
+                  stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+          </svg>
+          Eventos
+        </button>
+        <button class="tab-btn" data-tab="briefing">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="margin-right:5px">
+            <path d="M2 2h9v1.5L8 6.5V11H5V6.5L2 3.5V2z" stroke="currentColor" stroke-width="1.3"
+                  stroke-linejoin="round"/>
+          </svg>
+          Informe
+        </button>
+      </div>
+
+      <div id="tab-sentiment" class="tab-pane">
+        <div class="chart-card">
+          <div class="chart-label">Sentimiento neto diario (últimos 30 días)</div>
+          <div class="chart-container"><canvas id="chart-sentiment"></canvas></div>
+        </div>
+        <div class="chart-card" style="margin-top:12px">
+          <div class="chart-label">Volumen de noticias relevantes</div>
+          <div class="chart-container chart-container-sm"><canvas id="chart-volume"></canvas></div>
+        </div>
+      </div>
+
+      <div id="tab-news"     class="tab-pane hidden"></div>
+      <div id="tab-events"   class="tab-pane hidden"></div>
+      <div id="tab-briefing" class="tab-pane hidden"></div>
+
+    </main>
+
+  </div><!-- #app -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
