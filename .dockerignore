@@ -29,16 +29,8 @@ data/
 # ── Reports (generated at runtime; mount reports/briefings/ if persistence is needed)
 reports/
 
-# ── Training model artefacts (not needed for inference) ───────────────────────
-# These three files account for ~1.2 GB and are only read during training.
-models/deberta-v3-base-finetuned/checkpoint-198/optimizer.pt
-models/deberta-v3-base-finetuned/checkpoint-198/scheduler.pt
-models/deberta-v3-base-finetuned/checkpoint-198/rng_state.pth
-# Metadata files that are also training-only
-models/deberta-v3-base-finetuned/checkpoint-198/trainer_state.json
-models/deberta-v3-base-finetuned/checkpoint-198/training_args.bin
-# Baseline classifier (not used by the API)
-models/baseline_linearsvc.joblib
+# ── Models (downloaded from HF Hub at build time — not copied from host) ──────
+models/
 
 # ── IDE / OS ──────────────────────────────────────────────────────────────────
 .vscode/

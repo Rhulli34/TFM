@@ -40,7 +40,7 @@ uvicorn src.app.api:app --reload  # API + frontend en http://localhost:8000
 |-----------------|-------------------------------------|-----------|
 | `OPENAI_API_KEY`| Clave OpenAI para briefings (gpt-4o-mini) | Sí   |
 | `APP_ENV`       | `prod` (lo fija docker-compose)     | Auto      |
-| `PORT`          | Puerto de escucha (default: `8000`) | No        |
+| `PORT`          | Puerto de escucha (default: `7860`) | No        |
 
 Copia `.env.example` a `.env` y rellena al menos `OPENAI_API_KEY`.
 `docker compose` lee `.env` automáticamente.
@@ -67,9 +67,14 @@ La app queda disponible en `http://localhost:8000`.
 ### Notas de diseño
 - **Imagen autocontenida**: `data/processed/radar.db` se copia dentro de la imagen
   en el build (snapshot histórico), por lo que el contenedor arranca con datos sin
-  necesidad de volúmenes. Imprescindible para despliegue en HF Spaces / Fly.io.
+  necesidad de volúmenes. Imprescindible para despliegue en HF Spaces / Render.
+- **Modelo desde HF Hub**: el modelo DeBERTa fine-tuneado está publicado en
+  [`Rhulli/financial-news-radar-deberta`](https://huggingface.co/Rhulli/financial-news-radar-deberta)
+  (público). El `Dockerfile` lo descarga y cachea en `~/.cache/huggingface` durante el
+  `docker build`, por lo que el contenedor arranca sin necesitar acceso a red ni token.
 - **Dev override**: `docker-compose.yml` monta la BD local encima del snapshot para
-  reflejar la última ingesta sin reconstruir la imagen.
+  reflejar la última ingesta sin reconstruir la imagen. En dev local, `sentiment.py`
+  carga el checkpoint desde `models/deberta-v3-base-finetuned/checkpoint-198/`.
 - **torch CPU en el contenedor**: el fine-tuning ya está hecho; en producción solo
   se clasifica texto (unos pocos titulares por petición), lo que la CPU maneja en
   menos de un segundo. La imagen CPU es ~1.5 GB más pequeña que la CUDA equivalente.

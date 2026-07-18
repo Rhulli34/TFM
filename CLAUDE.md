@@ -81,8 +81,8 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
     - Arranque único: uvicorn src.app.api:app --reload (puerto 8000, todo junto)
   - F6.2 ✓ COMPLETADA
   - F6.3 Docker Compose ✓ COMPLETADA
-    - Dockerfile: python:3.12-slim, torch CPU (inferencia, no GPU en prod), modelo DeBERTa sin artefactos de entrenamiento
-    - .dockerignore: excluye data/ excepto data/processed/radar.db (baked-in), reports/, notebooks/, optimizer/scheduler/rng (.pt), baseline joblib
+    - Dockerfile: python:3.12-slim, torch CPU (inferencia, no GPU en prod)
+    - .dockerignore: excluye data/ excepto data/processed/radar.db (baked-in), reports/, notebooks/, models/ completo
     - docker-compose.yml: monta radar.db:ro (override dev) + reports/briefings, env_file .env, healthcheck
     - requirements-prod.txt: sin torch (se instala aparte con CPU wheel), sin streamlit/jupyter/datasets
     - settings.py: docstring actualizado (sin referencia a Streamlit, CORS abierto en ambos modos)
@@ -94,7 +94,13 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
     - README.md: frontmatter YAML HF Spaces (title, emoji, sdk: docker, app_port: 7860)
     - api.py: briefing captura EnvironmentError → HTTP 503 (arranca sin OPENAI_API_KEY)
     - Frontend: subtitle "Monitorización de sentimiento…"; header "Demo · datos hasta <fecha>"
-    - Tamaño imagen: 3.57 GB (torch CPU 920 MB + deps 648 MB + DeBERTa 754 MB + radar.db 19 MB)
+  - F6.5 Modelo en HF Hub ✓ COMPLETADA
+    - Modelo publicado en https://huggingface.co/Rhulli/financial-news-radar-deberta (público)
+    - Solo 4 ficheros de inferencia: config.json, model.safetensors, tokenizer.json, tokenizer_config.json
+    - sentiment.py: MODEL_ID="Rhulli/financial-news-radar-deberta"; carga local si existe checkpoint, Hub si no
+    - Dockerfile: eliminado COPY del modelo; RUN descarga y cachea en ~/.cache/huggingface en build time
+    - Estrategia build-time (no runtime): evita descarga de 750 MB en cada cold-start (Render free duerme)
+    - Tamaño imagen: ~2.9 GB (torch CPU 920 MB + deps 648 MB + DeBERTa 754 MB baked vía Hub + radar.db 19 MB)
 - F7 Vídeo beca
 - F8 Documentación
 Trabaja UNA fase cada vez. No saltes de fase sin cerrar el hito de la actual.

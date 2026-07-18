@@ -2,6 +2,10 @@
 
 The model is loaded once (lazy) and cached for the lifetime of the process.
 Call predict_sentiment(texts) anywhere; it returns (label, confidence) pairs.
+
+In dev (local checkpoint present) the model is loaded from disk.
+In prod (Docker / CI) it is downloaded from the HF Hub on first use and cached
+at ~/.cache/huggingface/hub (pre-warmed at build time in the Dockerfile).
 """
 
 from __future__ import annotations
@@ -13,9 +17,11 @@ import numpy as np
 import torch
 
 ROOT = Path(__file__).resolve().parents[2]
-# Tokenizer saved at the model root; best checkpoint in the sub-directory.
-_TOK_DIR  = ROOT / "models" / "deberta-v3-base-finetuned"
-_CKPT_DIR = ROOT / "models" / "deberta-v3-base-finetuned" / "checkpoint-198"
+
+# Public HF Hub repo — used when the local checkpoint is absent (prod / CI).
+MODEL_ID = "Rhulli/financial-news-radar-deberta"
+# Local checkpoint (dev only — ignored in Docker image).
+_LOCAL_CKPT = ROOT / "models" / "deberta-v3-base-finetuned" / "checkpoint-198"
 
 LABEL_TO_ID = {"negative": 0, "neutral": 1, "positive": 2}
 ID_TO_LABEL = {v: k for k, v in LABEL_TO_ID.items()}
@@ -24,18 +30,22 @@ _BATCH_SIZE = 32
 _MAX_LENGTH = 128
 
 
+def _model_source() -> str:
+    """Return the local checkpoint path if available, otherwise the Hub ID."""
+    return str(_LOCAL_CKPT) if _LOCAL_CKPT.exists() else MODEL_ID
+
+
 class _Predictor:
     """Wraps the DeBERTa model for batch inference."""
 
     def __init__(self) -> None:
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
-        print(f"[sentiment] Loading tokenizer...", flush=True)
-        self.tokenizer = AutoTokenizer.from_pretrained(str(_TOK_DIR))
-
-        print(f"[sentiment] Loading model from checkpoint-198...", flush=True)
+        source = _model_source()
+        print(f"[sentiment] Loading model from {source!r}...", flush=True)
+        self.tokenizer = AutoTokenizer.from_pretrained(source)
         self.model = AutoModelForSequenceClassification.from_pretrained(
-            str(_CKPT_DIR),
+            source,
             torch_dtype=torch.float32,  # explicit float32: avoids safetensors fp16 default
         )
         self.device = "cuda" if torch.cuda.is_available() else "cpu"

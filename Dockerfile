@@ -33,12 +33,7 @@ RUN pip install --no-cache-dir -r requirements-prod.txt
 # ── Layer 3: application source ────────────────────────────────────────────────
 COPY --chown=user:user src/ ./src/
 
-# ── Layer 4: fine-tuned model (inference files only) ──────────────────────────
-# Training artifacts (optimizer.pt, scheduler.pt, rng_state.pth, training_args.bin)
-# are excluded via .dockerignore — they add ~600 MB and are never read at runtime.
-COPY --chown=user:user models/deberta-v3-base-finetuned/ ./models/deberta-v3-base-finetuned/
-
-# ── Layer 5: SQLite DB snapshot ────────────────────────────────────────────────
+# ── Layer 4: SQLite DB snapshot ────────────────────────────────────────────────
 # Baked into the image for self-contained deployment.
 # docker-compose.yml mounts the host DB on top to override the snapshot in dev.
 COPY --chown=user:user data/processed/radar.db ./data/processed/radar.db
@@ -51,6 +46,17 @@ ENV APP_ENV=prod \
     HOME=/home/user
 
 USER user
+
+# ── Layer 5: DeBERTa model (downloaded from HF Hub at build time) ─────────────
+# Pre-warming the HF cache avoids a 750 MB download on every cold start.
+# The repo is public — no token needed. Cache lands in /home/user/.cache/huggingface.
+RUN python -c "\
+import torch; \
+from transformers import AutoModelForSequenceClassification, AutoTokenizer; \
+src = 'Rhulli/financial-news-radar-deberta'; \
+AutoTokenizer.from_pretrained(src); \
+AutoModelForSequenceClassification.from_pretrained(src, torch_dtype=torch.float32); \
+print('[build] DeBERTa cached from HF Hub.')"
 
 # HF Spaces requires port 7860; override with -e PORT=8000 for other platforms.
 EXPOSE 7860
