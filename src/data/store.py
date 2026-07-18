@@ -54,6 +54,14 @@ CREATE TABLE IF NOT EXISTS events (
 );
 CREATE INDEX IF NOT EXISTS idx_events_ticker ON events(ticker);
 CREATE INDEX IF NOT EXISTS idx_events_dt     ON events(datetime);
+
+CREATE TABLE IF NOT EXISTS briefings (
+    ticker       TEXT NOT NULL,
+    days         INTEGER NOT NULL,
+    generated_at TEXT NOT NULL,
+    markdown     TEXT NOT NULL,
+    PRIMARY KEY (ticker, days)
+);
 """
 
 
@@ -260,6 +268,35 @@ def query_news_relevant(
             (ticker,),
         ).fetchall()
     return [dict(r) for r in rows]
+
+
+def save_briefing(
+    ticker: str,
+    days: int,
+    generated_at: str,
+    markdown: str,
+    db_path: Path = DB_PATH,
+) -> None:
+    """Upsert a pre-generated briefing. Safe to re-run (idempotent)."""
+    with _connect(db_path) as conn:
+        conn.execute(
+            """INSERT OR REPLACE INTO briefings (ticker, days, generated_at, markdown)
+               VALUES (?, ?, ?, ?)""",
+            (ticker, days, generated_at, markdown),
+        )
+
+
+def get_briefing(ticker: str, db_path: Path = DB_PATH) -> dict[str, Any] | None:
+    """Return the most recently generated briefing for *ticker*, or None."""
+    with _connect(db_path) as conn:
+        conn.row_factory = sqlite3.Row
+        row = conn.execute(
+            """SELECT ticker, days, generated_at, markdown
+               FROM briefings WHERE ticker = ?
+               ORDER BY generated_at DESC LIMIT 1""",
+            (ticker,),
+        ).fetchone()
+    return dict(row) if row else None
 
 
 def query_events(ticker: str | None = None, db_path: Path = DB_PATH) -> list[dict[str, Any]]:

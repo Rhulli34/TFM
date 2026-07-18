@@ -14,10 +14,9 @@ Run with:
 
 from __future__ import annotations
 
-import asyncio
 import sqlite3
 from contextlib import contextmanager
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Generator
 
@@ -137,6 +136,7 @@ class BriefingResponse(BaseModel):
     ticker: str
     markdown: str
     generated_at: str  # ISO-8601 UTC
+    days: int | None = None  # lookback window used when pre-generating
 
 
 # ── App ────────────────────────────────────────────────────────────────────────
@@ -389,25 +389,32 @@ def company_detail(ticker: str) -> CompanyDetail:
 
 
 @app.get("/company/{ticker}/briefing", response_model=BriefingResponse)
-async def company_briefing(ticker: str, days: int = 7) -> BriefingResponse:
-    """Generate a markdown briefing for *ticker* using the F4 pipeline.
+def company_briefing(ticker: str) -> BriefingResponse:
+    """Return the pre-generated briefing for *ticker* from the DB.
 
-    Calls gpt-4o-mini via the OpenAI API. Runs in a thread pool to avoid
-    blocking the async event loop. Returns 503 if OPENAI_API_KEY is not set.
+    Briefings are produced offline by scripts/pregenerate_briefings.py and
+    stored in the 'briefings' table inside radar.db.  Production never calls
+    the OpenAI API at request time — it only serves the cached result.
     """
     ticker = ticker.upper()
     _require_ticker(ticker)
 
-    from src.intelligence.briefing import generate_briefing
+    from src.data.store import get_briefing
 
-    try:
-        markdown = await asyncio.to_thread(generate_briefing, ticker, days=days)
-    except EnvironmentError as exc:
-        raise HTTPException(status_code=503, detail=str(exc))
+    row = get_briefing(ticker)
+    if row is None:
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                f"No pre-generated briefing for {ticker!r}. "
+                "Run scripts/pregenerate_briefings.py to generate one."
+            ),
+        )
     return BriefingResponse(
         ticker=ticker,
-        markdown=markdown,
-        generated_at=datetime.utcnow().isoformat() + "Z",
+        markdown=row["markdown"],
+        generated_at=row["generated_at"],
+        days=row["days"],
     )
 
 

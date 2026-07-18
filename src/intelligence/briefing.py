@@ -65,6 +65,7 @@ def generate_briefing(
     ticker: str,
     days: int = 7,
     db_path: Path = DB_PATH,
+    as_of: date | None = None,
 ) -> str:
     """Generate a structured news briefing for *ticker* over the last *days*.
 
@@ -79,6 +80,9 @@ def generate_briefing(
         ticker:  Ticker symbol (e.g. "AAPL").
         days:    Calendar-day lookback window (default 7).
         db_path: SQLite file path.
+        as_of:   Reference date for the window end. Defaults to today.
+                 Pass the snapshot's max article date when pre-generating
+                 so the window is anchored to the data, not the current date.
 
     Returns:
         Markdown string of the full briefing.
@@ -92,7 +96,7 @@ def generate_briefing(
 
     init_db(db_path)
 
-    to_date = date.today()
+    to_date = as_of if as_of is not None else date.today()
     from_date = to_date - timedelta(days=days)
     from_str = from_date.isoformat()
     to_str = to_date.isoformat()

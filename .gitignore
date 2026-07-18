@@ -12,6 +12,7 @@ models/*
 .env
 CLAUDE.local.md
 .claude/settings.local.json
+reports/briefings/
 .ipynb_checkpoints/
 *.faiss
 *.duckdb

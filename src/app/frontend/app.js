@@ -59,7 +59,7 @@ const fetchPortfolio = (tickers)      => apiFetch(
     : `/portfolio?days=${state.activeDays}`
 );
 const fetchCompany   = (ticker)       => apiFetch(`/company/${ticker}`);
-const fetchBriefing  = (ticker, days) => apiFetch(`/company/${ticker}/briefing?days=${days}`);
+const fetchBriefing  = (ticker) => apiFetch(`/company/${ticker}/briefing`);
 
 // ── Visual helpers ────────────────────────────────────────────────────────────
 function netColor(net) {
@@ -501,57 +501,25 @@ function renderEvents(events) {
 }
 
 // ── Render: briefing tab ──────────────────────────────────────────────────────
-function setupBriefingTab(ticker) {
+async function setupBriefingTab(ticker) {
   const pane = document.getElementById('tab-briefing');
-  pane.innerHTML = `
-    <div class="briefing-controls">
-      <div class="slider-group">
-        <span class="slider-label">Ventana</span>
-        <div class="slider-wrap">
-          <input type="range" id="briefing-days" min="3" max="30" value="7">
-          <span id="briefing-days-val" class="slider-val">7 días</span>
-        </div>
-      </div>
-      <button class="btn-primary" id="btn-briefing">
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
-          <path d="M6.5 1v5.5M6.5 6.5L4 4M6.5 6.5L9 4" stroke="currentColor"
-                stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M1.5 9v1.5a1 1 0 001 1h8a1 1 0 001-1V9"
-                stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        Generar informe para ${ticker}
-      </button>
-    </div>
-    <div id="briefing-output"></div>`;
+  pane.innerHTML = `<div class="briefing-loading"><div class="spinner"></div><span>Cargando informe…</span></div>`;
 
-  document.getElementById('briefing-days').addEventListener('input', e => {
-    document.getElementById('briefing-days-val').textContent = `${e.target.value} días`;
-  });
-
-  document.getElementById('btn-briefing').addEventListener('click', async () => {
-    const days   = +document.getElementById('briefing-days').value;
-    const btn    = document.getElementById('btn-briefing');
-    const output = document.getElementById('briefing-output');
-
-    btn.disabled   = true;
-    btn.innerHTML  = `<div class="spinner" style="width:14px;height:14px;border-width:2px"></div> Generando…`;
-    output.innerHTML = `<div class="briefing-loading"><div class="spinner"></div>
-      <span>Llamando a gpt-4o-mini… puede tardar ~30 s</span></div>`;
-
-    try {
-      const brief = await fetchBriefing(ticker, days);
-      btn.disabled  = false;
-      btn.innerHTML = `Generar informe para ${ticker}`;
-      const ts = brief.generated_at.replace('T', ' ').slice(0, 19);
-      output.innerHTML = `
-        <div class="briefing-meta">Generado: ${ts} UTC · ${days} días</div>
-        <div class="briefing-body">${marked.parse(brief.markdown)}</div>`;
-    } catch (err) {
-      btn.disabled  = false;
-      btn.innerHTML = `Generar informe para ${ticker}`;
-      output.innerHTML = `<div class="error-state">Error al generar: ${escapeHtml(err.message)}</div>`;
-    }
-  });
+  try {
+    const brief = await fetchBriefing(ticker);
+    const dateLabel = brief.generated_at.slice(0, 10);
+    const daysLabel = brief.days ? ` · ventana ${brief.days} días` : '';
+    pane.innerHTML = `
+      <div class="briefing-meta">Pre-generado: ${dateLabel}${daysLabel}</div>
+      <div class="briefing-body">${marked.parse(brief.markdown)}</div>`;
+  } catch (err) {
+    const isNotFound = err.message.startsWith('404');
+    pane.innerHTML = `<div class="error-state">${
+      isNotFound
+        ? 'Informe no disponible para este ticker.'
+        : escapeHtml(err.message)
+    }</div>`;
+  }
 }
 
 // ── Tabs ──────────────────────────────────────────────────────────────────────

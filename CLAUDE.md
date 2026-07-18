@@ -101,6 +101,15 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
     - Dockerfile: eliminado COPY del modelo; RUN descarga y cachea en ~/.cache/huggingface en build time
     - Estrategia build-time (no runtime): evita descarga de 750 MB en cada cold-start (Render free duerme)
     - Tamaño imagen: ~2.9 GB (torch CPU 920 MB + deps 648 MB + DeBERTa 754 MB baked vía Hub + radar.db 19 MB)
+  - F6.6 Briefings pre-generados en el snapshot ✓ COMPLETADA
+    - Problema: plan free de Render (CPU lenta, poca RAM) da error 502 al generar informe en vivo (~150 art.)
+    - Solución: briefings pre-generados en local (GPU + OpenAI) y almacenados en tabla briefings de radar.db
+    - store.py: tabla briefings (ticker, days, generated_at, markdown; PK = ticker+days), save_briefing(), get_briefing()
+    - briefing.py: parámetro as_of para anclar ventana al max_date del snapshot (no a date.today())
+    - scripts/pregenerate_briefings.py: genera informe por ticker, guarda en BD; idempotente (INSERT OR REPLACE)
+    - api.py: /company/{ticker}/briefing lee BD; devuelve 404 claro si no hay informe; sin llamada a OpenAI
+    - app.js: briefing auto-carga al abrir empresa (fire & forget); sin slider ni aviso de "~30s"
+    - Flujo de actualización: python scripts/pregenerate_briefings.py → docker build → deploy
 - F7 Vídeo beca
 - F8 Documentación
 Trabaja UNA fase cada vez. No saltes de fase sin cerrar el hito de la actual.
