@@ -635,83 +635,11 @@ button { font-family: var(--font); }
 }
 
 /* ── Briefing ─────────────────────────────────────────────────────────────── */
-.briefing-controls {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 18px 22px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.slider-group {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 1;
-  min-width: 200px;
-}
-
-.slider-label {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--text-2);
-  white-space: nowrap;
-}
-
-.slider-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-}
-
-input[type="range"] {
-  flex: 1;
-  accent-color: var(--accent);
-  cursor: pointer;
-}
-
-.slider-val {
-  font-size: 12.5px;
+.briefing-header {
+  font-size: 15px;
   font-weight: 600;
   color: var(--text-1);
-  min-width: 46px;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 9px 18px;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: var(--r-md);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.13s, transform 0.1s, box-shadow 0.13s;
-  white-space: nowrap;
-  box-shadow: 0 1px 4px rgba(99,91,255,0.3);
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: var(--accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 3px 8px rgba(99,91,255,0.35);
-}
-
-.btn-primary:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+  margin-bottom: 4px;
 }
 
 .briefing-meta {
@@ -916,8 +844,7 @@ input[type="range"] {
   .container        { padding: 0 16px; }
   .detail-title-row { flex-direction: column; gap: 8px; }
   .detail-net       { text-align: left; margin-top: 0; }
-  .briefing-controls { flex-direction: column; align-items: stretch; }
-  .chart-container  { height: 200px; }
+.chart-container  { height: 200px; }
   .header-meta      { display: none; }
 }
 

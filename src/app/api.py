@@ -73,6 +73,20 @@ def _catalog_tickers() -> set[str]:
     return {r["ticker"] for r in rows}
 
 
+def _snapshot_max_date() -> date:
+    """Return the most recent article date in the DB.
+
+    All lookback windows use this as their anchor so the portfolio view stays
+    populated when the DB is a historical snapshot (not live).
+    """
+    with _db() as conn:
+        row = conn.execute(
+            "SELECT MAX(substr(datetime, 1, 10)) AS max_date FROM news"
+        ).fetchone()
+    raw = row["max_date"] if row and row["max_date"] else date.today().isoformat()
+    return date.fromisoformat(raw)
+
+
 def _require_ticker(ticker: str) -> None:
     if ticker not in _catalog_tickers():
         raise HTTPException(status_code=404, detail=f"Ticker {ticker!r} not found in database.")
@@ -223,7 +237,7 @@ def portfolio(
     else:
         ticker_list = sorted(known)
 
-    since = (date.today() - timedelta(days=days)).isoformat()
+    since = (_snapshot_max_date() - timedelta(days=days)).isoformat()
     results: list[PortfolioItem] = []
 
     with _db() as conn:
@@ -309,7 +323,7 @@ def company_detail(ticker: str) -> CompanyDetail:
     ticker = ticker.upper()
     _require_ticker(ticker)
 
-    since_30 = (date.today() - timedelta(days=30)).isoformat()
+    since_30 = (_snapshot_max_date() - timedelta(days=30)).isoformat()
 
     with _db() as conn:
         series_rows = conn.execute(

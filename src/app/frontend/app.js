@@ -508,9 +508,12 @@ async function setupBriefingTab(ticker) {
   try {
     const brief = await fetchBriefing(ticker);
     const dateLabel = brief.generated_at.slice(0, 10);
-    const daysLabel = brief.days ? ` · ventana ${brief.days} días` : '';
+    const windowLabel = brief.days
+      ? `Resumen de los últimos ${brief.days} días`
+      : 'Informe de noticias';
     pane.innerHTML = `
-      <div class="briefing-meta">Pre-generado: ${dateLabel}${daysLabel}</div>
+      <div class="briefing-header">${escapeHtml(windowLabel)}</div>
+      <div class="briefing-meta">Generado el ${dateLabel}</div>
       <div class="briefing-body">${marked.parse(brief.markdown)}</div>`;
   } catch (err) {
     const isNotFound = err.message.startsWith('404');

@@ -107,9 +107,15 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
     - store.py: tabla briefings (ticker, days, generated_at, markdown; PK = ticker+days), save_briefing(), get_briefing()
     - briefing.py: parámetro as_of para anclar ventana al max_date del snapshot (no a date.today())
     - scripts/pregenerate_briefings.py: genera informe por ticker, guarda en BD; idempotente (INSERT OR REPLACE)
+    - scripts/ingest_gap.py: ingesta ad-hoc para cerrar huecos temporales; reporta fechas reales por ticker
     - api.py: /company/{ticker}/briefing lee BD; devuelve 404 claro si no hay informe; sin llamada a OpenAI
-    - app.js: briefing auto-carga al abrir empresa (fire & forget); sin slider ni aviso de "~30s"
-    - Flujo de actualización: python scripts/pregenerate_briefings.py → docker build → deploy
+    - api.py: /portfolio y /company/{ticker} anclan ventana a _snapshot_max_date() (MAX news.datetime), no a date.today()
+    - app.js: briefing auto-carga al abrir empresa (fire & forget); sin slider, sin aviso de "~30s"
+    - Encabezado fijo "Resumen de los últimos 7 días" en la pestaña Informe (ventana fija, no configurable)
+    - CSS muerto del slider eliminado de styles.css (.briefing-controls, .slider-*, .btn-primary)
+    - Flujo de actualización: python scripts/ingest_gap.py → python scripts/pregenerate_briefings.py → docker build → deploy
+    - Snapshot actual: fecha máxima 2026-08-18; 3.413 artículos nuevos en reingesta 2026-07-20→2026-08-18
+    - Límite Finnhub free tier: ~500 art/llamada mensual; tickers alto volumen solo alcanzan ~20d hacia atrás
 - F7 Vídeo beca
 - F8 Documentación
 Trabaja UNA fase cada vez. No saltes de fase sin cerrar el hito de la actual.

@@ -1,0 +1,73 @@
+Financial News Radar — Gap Ingestion
+Tickers : ['AAPL', 'NVDA', 'MSFT', 'AMZN', 'META', 'GOOGL', 'TSLA', 'JPM', 'XOM', 'PFE']
+Period  : 2026-07-20 -> 2026-08-18
+
+Portfolio : ['AAPL', 'NVDA', 'MSFT', 'AMZN', 'META', 'GOOGL', 'TSLA', 'JPM', 'XOM', 'PFE']
+Period    : 2026-07-20 -> 2026-08-18  (2 months)
+Finnhub   : 20 calls planned  (sleep=1.1s)
+
+[AAPL]
+  494 unique articles fetched
+[sentiment] Loading model from 'C:\\Users\\rarra\\Desktop\\TFM\\models\\deberta-v3-base-finetuned\\checkpoint-198'...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights: 100%|##########| 202/202 [00:00<00:00, 13016.38it/s]
+[sentiment] Ready on cuda.
+  494 new rows inserted into news
+  21 price rows upserted
+[NVDA]
+  499 unique articles fetched
+  447 new rows inserted into news
+  21 price rows upserted
+[MSFT]
+  497 unique articles fetched
+  360 new rows inserted into news
+  21 price rows upserted
+[AMZN]
+  491 unique articles fetched
+  238 new rows inserted into news
+  21 price rows upserted
+[META]
+  496 unique articles fetched
+  293 new rows inserted into news
+  21 price rows upserted
+[GOOGL]
+  495 unique articles fetched
+  227 new rows inserted into news
+  21 price rows upserted
+[TSLA]
+  486 unique articles fetched
+  409 new rows inserted into news
+  21 price rows upserted
+[JPM]
+  443 unique articles fetched
+  417 new rows inserted into news
+  21 price rows upserted
+[XOM]
+  330 unique articles fetched
+  312 new rows inserted into news
+  21 price rows upserted
+[PFE]
+  225 unique articles fetched
+  216 new rows inserted into news
+  21 price rows upserted
+
+========================================================================
+GAP INGESTION SUMMARY
+========================================================================
+Ticker    Fetched  Inserted  Finnhub from  Finnhub to
+------------------------------------------------------------------------
+AAPL          494       494    2026-07-30  2026-08-18
+NVDA          499       447    2026-07-30  2026-08-18
+MSFT          497       360    2026-07-30  2026-08-18
+AMZN          491       238    2026-07-30  2026-08-18
+META          496       293    2026-07-30  2026-08-18
+GOOGL         495       227    2026-07-29  2026-08-18
+TSLA          486       409    2026-07-28  2026-08-17
+JPM           443       417    2026-07-20  2026-08-17
+XOM           330       312    2026-07-20  2026-08-18
+PFE           225       216    2026-07-20  2026-08-18
+------------------------------------------------------------------------
+TOTAL                  3413
+
+Requested window : 2026-07-20 -> 2026-08-18
+If 'Finnhub to' < today, the free tier does not reach recent dates.
