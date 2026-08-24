@@ -1,0 +1,18 @@
+=== HEADLINE ===
+Meta's Dip Offers A 30% Upside Potential
+datetime: 2026-08-18 09:30 UTC
+sentiment_label: negative
+is_relevant: 1
+--- SUMMARY COMPLETO (114 chars) ---
+Meta Platforms (META) has underperformed peers, dropping ~27% YTD, but I view the negative repricing as excessive.
+
+
+=== HEADLINE ===
+Meta (META) Stock Could Be 37% Undervalued On Teen Safety Ruling
+datetime: 2026-08-14 07:12 UTC
+sentiment_label: negative
+is_relevant: 1
+--- SUMMARY COMPLETO (497 chars) ---
+Meta Platforms stock has pulled back over the past year, yet the latest valuation work suggests the current price may still sit well below an intrinsic value estimate based on a Discounted Cash Flow (DCF) approach. At the same time, market based multiples also point to the shares screening as undervalued, which is unusual when both methods line up on the same side. Meta Platforms has returned 110.5% over the past 3 years, which means the current valuation debate is happening after a strong...
+
+

@@ -1,0 +1,1300 @@
+======================================================================
+PLAN DE DEDUPLICACION - Nivel A (mismo article_id + event_type)
+======================================================================
+
+article_id=018fa88a91720212  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=776109798f86c506
+    A Wall Street analyst downgraded Apple stock to a sell rating due to expectations of slowing iPhone sales and device upgrades, which could negatively impact investor sentiment.
+  [CONSERVAR] id=8dbef876d1282434
+    A Wall Street analyst downgraded Apple stock to a sell rating based on expectations of slowing iPhone sales and device upgrades.
+  [BORRAR]    id=26e50c6b686412e9
+    A Wall Street analyst downgraded Apple stock to a sell rating due to expectations of slowing iPhone sales and device upgrades.
+
+article_id=02ce29794e5bcbbc  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=fd406afabefcc224
+    Apple has filed a federal lawsuit against OpenAI, alleging the theft of its trade secrets, which could impact its competitive position in the market.
+  [CONSERVAR] id=f508d63eda3e335b
+    Apple shares are trending following the announcement of a federal lawsuit against OpenAI for allegedly stealing its trade secrets, potentially impacting investor sentiment.
+  [BORRAR]    id=f2200d54ff59345a
+    Apple filed a federal lawsuit against OpenAI, alleging theft of its trade secrets, which could impact its competitive position in the market.
+
+article_id=085ff086af200ec0  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=65bc5ecd3e3e9bb7
+    Apple was downgraded from Buy to Hold due to valuation concerns and macroeconomic headwinds, indicating a less favorable outlook for investors.
+  [BORRAR]    id=cb0ac2964ab9586a
+    Apple was downgraded from Buy to Hold due to valuation concerns and macroeconomic headwinds, signaling a cautious outlook for investors.
+
+article_id=0d24112d428b8fe0  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=1cf348315dd82012
+    Apple's lawsuit against OpenAI for stealing trade secrets could have significant repercussions for both companies in the tech industry.
+  [CONSERVAR] id=ca6a9e6b67318af5
+    Apple has filed a lawsuit against OpenAI, accusing it of stealing sensitive hardware secrets, which could impact OpenAI's upcoming IPO and Apple's competitive position.
+  [BORRAR]    id=e554f073ce47da16
+    Apple's lawsuit against OpenAI for stealing trade secrets could have significant ramifications for both companies in the tech industry.
+
+article_id=10ac79ef21b3da0c  ticker=AAPL  event_type=other  (2 eventos)
+  [CONSERVAR] id=c06a08e9dabcd0da
+    Apple's Siri AI is actively seeking new content deals with publishers, which could enhance its service offerings and market position.
+  [BORRAR]    id=8b5fd30f5bef07b7
+    Apple's Siri AI is actively seeking new content deals with publishers, which could enhance its service offerings.
+
+article_id=112b2b949f390ce4  ticker=AAPL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=f0a0cdbd58b2bd90
+    Apple has initiated a federal lawsuit against OpenAI, accusing it of stealing trade secrets through former employees.
+  [BORRAR]    id=8755ccd558e05a0b
+    Apple has filed a federal lawsuit against OpenAI, accusing it of stealing trade secrets through former employees.
+
+article_id=11b2f6561fad3237  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=7c91be465be84463
+    KeyBanc issued a rare 'Underweight' rating for Apple, citing fears of slower growth due to price hikes.
+  [CONSERVAR] id=ee061eaaff3dd399
+    Apple stock falls following KeyBanc's downgrade, which warns of slower growth due to price hikes.
+  [BORRAR]    id=96ac7beeb129472c
+    KeyBanc issued a rare Underweight rating for Apple, citing fears of slower growth due to price hikes.
+
+article_id=125e1caa42fa3ab2  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=0b390e399aa97325
+    Apple's stock fell on an analyst downgrade, although Gene Munster believes shares are undervalued, suggesting a potential investment opportunity.
+  [BORRAR]    id=4f8360e63b186b5a
+    Apple's stock fell on an analyst downgrade, but Gene Munster believes shares are undervalued, suggesting a potential investment opportunity.
+
+article_id=1625daee8529a91c  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=36fff1e11b50b71e
+    Morgan Stanley expects Apple to raise iPhone prices by approximately $200, potentially increasing EPS estimates for the upcoming fiscal periods.
+  [BORRAR]    id=690f2e8931cea050
+    Morgan Stanley expects Apple to raise iPhone prices by approximately $200, potentially increasing EPS estimates for F3Q26 and FY27.
+
+article_id=16fb3405ad3e37b7  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=dea8cf10e8e67034
+    KeyBanc analyst Brandon Nispel downgraded Apple shares from equal weight to underweight due to valuation concerns, which could impact investor sentiment.
+  [CONSERVAR] id=6d5818c65fd4d9a2
+    KeyBanc downgraded Apple to underweight from equal weight, raising valuation concerns that could impact investor sentiment.
+  [BORRAR]    id=52b69d0cc01416e8
+    KeyBanc analyst Brandon Nispel downgraded Apple from equal weight to underweight due to valuation concerns, which could impact investor sentiment.
+
+article_id=1853c50bbe6f59de  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=9b84cfaa64dcce06
+    Jim Cramer advised investors to hold onto Apple stock, highlighting its AI strategy as a key factor for future growth.
+  [BORRAR]    id=ef44c0063016ecba
+    Jim Cramer advises investors to hold onto Apple stock, highlighting its AI strategy as a key factor for future growth.
+
+article_id=1ab53a5ec4a49272  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=e5673ef5fb77a2aa
+    Apple lost its challenge against EU regulations, which designates its app stores and operating system as gatekeepers, impacting its operational flexibility in Europe.
+  [CONSERVAR] id=3b51ad760c11d5ab
+    Apple lost its challenge against EU regulations, which could impose significant operational constraints on the company.
+  [BORRAR]    id=7502f5fe15e35568
+    Apple lost its challenge against EU regulations, which designates its app stores as gatekeepers, impacting its operational flexibility.
+
+article_id=1f8cb3bbd2fa6927  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=4187ccee5916cbae
+    Jefferies downgraded Apple from hold to underperform and cut its price target significantly, reflecting market concerns.
+  [BORRAR]    id=894984fe61323d03
+    Jefferies downgraded Apple from hold to underperform and cut its price target significantly.
+
+article_id=3574e29c56af6823  ticker=AAPL  event_type=macro  (3 eventos)
+  [CONSERVAR] id=f0eb791bcba99464
+    Apple and Samsung have gained market share despite a decline in global smartphone shipments, reflecting resilience in their business models.
+  [CONSERVAR] id=9376bd1b5a0a6261
+    Apple and Samsung have gained market share despite a global decline in smartphone shipments, suggesting resilience in their business models during economic downturns.
+  [BORRAR]    id=903fa6bbba2a8954
+    Apple and Samsung gained market share despite a decline in global smartphone shipments, reflecting resilience in their business models.
+
+article_id=495aad8cca7d2180  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=8c9049213611a408
+    Citi Research has raised its price target for Apple shares to $365, indicating confidence in the company's market share growth.
+  [BORRAR]    id=ff9029beaba5c34d
+    Citi Research raised its price target for Apple shares to $365, indicating confidence in the company's market share growth.
+  [BORRAR]    id=b816718c3adcf2c2
+    Citi Research raised its price target for Apple shares to $365, indicating confidence in the company's market position.
+
+article_id=523f5b88ddac7625  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=2e1a10b67c483b1c
+    Jefferies has cut its price target for Apple stock to $263.66, citing pressure from rising component costs, which may influence investor sentiment.
+  [BORRAR]    id=fb8336364597d70a
+    Jefferies has cut its target price for Apple stock to $263.66, citing pressure from rising component costs, which may influence investor sentiment.
+
+article_id=54efa0f1d4640fb6  ticker=AAPL  event_type=other  (2 eventos)
+  [CONSERVAR] id=f2a9f960eede87e0
+    Apple is in discussions to allocate a nine-figure budget to pay publishers for content used in Siri, indicating a strategic move to enhance its AI capabilities.
+  [BORRAR]    id=9e7c011f6d296167
+    Apple is in discussions to allocate a nine-figure budget to pay publishers for content used in Siri, indicating a strategic investment in AI capabilities.
+
+article_id=5cbfe12394579175  ticker=AAPL  event_type=product  (3 eventos)
+  [CONSERVAR] id=0aec1521755e6735
+    Apple plans to release at least 5 new iPhone models through early 2027, indicating ongoing innovation and product development.
+  [CONSERVAR] id=ac34b78dfac630e2
+    Apple plans to release at least 5 new iPhone models through early 2027, indicating a strong product pipeline and commitment to innovation.
+  [BORRAR]    id=13e40bb558eaa232
+    Apple plans to release at least 5 new iPhone models through early 2027, indicating ongoing product innovation.
+
+article_id=620971d8039adebc  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=7f6fbd6b32dcea15
+    Apple's lawsuit against OpenAI may expose the AI company's hardware plans, potentially affecting investor perceptions of both firms.
+  [CONSERVAR] id=38b855ba227b5b24
+    The lawsuit filed by Apple against OpenAI could potentially expose OpenAI's hardware plans, affecting its market strategy and competitive landscape.
+  [BORRAR]    id=15c55b73e364a840
+    Apple's lawsuit against OpenAI may expose the latter's hardware plans, potentially affecting investor perceptions of both companies.
+
+article_id=6309ec17a606c0d2  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=7c579d057a61585b
+    KeyBanc downgraded Apple due to concerns over weaker hardware demand and slower growth in Services.
+  [BORRAR]    id=7907172ffb512ec0
+    KeyBanc downgraded Apple due to concerns over weaker hardware demand and slower Services growth.
+
+article_id=63d4a54ec6b16a84  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=117388f136d3e647
+    A Wall Street analyst downgraded Apple stock ahead of the iPhone 18 launch, raising concerns about the company's upcoming products.
+  [BORRAR]    id=4e9984864c84374b
+    A Wall Street analyst downgraded Apple stock ahead of the iPhone 18 launch, raising concerns about upcoming products.
+
+article_id=66f63578a9b5dda0  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=0c1bd2c7b7a2988f
+    Traders on 'Fast Money' discussed the implications of Jefferies' downgrade of Apple, highlighting its potential impact on investor sentiment.
+  [BORRAR]    id=0c13f93ce721671e
+    Traders on 'Fast Money' reacted to Jefferies' downgrade of Apple, highlighting its impact on investor sentiment.
+
+article_id=68d370e958816fcf  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=1e37878814bcf274
+    Apple's lawsuit against OpenAI over alleged trade secret theft could have significant implications for both companies' market positions.
+  [CONSERVAR] id=5dda6e826053d9f0
+    Apple's lawsuit against OpenAI for alleged trade secret theft could have significant financial repercussions for both companies involved.
+  [BORRAR]    id=b95b1c7af492622a
+    Apple's lawsuit against OpenAI over alleged trade secret theft could have significant implications for both companies' futures.
+
+article_id=6b409900c738c82b  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=b816017dd95ade34
+    KeyBanc has issued a rare bearish rating for Apple, citing concerns over demand and valuation risks.
+  [CONSERVAR] id=1b4b0ca4f5a5cd73
+    KeyBanc Capital Markets downgraded Apple to underweight due to concerns over demand and valuation, indicating potential risks for investors.
+  [BORRAR]    id=e15f3bef2a2b504d
+    KeyBanc's rare bearish rating for Apple reflects concerns over demand and valuation risks.
+
+article_id=73440fa5d93563f8  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=47d485c5b39a295b
+    Apple is suing OpenAI, alleging that the AI lab took its intellectual property to develop consumer hardware, which could impact both companies' market positions.
+  [CONSERVAR] id=3e3ccd5bc3edef2c
+    Apple's lawsuit against OpenAI alleges theft of intellectual property, which may have significant implications for both companies' future hardware developments.
+  [BORRAR]    id=e9a474d0bea5f934
+    Apple is suing OpenAI for allegedly taking its intellectual property to develop consumer hardware, which could impact both companies' market positions.
+
+article_id=89a1c138c8b30b8f  ticker=AAPL  event_type=leadership  (3 eventos)
+  [CONSERVAR] id=a6ab42fb6fee1a22
+    John Ternus is stepping into the CEO role at Apple, a pivotal moment that could shape the company's future direction and market performance.
+  [CONSERVAR] id=8004f9f8e41d8f87
+    John Ternus is set to become Apple's new CEO, a pivotal moment that could shape the company's direction and market performance in the coming years.
+  [BORRAR]    id=d38a8130da18e8b2
+    John Ternus is stepping into the CEO role at Apple, a pivotal moment that could shape the company's future performance and market strategy.
+
+article_id=9016f340072d8cae  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=90059f07ea4fcd76
+    Citigroup maintained a Buy rating on Apple and raised the price target to $365, reflecting positive sentiment about the company's future performance.
+  [BORRAR]    id=1166420191f208f1
+    Citigroup maintains a Buy rating on Apple and raises the price target to $365, reflecting positive outlook on the company's performance.
+
+article_id=9226c331202e408a  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=66bb41bd89e15c38
+    OpenAI's statement regarding the lack of evidence for Apple's lawsuit may influence investor sentiment regarding both companies amid ongoing legal disputes.
+  [CONSERVAR] id=bdfa67fe2a7c4e00
+    OpenAI has stated it sees no evidence that Apple's lawsuit has merit, which could influence investor sentiment regarding both companies' legal battles.
+  [BORRAR]    id=c64aa4ef6d0704a8
+    OpenAI's statement regarding the lack of evidence for Apple's lawsuit may influence investor sentiment regarding AAPL stock amid ongoing legal disputes.
+
+article_id=955eb87912b3f8da  ticker=AAPL  event_type=guidance  (3 eventos)
+  [CONSERVAR] id=49ebfe9f1ea17127
+    Apple faces margin pressure from soaring NAND/DRAM costs, risking share declines ahead of Q3 earnings.
+  [CONSERVAR] id=02d0e67d8ba7b8e5
+    Apple faces potential margin pressure from rising NAND/DRAM costs ahead of its Q3 earnings report, which could lead to share declines.
+  [BORRAR]    id=497b22e183a223e8
+    Apple faces margin pressure from soaring NAND/DRAM costs, risking share declines.
+
+article_id=9f1185845239d78e  ticker=AAPL  event_type=other  (2 eventos)
+  [CONSERVAR] id=646b8ee25baca0fc
+    Apple has opened a new advanced manufacturing facility in Houston, which signifies its commitment to expanding U.S. manufacturing operations.
+  [BORRAR]    id=04fa822297fb045c
+    Apple has opened a new advanced manufacturing facility in Houston, which signifies its commitment to U.S. manufacturing.
+
+article_id=a0668f074bb0ab12  ticker=AAPL  event_type=m_and_a  (3 eventos)
+  [CONSERVAR] id=f0e8bd556c8c45cc
+    Broadcom insiders sold millions in stock following a significant chip deal with Apple, indicating potential shifts in market confidence related to the partnership.
+  [CONSERVAR] id=cbd8a039cd6ea796
+    Broadcom insiders sold millions in stock following a significant chip deal with Apple, indicating market reactions to corporate transactions.
+  [BORRAR]    id=d3c95f9cd0b23973
+    Broadcom insiders sold millions in stock following a significant chip deal with Apple, indicating potential shifts in market dynamics.
+
+article_id=a35aecd5cae289b2  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=f385e22f917a3616
+    A former Apple employee allegedly exploited a bug to download confidential files after joining OpenAI, raising security concerns for Apple.
+  [CONSERVAR] id=54c4860f98c0ce0d
+    A former Apple employee allegedly exploited a bug to download confidential files after leaving for OpenAI, raising concerns about security and potential legal implications.
+  [BORRAR]    id=78412484f5141759
+    A former Apple employee allegedly exploited a bug to download confidential files after joining OpenAI, raising security concerns.
+
+article_id=a51c7eee6e468711  ticker=AAPL  event_type=product  (2 eventos)
+  [CONSERVAR] id=6a4bdb12cb79aaa3
+    Apple is launching a suite of AI tools in China, trained with support from Alibaba, to enhance its competitive edge in the market.
+  [BORRAR]    id=8004479a898a9200
+    Apple is launching a suite of AI tools in China, trained with support from Alibaba, to enhance its market presence.
+
+article_id=a5ef2e8849200522  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=b5a8c30e728040a5
+    Apple has filed a lawsuit against OpenAI and former employees for alleged trade secret theft related to AI hardware, which could impact OpenAI's development efforts.
+  [CONSERVAR] id=95c3375706e95fbe
+    Apple has filed a lawsuit against OpenAI and former employees for trade secret theft, which could have significant financial implications.
+  [BORRAR]    id=84c5cd04c2e3e3f3
+    Apple has filed a lawsuit against OpenAI and former employees for misappropriating trade secrets related to AI hardware, which could impact OpenAI's development.
+
+article_id=b4c0b7b9a9ccad7f  ticker=AAPL  event_type=guidance  (2 eventos)
+  [CONSERVAR] id=37651c9298cec743
+    KeyBanc warns that Apple's fiscal 2027 results could be negatively impacted by price hikes and slowing demand.
+  [BORRAR]    id=ac5ff43f8cfd0853
+    KeyBanc warns that Apple's fiscal 2027 results may be negatively impacted by price hikes and slowing demand.
+
+article_id=b4fb261cacc8e984  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=d6eeea928ea9598e
+    Apple has filed a lawsuit against OpenAI for allegedly stealing trade secrets related to its AI hardware, which could have significant financial implications.
+  [CONSERVAR] id=eb0eef6e6c6346c0
+    Apple has filed a federal lawsuit against OpenAI alleging theft of trade secrets related to its AI hardware work, which could impact its competitive position in the market.
+  [BORRAR]    id=67c59bf202a3fa7f
+    Apple has filed a lawsuit against OpenAI for allegedly stealing trade secrets related to its AI hardware, which could have major financial implications.
+
+article_id=b64cbfd45b0a5039  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=0f08d5886a2ded4d
+    Keybanc analyst Brandon Nispel has downgraded Apple from Sector Weight to Underweight with a new price target of $250.
+  [CONSERVAR] id=8be40c2ed13a440f
+    Keybanc analyst Brandon Nispel downgraded Apple from Sector Weight to Underweight with a new price target of $250, indicating potential concerns about the stock's future performance.
+  [BORRAR]    id=a94111ff483201e1
+    Keybanc analyst Brandon Nispel downgraded Apple from Sector Weight to Underweight with a new price target of $250, indicating a negative outlook for the stock.
+
+article_id=bbfb02e08e45db33  ticker=AAPL  event_type=legal  (3 eventos)
+  [CONSERVAR] id=a02fc29f75f48179
+    Apple's lawsuit against OpenAI seeks damages that could hinder OpenAI's hardware development and hiring efforts, potentially affecting its market position.
+  [CONSERVAR] id=327169401d36298f
+    Apple's lawsuit against OpenAI seeks damages that could impede OpenAI's hardware development and hiring, which may impact competition in the AI market.
+  [BORRAR]    id=98e2d3692fdcb21e
+    Apple's lawsuit against OpenAI seeks damages that could hinder OpenAI's hardware development and hiring, potentially affecting its market position.
+
+article_id=ca55ab8f863b2d5e  ticker=AAPL  event_type=analyst  (3 eventos)
+  [CONSERVAR] id=5b95c69deefd5fae
+    KeyBanc's downgrade of Apple to Underweight signals potential limits to the company's hardware growth and pricing power.
+  [CONSERVAR] id=b3cad759e29bf1e1
+    KeyBanc's downgrade of Apple to Underweight suggests that the stock may face significant downside due to limits on hardware growth.
+  [BORRAR]    id=ef16ac420e2b5b11
+    KeyBanc's downgrade of Apple to Underweight signals potential limits to hardware growth and pricing power.
+
+article_id=cc6875cb1b8777df  ticker=AAPL  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=841dec45d3323c55
+    Tim Cook warned of a significant increase in memory chip pricing during his last earnings call, raising concerns about Apple's profit margins as he steps down.
+  [BORRAR]    id=60ff5a6ae52a257b
+    Tim Cook warned of significant challenges in memory chip pricing during his last earnings call, raising concerns about Apple's future margins as he steps down.
+
+article_id=cff63bda583a3622  ticker=AAPL  event_type=other  (2 eventos)
+  [CONSERVAR] id=1237e12b576123a7
+    Apple has opened its Advanced Manufacturing Center in Houston, providing training and resources for small and medium-sized businesses.
+  [BORRAR]    id=e18e9c30265817d1
+    Apple opened its Advanced Manufacturing Center in Houston, providing training and resources for small and medium-sized businesses.
+
+article_id=d90bb4023939ec51  ticker=AAPL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=d10c1f0ddf0f91cc
+    Broadcom secures a deal with Apple to supply custom chips through 2031, strengthening their partnership.
+  [BORRAR]    id=d3c1e83744aef38d
+    Broadcom secures a deal with Apple to supply custom chips through 2031, enhancing their partnership.
+
+article_id=d98d83e3b45e2305  ticker=AAPL  event_type=macro  (3 eventos)
+  [CONSERVAR] id=8f58fc0301443ee3
+    Despite a global decline in smartphone shipments, Apple experienced a 3% increase, showcasing its resilience in a challenging market environment.
+  [CONSERVAR] id=0e20a04f90989438
+    Despite a global decline in smartphone shipments, Apple experienced a 3% increase, indicating resilience in its market position amid broader industry challenges.
+  [BORRAR]    id=3bcf1a4b54976c6e
+    Despite a global decline in smartphone shipments, Apple experienced a 3% increase, indicating resilience in its market strategy.
+
+article_id=e16f56a6645e2853  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=d80c5d663c75dd47
+    Apple's stock declined following an analyst downgrade by Jefferies, indicating a negative sentiment in the market.
+  [BORRAR]    id=7860550ccd7795be
+    Apple's stock declined following an analyst downgrade by Jefferies, indicating a bearish sentiment in the market.
+
+article_id=e2abc09334a6b707  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=19986259e665a01a
+    KeyBanc downgraded Apple stock to 'Underweight' due to anticipated significant downside in AAPL shares.
+  [BORRAR]    id=a6c21bddec7e028e
+    KeyBanc downgraded Apple stock to 'Underweight' due to anticipated significant downside.
+
+article_id=e3b2bdb2ca87b67a  ticker=AAPL  event_type=macro  (2 eventos)
+  [CONSERVAR] id=5235cf23f4b90e3b
+    Retail investors are cashing out of Apple and Tesla stocks, which may indicate a shift in market sentiment and could affect stock prices.
+  [BORRAR]    id=1e41d4c5b8377663
+    Retail investors are cashing out of Apple and Tesla stocks, which may indicate a shift in market sentiment among individual investors.
+
+article_id=edbf4f8ba55ae4d7  ticker=AAPL  event_type=m_and_a  (3 eventos)
+  [CONSERVAR] id=a2a348b6e827ae86
+    Apple has extended its technology collaboration with Broadcom through 2031, securing a multi-year agreement for custom chip development.
+  [CONSERVAR] id=4672d4403ad59308
+    Apple and Broadcom have extended their technology collaboration through 2031, which may enhance Apple's product offerings and long-term growth prospects.
+  [BORRAR]    id=373023ebc5eca8f5
+    Apple and Broadcom extended their technology collaboration through 2031, which may enhance Apple's product offerings and long-term growth prospects.
+
+article_id=ef979c82a29dabbc  ticker=AAPL  event_type=other  (2 eventos)
+  [CONSERVAR] id=4b3189fce9680d44
+    Evercore ISI has called the multiyear agreement with Broadcom strategically positive for Apple, indicating potential benefits for Apple's supply chain and product development.
+  [BORRAR]    id=8ce5bd3ca5f249a4
+    Evercore ISI has called the multiyear agreement with Broadcom strategically positive for Apple, suggesting potential benefits for Apple's supply chain and product offerings.
+
+article_id=fb977497c7d7aafb  ticker=AAPL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=07d4f50eb7268689
+    Broadcom extended its partnership with Apple through 2031 to develop custom chips, reinforcing their long-term collaboration in technology development.
+  [BORRAR]    id=7030ec5fc880ff68
+    Broadcom extended its partnership with Apple through 2031 to develop custom chips, reinforcing their long-term collaboration.
+
+article_id=fdf740d1b7cd7158  ticker=AAPL  event_type=macro  (2 eventos)
+  [CONSERVAR] id=47bc1898fddedca9
+    Despite signs of weakening iPhone demand, Apple shares have gained 14% in two weeks, indicating market resilience.
+  [BORRAR]    id=c6857e3b3ef59835
+    Despite signs of weakening iPhone sales, Apple shares have gained 14% in two weeks, indicating market resilience.
+
+article_id=ff958a1bba608b63  ticker=AAPL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=a7afb66f091b89b0
+    Jefferies downgraded Apple to a sell rating, suggesting a negative outlook for the stock.
+  [BORRAR]    id=65ec4f1ed270c371
+    Jefferies downgraded Apple to a sell rating, suggesting a bearish outlook for the stock.
+
+article_id=ffe0c6b1873a1b26  ticker=AAPL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=f05d7bdcf95be00d
+    Apple CEO Tim Cook announced a $30 billion deal with Broadcom to produce 15 billion chips as part of its American Manufacturing Program.
+  [BORRAR]    id=82752b570577c779
+    Apple's $30 billion deal with Broadcom aims to produce 15 billion chips as part of its American Manufacturing Program.
+
+article_id=06547eaf84e12269  ticker=AMZN  event_type=other  (2 eventos)
+  [CONSERVAR] id=263664670ee748c4
+    Amazon's P/E ratio is near multiyear lows, indicating that the stock may be undervalued in the current market.
+  [BORRAR]    id=741faa87287c9016
+    Amazon's P/E ratio is near multiyear lows, suggesting the stock may be undervalued in the current market.
+
+article_id=0cc99d3a8eece11c  ticker=AMZN  event_type=other  (2 eventos)
+  [CONSERVAR] id=ec1f24ceb9db3ac1
+    Coatue Management increases its share stake in Amazon by 49.2%, indicating a bullish outlook on the company's performance.
+  [BORRAR]    id=148ba259deb1c2de
+    Coatue Management increases its share stake in Amazon by 49.2%, indicating a bullish outlook on the company.
+
+article_id=1c9732f2f4c56b3d  ticker=AMZN  event_type=other  (2 eventos)
+  [CONSERVAR] id=784687c698926a9e
+    Governor Abbott announced that Amazon, Lancium, and Cipher Digital have committed to comply with new data center standards, which may impact operational costs and regulatory compliance.
+  [BORRAR]    id=d7528b176ac860c8
+    Governor Abbott announced that Amazon, Lancium, and Cipher Digital have committed to comply with new data center standards, which may impact operational regulations.
+
+article_id=359d91020bfc0579  ticker=AMZN  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=268c2cd1e533983d
+    Morgan Stanley presents a bullish long-term case for Amazon.com Inc (AMZN) despite the stock trading lower, suggesting potential future growth.
+  [BORRAR]    id=ee38a323666da44a
+    Morgan Stanley presents a bullish long-term case for Amazon.com Inc, despite the stock trading lower, suggesting potential future growth.
+
+article_id=6f006cf0591e7af0  ticker=AMZN  event_type=macro  (2 eventos)
+  [CONSERVAR] id=0ffd846cad305b88
+    U.S. retail sales fell 0.6% in July, impacting Amazon and non-store retailers, indicating a potential slowdown in consumer spending.
+  [BORRAR]    id=9fcaeb42a35a5156
+    U.S. retail sales fell 0.6% in July, impacting Amazon and non-store retailers, indicating a potential decline in consumer spending.
+
+article_id=778ae3ed26208c27  ticker=AMZN  event_type=product  (2 eventos)
+  [CONSERVAR] id=fae10db2324168f3
+    Amazon is reportedly considering selling its Trainium chip to external companies, which could expand its market reach and revenue streams.
+  [BORRAR]    id=8b009a55b3952ef7
+    Amazon is reportedly considering selling its Trainium chip to external companies, which could diversify its revenue streams.
+
+article_id=852f2599252f418e  ticker=AMZN  event_type=other  (2 eventos)
+  [CONSERVAR] id=2b28a4bfb0fb2ed6
+    Thrive Capital disclosed ownership of nearly 1 million shares in Amazon, valued at approximately $215 million, reflecting significant investment interest.
+  [BORRAR]    id=4098941c4de63f60
+    Thrive Capital disclosed ownership of nearly 1 million shares of Amazon, valued at approximately $215 million, reflecting significant investment interest.
+
+article_id=cee9a2b291b48f57  ticker=AMZN  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=73276293edb50776
+    Amazon's stock is experiencing volatility around the $3 trillion market cap, following a rally driven by its Q2 earnings report.
+  [BORRAR]    id=5a7b88f597771911
+    Amazon's stock is experiencing volatility around the $3 trillion market cap, driven by a rally following its Q2 earnings report.
+
+article_id=e744a08c44c74846  ticker=AMZN  event_type=legal  (2 eventos)
+  [CONSERVAR] id=fff9d5c487da46ab
+    Zohran Mamdani is advocating for a bill to strengthen delivery worker protections, which could have significant implications for Amazon's labor policies and operational costs.
+  [BORRAR]    id=0fd97691c4f893cb
+    Zohran Mamdani is advocating for a bill to strengthen delivery worker protections, which could have significant implications for Amazon's labor practices.
+
+article_id=091fcc528bb94de2  ticker=GOOGL  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=c24634b679cf0824
+    Google is set to report Q2 earnings on July 22, with expectations of strong results and a positive outlook supporting its AI spending.
+  [BORRAR]    id=28fcdb0984496313
+    Google is set to report Q2 earnings on July 22, with expectations of strong results supporting its AI spending outlook.
+
+article_id=0bb2da95824dd175  ticker=GOOGL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=109d25f8da2c2636
+    Google is urging the EU top court to uphold a ruling that scrapped a €1.49 billion antitrust fine, which is crucial for its financial standing in Europe.
+  [BORRAR]    id=eb495d8ce15129ee
+    Google urged the EU top court to uphold a ruling that scrapped a $1.7 billion antitrust fine, which is crucial for its financial health.
+
+article_id=1b7690bf3bfe514d  ticker=GOOGL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=10c171e3ad17e4cc
+    Ryanair signed a five-year cloud deal with Google to deploy AI tools, enhancing operational efficiency in airline operations.
+  [BORRAR]    id=4325249dec2fe698
+    Ryanair signs a five-year cloud deal with Google to deploy AI tools, enhancing operational efficiency in airline management.
+
+article_id=2c86b0be688a8906  ticker=GOOGL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=bb393d693d71f2f7
+    Ryanair has signed a five-year cloud contract with Google, deploying AI tools and cloud services, which could significantly enhance operational efficiency.
+  [BORRAR]    id=997a1eaab0510eef
+    Ryanair has signed a five-year cloud contract with Google, deploying AI tools and cloud services, which could significantly boost Google's cloud business.
+
+article_id=3311e178e1cd0b43  ticker=GOOGL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=4a4d0390d1671fc7
+    Berkshire Hathaway's Q2 2026 update reveals an increase in its investment in Alphabet, reflecting strategic portfolio adjustments.
+  [BORRAR]    id=0820d6c468a8dba5
+    Berkshire Hathaway's Q2 2026 update shows an increase in its investment in Alphabet, reflecting strategic portfolio adjustments.
+
+article_id=33400df8cd8e9726  ticker=GOOGL  event_type=product  (2 eventos)
+  [CONSERVAR] id=e5e03f34a49fab7f
+    Google has increased the prices of its Pixel 11 smartphones by $100 due to rising memory costs, which may impact sales and market competitiveness.
+  [BORRAR]    id=028d4bde3c65da33
+    Google has raised the prices of its Pixel 11 smartphones by $100 due to increased memory costs, which may impact sales and revenue.
+
+article_id=4226c2d1ed3e8988  ticker=GOOGL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=ca03b05df0c8b001
+    Alphabet Inc faces a $4.7 billion fine from the EU, which could impact its financial standing and investor sentiment.
+  [BORRAR]    id=82e8de4aac67a72d
+    Alphabet Inc faces a $4.7 billion fine from the EU, which could impact its financial standing.
+
+article_id=428cc898f51e465c  ticker=GOOGL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=38deeaa85c28ceeb
+    The Swiss competition authority has opened a preliminary investigation into Google's removal of the 'choice screen' feature on Android devices in Switzerland, which could have legal implications for the company.
+  [BORRAR]    id=22270172ed42f4b6
+    The Swiss competition authority has opened a preliminary investigation into Google's removal of the 'choice screen' feature on Android devices, which could have implications for competition law compliance.
+
+article_id=5698e172f0d9d48b  ticker=GOOGL  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=a60620ee2c44bb9b
+    Sergey Brin is advocating for AI talent to focus on the Gemini models, as Alphabet reorganizes to enhance the commercial performance of its AI initiatives.
+  [BORRAR]    id=55cfc1efd3f57e8e
+    Sergey Brin is urging AI talent to focus on the Gemini models, as Alphabet reorganizes to enhance the commercial performance of its AI initiatives.
+
+article_id=810231bd86be5455  ticker=GOOGL  event_type=other  (2 eventos)
+  [CONSERVAR] id=ca582772ee728768
+    Alphabet announced an $84.75 billion equity capital raise to expand its AI infrastructure, indicating strong growth potential and investor confidence.
+  [BORRAR]    id=cf08f01c5cfad6ef
+    Alphabet announced an $84.75 billion equity capital raise to expand AI infrastructure, indicating strong growth potential and investor confidence.
+
+article_id=87aba5f3c08394cf  ticker=GOOGL  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=2fb844865662470e
+    UBS analyst Stephen Ju maintains a Neutral rating on Alphabet and lowers the price target from $410 to $400, indicating a cautious outlook on the stock's performance.
+  [BORRAR]    id=caf3846106fbcd7d
+    UBS analyst Stephen Ju maintains a Neutral rating on Alphabet (GOOGL) and lowers the price target from $410 to $400, indicating a cautious outlook.
+
+article_id=8afa305f393ff7b6  ticker=GOOGL  event_type=product  (2 eventos)
+  [CONSERVAR] id=8bb6a56ce608c682
+    Google acquires data from Spirit Airlines to enhance its AI training capabilities.
+  [BORRAR]    id=f14897bbdd6cf069
+    Google acquires Spirit Airlines data to enhance its AI training capabilities.
+
+article_id=93639fd3cdaebb74  ticker=GOOGL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=36b12d7583ed8697
+    Third Point raises its share stake in Alphabet to 1 million Class A capital stock, indicating increased confidence in the company.
+  [BORRAR]    id=21aa61ace5ae0263
+    Third Point raises its share stake in Alphabet to 1 million Class A capital stock, indicating increased investment interest.
+
+article_id=add0fb5db296fab6  ticker=GOOGL  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=c352cf59f92736df
+    A hedge fund has opened a stake in Alphabet, indicating confidence in the company's future performance.
+  [BORRAR]    id=83cffd01b52c5d02
+    A hedge fund opened a stake in Alphabet, indicating confidence in the company's future performance.
+
+article_id=b06d6854aa7d0a66  ticker=GOOGL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=7ae33ad9017fc64d
+    Alphabet faces over 3,000 youth addiction lawsuits following a court ruling, which could have significant financial implications for the company.
+  [BORRAR]    id=d8eacb2e856d10bc
+    Alphabet faces over 3,000 youth addiction lawsuits following a court ruling, which could have significant legal and financial implications.
+
+article_id=b60bc92b701cf40b  ticker=GOOGL  event_type=product  (2 eventos)
+  [CONSERVAR] id=90b1e1ca1798acb3
+    Google's new wearables will track insulin resistance, marking a significant innovation in health monitoring technology.
+  [BORRAR]    id=601e40476ee608f9
+    Google's new wearables will track insulin resistance, marking a significant innovation in health monitoring.
+
+article_id=c7aed842005d09bb  ticker=GOOGL  event_type=product  (2 eventos)
+  [CONSERVAR] id=819239b7869c30dc
+    Cypress Creek and Google have broken ground on the Steel River Energy Center, which aims to deliver significant solar capacity and battery storage.
+  [BORRAR]    id=394bbb5746d39b9a
+    Google and Cypress Creek have broken ground on the Steel River Energy Center, aiming to deliver significant solar capacity and battery storage.
+
+article_id=cbf3794bf0c086e7  ticker=GOOGL  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=b510cf18b9d10983
+    Alphabet reported a historic Q2 2026 with 24% YoY revenue growth, affirming its leadership in AI and indicating strong financial performance.
+  [BORRAR]    id=47ca14eae7767dfc
+    Alphabet reported a historic Q2 2026 with 24% YoY revenue growth, affirming its leadership in AI and indicating strong financial health.
+
+article_id=d339c012faef7785  ticker=GOOGL  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=f093937aeffa7493
+    OpenAI's new revenue officer comes from Alphabet's Wiz, indicating a strategic shift towards performance metrics in advertising.
+  [BORRAR]    id=3bc4b181ebe25f63
+    OpenAI's new revenue officer comes from Alphabet's Wiz, indicating a shift towards performance metrics in advertising.
+
+article_id=d37e07455e61bcb3  ticker=GOOGL  event_type=product  (2 eventos)
+  [CONSERVAR] id=faa9e022e79e80f5
+    Google introduces the Google Pixel Tag, which will be available for purchase, potentially impacting its product lineup and sales.
+  [BORRAR]    id=f85c28ffc758c454
+    Google introduces the Google Pixel Tag, which will be available for purchase, potentially impacting accessory sales.
+
+article_id=def089aaf3367310  ticker=GOOGL  event_type=product  (2 eventos)
+  [CONSERVAR] id=0d40b8747b95c47e
+    Waymo has received CPUC approval to expand its autonomous ride-hailing service across the SF Bay Area and LA, which could enhance its market presence and revenue potential.
+  [BORRAR]    id=0f717fbc4e2fc4ff
+    Waymo has received approval to expand its autonomous ride-hailing service across the SF Bay Area and LA, which could enhance its market presence and revenue potential.
+
+article_id=fa18c5fd0eae7be5  ticker=GOOGL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=be6d83eefe75615d
+    Swiss regulators have launched an investigation into Google regarding its search engine settings, which may affect its operations in the region.
+  [BORRAR]    id=8a9e583c92bfc984
+    Swiss regulators have launched an investigation into Google's search engine settings, which could impact its operations in the region.
+
+article_id=fb041e5dfeeb97b0  ticker=GOOGL  event_type=legal  (2 eventos)
+  [CONSERVAR] id=e8d72bb3b851fe08
+    Bernie Sanders criticizes Sergey Brin for spending $102 million against California's billionaire tax, highlighting the growing scrutiny on wealth and taxation.
+  [BORRAR]    id=5a1c35afd98fe36a
+    Bernie Sanders criticized Sergey Brin for spending $102 million against California's billionaire tax, highlighting the growing scrutiny on wealth and taxation.
+
+article_id=212d2771f1af130d  ticker=JPM  event_type=other  (2 eventos)
+  [CONSERVAR] id=1d11f18baabeea8f
+    JPMorgan has cut earnings forecasts for Circle and Coinbase due to the weakening revenue economics from the Hyperliquid partnership.
+  [BORRAR]    id=67b3221c0ff19f7a
+    JPMorgan cut earnings forecasts for Circle and Coinbase due to the weakening revenue economics from the Hyperliquid partnership.
+
+article_id=2b211db3fadd8117  ticker=JPM  event_type=macro  (2 eventos)
+  [CONSERVAR] id=8dd8ee4714ff6f16
+    JPMorgan described the current market conditions as 'extremely risk-on' following a significant Q2 earnings beat and increased investment banking fees.
+  [BORRAR]    id=54d11f8e8f9956c9
+    JPMorgan described the current markets as 'extremely risk-on' following a significant Q2 earnings beat and increased investment banking fees.
+
+article_id=2c5ab6a1b1c72986  ticker=JPM  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=cd817c87898dc4c1
+    JPMorgan Chase & Co. reported its highest quarterly profit ever, driven by strong stock trading performance and a significant Visa stake payout.
+  [BORRAR]    id=69774ed2ef1340f3
+    JPMorgan Chase reported its highest quarterly profit ever, driven by strong stock trading performance and a significant gain from a Visa stake.
+
+article_id=2c654bef95e5ea87  ticker=JPM  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=6fbbf36d5ed7c9e7
+    JPMorgan was among five banks that reported strong revenue from equities trading, highlighting robust performance in the sector.
+  [BORRAR]    id=af0a91e429d93913
+    JPMorgan and other major banks reported strong revenue from equities trading, indicating robust performance in the sector.
+
+article_id=640a92a3f920d31e  ticker=JPM  event_type=other  (2 eventos)
+  [CONSERVAR] id=29e0781f29d6e2e7
+    Viking Global Investors has increased its stake in JPMorgan Chase by 7.2%, indicating confidence in the bank's future performance.
+  [BORRAR]    id=74ffb3642f73ae83
+    Viking Global Investors increased its stake in JPMorgan Chase by 7.2%, indicating growing confidence in the bank's prospects.
+
+article_id=64979d06d7984a6c  ticker=JPM  event_type=macro  (2 eventos)
+  [CONSERVAR] id=886973d70dd3fc6b
+    JPMorgan Chase & Co. shares are trading near all-time highs following a positive jobs report, contributing to the Dow Jones Industrial Average reaching record levels.
+  [BORRAR]    id=c4beb3d8ed445e3e
+    JPMorgan Chase shares are trading near all-time highs due to a positive jobs report, contributing to the Dow Jones Industrial Average reaching record levels.
+
+article_id=75f13e84aa16ccae  ticker=JPM  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=11be4812efff3ff1
+    JPMorgan's EPS of $6.14 for Q2 exceeded Wall Street's estimate of $5.44, indicating strong financial performance.
+  [BORRAR]    id=f728de9ad2e32d53
+    JPMorgan's EPS of $6.14 exceeded Wall Street's estimate of $5.44, indicating strong financial performance in Q2.
+
+article_id=ade3dbce5f03458d  ticker=JPM  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=7c5c32e164ed1c89
+    JPMorgan ended its banking relationship with Polymarket due to regulatory scrutiny but is still considering a role in its potential IPO, indicating ongoing strategic interests.
+  [BORRAR]    id=d9a3ce4d88396e39
+    JPMorgan ended its banking relationship with Polymarket due to regulatory scrutiny but is still considering a role in its potential IPO.
+
+article_id=b84a97823c4cf728  ticker=JPM  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=1e1e4fbbe4a4d0f2
+    JPMorgan Chase reported a net income of $16.9 billion and a 15% revenue increase in Q2 2026, showcasing strong financial performance despite rising expenses.
+  [BORRAR]    id=ee43205ca1555a44
+    JPMorgan reports a net income of $16.9 billion and a 15% revenue increase in Q2 2026, showcasing strong financial performance despite rising expenses.
+
+article_id=bc7dbe74e0a42178  ticker=JPM  event_type=macro  (2 eventos)
+  [CONSERVAR] id=f2f691c2087fd982
+    Jamie Dimon warns that increased bank taxes in the UK could lead to a loss of finance jobs, drawing parallels to New York's past experiences, which could impact JPMorgan's operations.
+  [BORRAR]    id=bf2b2c4eab687ac2
+    Jamie Dimon warns that increased bank taxes in the UK could lead to a loss of finance jobs, drawing parallels to New York's tax experiences.
+
+article_id=c64e75a73ee9907c  ticker=JPM  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=a3b13170da363ff4
+    Jamie Dimon expressed support for Troy Rohrbaugh, JPMorgan's new consumer-banking chief, amidst analyst scrutiny regarding his experience.
+  [BORRAR]    id=153ab7789cacd8c6
+    Jamie Dimon expressed support for Troy Rohrbaugh, the newly named bank co-president, amidst analyst scrutiny regarding his experience.
+
+article_id=cbe5eff337724190  ticker=JPM  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=66f3f6299dac673b
+    JPMorgan Chase plans to hire 30 senior bankers to support its corporate banking business expansion in EMEA.
+  [BORRAR]    id=30cbbf173b7de0f1
+    JPMorgan Chase is hiring 30 senior bankers to support its corporate banking business expansion in EMEA.
+
+article_id=cd1d1976aafa50f6  ticker=JPM  event_type=other  (2 eventos)
+  [CONSERVAR] id=c20e9daff6aa44bf
+    JPM was listed as a Strong Buy income stock by Zacks Rank, indicating positive investment potential.
+  [BORRAR]    id=589c4c6492aa69b6
+    JPM was listed as a Strong Buy income stock by Zacks Rank, indicating positive investment sentiment.
+
+article_id=d0ef144521bf2b13  ticker=JPM  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=3cacc71eb31ccce9
+    JPMorgan's strong Q2 earnings report has caused significant market reactions, affecting five other stocks in the financial sector.
+  [BORRAR]    id=8c5fca510207c5ec
+    JPMorgan's strong Q2 earnings report caused significant market reactions, impacting five other stocks in the financial sector.
+
+article_id=e6ecaca3069ec8b0  ticker=JPM  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=77afc6bf30eb30af
+    Jamie Dimon ruled out a future in politics, stating he prefers to focus on banking and other pursuits after his tenure at JPMorgan.
+  [BORRAR]    id=7c3709118d5f2d85
+    Jamie Dimon ruled out a future in politics, stating he prefers to focus on banking and public policy after his tenure at JPMorgan.
+
+article_id=f77b7de3c1e98b38  ticker=JPM  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=4f791e30fd69da90
+    JPMorgan Chase continues to profit from its long-held stake in Visa Inc., generating an additional $4.6 billion.
+  [BORRAR]    id=a3ca5a5b97679eab
+    JPMorgan continues to profit from its long-held stake in Visa, generating an additional $4.6 billion.
+
+article_id=f8a58d029dd83540  ticker=JPM  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=09e63ae02038c835
+    JPMorgan Chase & Co. reported earnings 30 days ago, prompting speculation about future stock performance.
+  [BORRAR]    id=5b222e5bafb6c14c
+    JPMorgan Chase reported earnings 30 days ago, prompting speculation about future stock performance.
+
+article_id=1d74d0a10f47b343  ticker=META  event_type=other  (3 eventos)
+  [CONSERVAR] id=3ed32bfb59829abb
+    Meta's stock is suggested to be undervalued based on recent valuation work, indicating potential investment opportunities.
+  [CONSERVAR] id=a78f89b92200d15b
+    Meta's stock is considered undervalued based on recent valuation analysis, suggesting potential for price appreciation.
+  [BORRAR]    id=7a877a37b5b08c40
+    Meta's stock is considered undervalued based on recent valuation work, suggesting potential for price appreciation.
+
+article_id=236f108b596ea0db  ticker=META  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=26b11bacc3222396
+    Meta was forced to unwind its $2 billion acquisition deal for Manus due to regulatory pressures from China, impacting its AI strategy.
+  [BORRAR]    id=7079b0b2ea2ff8fc
+    Meta was forced to unwind its $2 billion acquisition of Manus due to regulatory pressures from China, impacting its AI strategy.
+
+article_id=2d245db6d45a8779  ticker=META  event_type=m_and_a  (3 eventos)
+  [CONSERVAR] id=eccf3a06e103a8bc
+    Soros Fund Management has reduced its share stake in Meta Platforms by 37.1%, which could reflect concerns about the company's future prospects.
+  [CONSERVAR] id=c66124fd5e224160
+    Soros Fund Management has reduced its share stake in Meta by 37.1%, which may signal a lack of confidence in the company's future performance.
+  [BORRAR]    id=7fe30133f6dcb9e3
+    Soros Fund Management has reduced its share stake in Meta by 37.1%, which may signal concerns about the company's future performance.
+
+article_id=5bc2546213b64dad  ticker=META  event_type=m_and_a  (3 eventos)
+  [CONSERVAR] id=4b421c4ab0d5370c
+    Viking Global Investors has increased its share stake in Meta Platforms by 75.8%, indicating a bullish outlook on the company's future performance.
+  [BORRAR]    id=cc7a6a161638b406
+    Viking Global Investors has increased its share stake in Meta by 75.8%, indicating a bullish outlook on the company's prospects.
+  [BORRAR]    id=5c67b0e2bbf5360c
+    Viking Global Investors has increased its share stake in Meta by 75.8%, indicating a bullish outlook on the company's future prospects.
+
+article_id=7632e558a156871f  ticker=META  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=9a2af3b30cd6640d
+    Jim Cramer continues to support Meta Platforms Inc. despite recent share price weakness, indicating confidence in the company's future performance.
+  [BORRAR]    id=dc215ab71c5a335e
+    Jim Cramer continues to support Meta Platforms Inc. despite recent share price weakness, indicating potential investor confidence in the company.
+
+article_id=7c089b68acd83b7a  ticker=META  event_type=legal  (3 eventos)
+  [CONSERVAR] id=e0d714d7bdbd15e9
+    Meta has deleted 756,000 accounts of users under 16 in compliance with Australian regulations, which may mitigate legal risks.
+  [CONSERVAR] id=97fa342a18ce4d4e
+    Meta has deleted 756,000 accounts believed to belong to underage users in Australia, responding to regulatory requirements and scrutiny.
+  [BORRAR]    id=b963385d594cace0
+    Meta has deleted 756,000 accounts believed to belong to underage users in Australia, responding to regulatory requirements.
+
+article_id=84a4070b04784a2c  ticker=META  event_type=other  (3 eventos)
+  [CONSERVAR] id=f3c5265c9b0a9ac5
+    Meta's business momentum is slowing, leading to a rating downgrade, which could affect investor confidence.
+  [CONSERVAR] id=2c24d71005d4b6a5
+    Meta's rating has been downgraded due to slowing business momentum and weakening fundamentals.
+  [BORRAR]    id=e172b897ab8d863e
+    Meta's business momentum is slowing, leading to a rating downgrade, which could affect investor sentiment.
+
+article_id=975e94641a55e4ea  ticker=META  event_type=legal  (2 eventos)
+  [CONSERVAR] id=606aa189886157b2
+    Meta faces a federal trial over child safety claims that could lead to major financial penalties, affecting its business operations and stock value.
+  [BORRAR]    id=9cc7530e97b5d63f
+    Meta is involved in a federal trial over child safety claims that could lead to major financial penalties, affecting its operations and stock value.
+
+article_id=9885ee2cf80ddcfd  ticker=META  event_type=earnings  (3 eventos)
+  [CONSERVAR] id=f2daecde3b4ac1a9
+    Mark Zuckerberg discussed future AI plans during Meta's Q2 earnings call, indicating a strategic direction that could influence investor confidence.
+  [CONSERVAR] id=04e074e590f15b99
+    Mark Zuckerberg discussed future AI developments during Meta's Q2 earnings call, indicating a strategic focus on AI technology.
+  [BORRAR]    id=1c6c3c1e932c2908
+    Mark Zuckerberg discussed future AI developments during Meta's Q2 earnings call, indicating a strategic focus on AI.
+
+article_id=acb0c5cccad79199  ticker=META  event_type=other  (3 eventos)
+  [CONSERVAR] id=03c8e152371c4d50
+    Meta's low stock valuation is attributed to high capital expenditures, which analysts believe can be optimized, suggesting potential for stock recovery.
+  [BORRAR]    id=6b4875fde56ba5af
+    Meta's low valuation is attributed to high capital expenditures, which could be optimized, suggesting potential for stock recovery.
+  [BORRAR]    id=fa4ba9fa7491e3f9
+    Meta's low valuation is attributed to high capital expenditures, which may be optimized, suggesting potential for stock recovery.
+
+article_id=c14405488bba5e31  ticker=META  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=3c8cd1490143e4c8
+    Jiahui Yu leaves Meta to start a new AI company, indicating a shift in leadership and talent within Meta's AI division.
+  [BORRAR]    id=3395ad838e7df3fe
+    Jiahui Yu leaves Meta to start a new AI company, indicating a shift in leadership and talent within the organization.
+
+article_id=d6fc94d497160a3f  ticker=META  event_type=other  (3 eventos)
+  [CONSERVAR] id=17d525c735aa07f9
+    Meta has launched new open-weight AI models and increased data-center commitments amid scrutiny, which could affect investor sentiment and market positioning.
+  [CONSERVAR] id=738f4c85c7f7566b
+    Meta has launched new open-weight AI models and increased data-center commitments amid scrutiny over its AI practices.
+  [BORRAR]    id=017c8aeb4dccf9d4
+    Meta has launched new open-weight AI models and increased data-center commitments amid scrutiny over its practices.
+
+article_id=daa0a36b24f9c958  ticker=META  event_type=product  (3 eventos)
+  [CONSERVAR] id=e0cd515f41d4810a
+    Meta is joining a consortium to develop an open standard for high bandwidth flash, indicating its commitment to technological advancements.
+  [CONSERVAR] id=a6f36c622b610ebd
+    Meta is joining a consortium to develop an open standard for high bandwidth flash, which could enhance its technological capabilities.
+  [BORRAR]    id=2dfa19d4cfbf75f2
+    Meta is joining a consortium to develop an open standard for high bandwidth flash, which may enhance its technological capabilities.
+
+article_id=e24e6951d07f7ad3  ticker=META  event_type=m_and_a  (3 eventos)
+  [CONSERVAR] id=6a02a6f455a1522b
+    Coatue Management has cut its share stake in Meta by 10.2%, suggesting a potential shift in investment strategy or confidence in the company.
+  [BORRAR]    id=50b1823c4e0f1678
+    Coatue Management has cut its share stake in Meta by 10.2%, reflecting a reduction in investment in the company.
+  [BORRAR]    id=a19cee0fcdca0aec
+    Coatue Management has cut its share stake in Meta by 10.2%, reflecting a potential decrease in investor confidence in the company.
+
+article_id=f0f3d7fe5c66cf8e  ticker=META  event_type=product  (2 eventos)
+  [CONSERVAR] id=daed450240139d96
+    Meta plans to manufacture its in-house AI chip, Iris, starting in September, enhancing its AI infrastructure.
+  [BORRAR]    id=a8c2a59be0cc18ef
+    Meta is set to manufacture its in-house AI chip, Iris, in September, enhancing its AI infrastructure.
+
+article_id=0a856b1b15eebb2a  ticker=MSFT  event_type=product  (2 eventos)
+  [CONSERVAR] id=6afe93b603c7bcc9
+    Microsoft has launched a $2.5 billion initiative to help large customers deploy AI systems, enhancing its position in the enterprise AI market.
+  [BORRAR]    id=d9463e22686b7567
+    Microsoft launched a $2.5 billion initiative to help large customers deploy AI systems, enhancing its enterprise AI capabilities.
+
+article_id=0d22917c686de63c  ticker=MSFT  event_type=other  (2 eventos)
+  [CONSERVAR] id=f56ebb929d863f5f
+    Microsoft reported a 25% rise in carbon emissions in 2025 due to the expansion of AI data centers, raising concerns about its ESG goals.
+  [BORRAR]    id=2bcb772000508b17
+    Microsoft reported a 25% rise in carbon emissions due to the expansion of AI data centers, raising concerns about its ESG goals.
+
+article_id=6bdae2d3863969ac  ticker=MSFT  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=595d8f1cafc4df3b
+    Billionaire D.E. Shaw has listed Microsoft as one of the best stocks to buy in 2026, indicating strong future potential despite recent stock declines.
+  [BORRAR]    id=9130a70ba6a79b4a
+    Billionaire D.E. Shaw lists Microsoft as one of the 10 Best Stocks to Buy in 2026, indicating strong future potential despite recent stock declines.
+
+article_id=7395213049da344b  ticker=MSFT  event_type=other  (2 eventos)
+  [CONSERVAR] id=1375ecfa9e9d2d39
+    Microsoft received a 7/10 dividend rating, indicating strong health and reliable dividend growth, making it a solid dividend investment.
+  [BORRAR]    id=fc4665f51b91aa61
+    Microsoft received a 7/10 dividend rating, indicating strong health and reliable dividend growth, making it a solid dividend pick.
+
+article_id=797bc80d2472193c  ticker=MSFT  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=f66c41f2bc264241
+    J.P. Morgan has raised its price target for Microsoft stock, driven by anticipated growth from AI developments.
+  [BORRAR]    id=9ddf115616237018
+    J.P. Morgan has raised its price target for Microsoft stock, driven by anticipated growth from AI initiatives.
+
+article_id=84ef713c67cebbba  ticker=MSFT  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=707af6f48bd083ec
+    Pershing Square reaffirms its investment in Microsoft, citing Azure capacity and Microsoft 365's position as drivers of high earnings growth.
+  [BORRAR]    id=5181f7d66239cd22
+    Ackman reaffirms his investment in Microsoft, citing Azure capacity and Microsoft 365's position as drivers for high earnings growth.
+
+article_id=943c27e1613aee5f  ticker=MSFT  event_type=macro  (2 eventos)
+  [CONSERVAR] id=e483c958460a56b2
+    IBM's significant stock drop has raised concerns about enterprise spending, which could impact Microsoft and the broader software sector.
+  [BORRAR]    id=d8c96b37f4c49438
+    IBM's significant stock drop has raised concerns about enterprise spending, which could impact Microsoft and other software companies.
+
+article_id=9c13f2ff914958a8  ticker=MSFT  event_type=product  (2 eventos)
+  [CONSERVAR] id=25a77e08a81499c7
+    Microsoft released a revamped Search feature in Windows 11 that enhances user experience by prioritizing on-device information.
+  [BORRAR]    id=c97eba7eebea3ec1
+    Microsoft released a revamped search feature in Windows 11, enhancing user experience by prioritizing on-device information.
+
+article_id=cc6844589f2e6f5b  ticker=MSFT  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=72827480b8d22ea4
+    Microsoft and Chevron are collaborating to build a $7-billion AI data center, indicating a significant investment in AI infrastructure.
+  [BORRAR]    id=01b6f1236f1e76a6
+    Microsoft and Chevron are collaborating to build a $7-billion AI data center, indicating significant investment in AI infrastructure.
+
+article_id=e12d0ec1ca5fdb0d  ticker=MSFT  event_type=other  (2 eventos)
+  [CONSERVAR] id=b106abac20c16674
+    Haleon has partnered with Microsoft to enhance its digital and AI capabilities, which could lead to improved operational efficiency and market competitiveness.
+  [BORRAR]    id=d29b794fa6e0cf1c
+    Haleon partners with Microsoft to enhance its digital and AI capabilities, which could lead to improved operational efficiency and market competitiveness.
+
+article_id=05d61d0ca8a47f24  ticker=NVDA  event_type=product  (2 eventos)
+  [CONSERVAR] id=1407bb882c6ff37e
+    Nvidia is accelerating the development of its next-gen Feynman AI platform, prompting TSMC to enhance its production capabilities, which could impact supply chains.
+  [BORRAR]    id=131cf0e53a37bd46
+    Nvidia is accelerating the development of its next-gen Feynman AI platform, prompting TSMC to enhance its production capabilities.
+
+article_id=08c162ec5f2f8023  ticker=NVDA  event_type=product  (2 eventos)
+  [CONSERVAR] id=46ce40b2ebb7e762
+    Nvidia's Vera Rubin AI hardware rollout may be slightly delayed, but analysts expect strong demand and limited financial impact.
+  [BORRAR]    id=2e02f83f06b17921
+    Nvidia's Vera Rubin AI hardware rollout may face slight delays, but analysts expect strong demand to mitigate financial impacts.
+
+article_id=0b38f1d4e84dc55b  ticker=NVDA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=f11320bca5ddb203
+    TD Cowen analyst Joshua Buchalter reiterated a 'Buy' rating on Nvidia with a price target of $275, indicating strong confidence in the company's stock performance.
+  [BORRAR]    id=6d523f24dfb07de7
+    TD Cowen analyst Joshua Buchalter reiterated a 'Buy' rating on NVIDIA with a price objective of $275, indicating confidence in the company's stock performance.
+
+article_id=13af33862882bf36  ticker=NVDA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=f06f69c8ba156d82
+    Analysts suggest that Nvidia's stock may rise due to its undervaluation despite strong AI-driven revenue growth, highlighting potential catalysts for the stock.
+  [BORRAR]    id=9d18905ce9430b7c
+    Analysts suggest that Nvidia's stock may rise due to its undervaluation amidst strong AI-driven revenue growth, highlighting potential investment opportunities.
+
+article_id=19d1414ed013d0c4  ticker=NVDA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=14c7c99a49138d0b
+    Morgan Stanley maintains Nvidia as a top pick despite recent struggles in stock performance, indicating confidence in its long-term growth.
+  [BORRAR]    id=dd9135e3fcdd084f
+    Morgan Stanley maintains Nvidia as a top pick despite recent stock struggles, indicating confidence in its long-term growth potential.
+
+article_id=229eeb6dbbb1ddcb  ticker=NVDA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=33df670ce3dd63b3
+    Sandisk has upgraded its rating based on bullish guidance and rising NAND prices linked to Nvidia's Vera-Rubin.
+  [BORRAR]    id=c409a1352259e323
+    Sandisk upgrades its rating based on bullish guidance and rising NAND prices linked to Nvidia's Vera-Rubin.
+
+article_id=3e6dfa9b4c8fcceb  ticker=NVDA  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=f7eccd4aebe76b3b
+    Third Point has dissolved its share stake in Nvidia, which may indicate a shift in investment strategy.
+  [BORRAR]    id=054789bd8fba651d
+    Third Point dissolves its share stake in Nvidia, indicating a potential shift in investment strategy.
+
+article_id=563a9ccdbf6c39fd  ticker=NVDA  event_type=other  (2 eventos)
+  [CONSERVAR] id=fac5279308aebd88
+    Nvidia reports holding 122.8 million Class A shares in SpaceX, reflecting its substantial investment in the aerospace sector.
+  [BORRAR]    id=2a975781658a0ae3
+    Nvidia reports holding 122.8 million Class A shares in SpaceX, highlighting its substantial investment in the company.
+
+article_id=57e2214c9f60bf6d  ticker=NVDA  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=f8370c5191c04076
+    NVIDIA partners with SB Energy to invest $1.5 billion in building an 8 IT-GW AI campus in Ohio for OpenAI.
+  [BORRAR]    id=dfbddc75c1c99ee7
+    NVIDIA partners with SB Energy to invest $1.5 billion in an 8 IT-GW AI campus in Ohio for OpenAI.
+
+article_id=72ab965fad96db80  ticker=NVDA  event_type=macro  (2 eventos)
+  [CONSERVAR] id=8974faacd856b176
+    Jim Cramer criticizes the White House for blocking Nvidia's chip sales to China, suggesting it could hinder US competitiveness in AI.
+  [BORRAR]    id=0c0a87f8d0932915
+    Jim Cramer criticizes the White House for blocking Nvidia's chip sales to China, suggesting it may hinder US competitiveness in AI.
+
+article_id=8fa844a26ef4c2d2  ticker=NVDA  event_type=other  (2 eventos)
+  [CONSERVAR] id=9a697a29a45a441f
+    Nvidia discloses a $21 billion stake in SpaceX, reflecting its investment in the AI sector through xAI.
+  [BORRAR]    id=a2f56a6b2ea51def
+    Nvidia discloses a $21 billion stake in SpaceX, reflecting its investment in xAI.
+
+article_id=9e3a12793b0f8ca1  ticker=NVDA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=760c28d5fa1cc26f
+    Nvidia has been downgraded to Hold due to concerns over systemic risks related to a $500 billion AI securitization.
+  [BORRAR]    id=ca87397bd03f572a
+    Nvidia is downgraded to Hold due to concerns over systemic risks related to a $500 billion AI securitization.
+
+article_id=ae353c7a23c314a1  ticker=NVDA  event_type=other  (2 eventos)
+  [CONSERVAR] id=a7ea00848a2e05c5
+    IREN's delivery of AI cloud deployment to Microsoft and securing Nvidia's Exemplar Cloud status may enhance Nvidia's reputation in the AI sector.
+  [BORRAR]    id=4c3666d29e9f07b7
+    IREN's delivery of AI cloud deployment to Microsoft and securing Nvidia's Exemplar Cloud status may boost Nvidia's reputation in the market.
+
+article_id=af0596b9cb289050  ticker=NVDA  event_type=other  (2 eventos)
+  [CONSERVAR] id=eebf43233629fa2e
+    Cathie Wood's Ark Invest purchases $22.8 million of Nvidia stock, indicating confidence in the company.
+  [BORRAR]    id=290e7bc9fec06b9b
+    Cathie Wood's Ark Invest purchased $22.8 million of Nvidia stock, indicating confidence in the company.
+
+article_id=c1fe076a6e2764d2  ticker=NVDA  event_type=other  (2 eventos)
+  [CONSERVAR] id=bf2f8022cd1cb9d9
+    Bill Baruch, a financial expert, expresses confidence in Nvidia by purchasing more shares, indicating positive sentiment towards the stock.
+  [BORRAR]    id=a6db98e5485fef4f
+    Bill Baruch, a financial expert, expresses confidence in Nvidia by purchasing more shares, suggesting positive market sentiment.
+
+article_id=c93ed009b8e87ffd  ticker=NVDA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=588a2c424bfd23e2
+    Goldman Sachs has downgraded Nvidia's rating, citing attractive exposure but caution on valuation.
+  [BORRAR]    id=0b02e4e9620a7239
+    Goldman Sachs downgrades Nvidia's rating, citing attractive exposure but caution on valuation.
+
+article_id=d5d471b323059f91  ticker=NVDA  event_type=other  (2 eventos)
+  [CONSERVAR] id=6cd020886ce020c5
+    Nvidia's CEO Jensen Huang introduced a bold $500 billion plan for chip-backed securities, which could reshape funding in the AI sector.
+  [BORRAR]    id=440765477bf027a7
+    Nvidia CEO Jensen Huang introduced a bold $500 billion plan for chip-backed securities, which could reshape funding in the AI sector.
+
+article_id=35f75e6a0f9a808f  ticker=PFE  event_type=product  (2 eventos)
+  [CONSERVAR] id=b425483bfaaddc91
+    The EMA validated the Marketing Authorization Application for Pfizer and Valneva's Lyme disease vaccine candidate, a step towards potential market introduction.
+  [BORRAR]    id=d57b10919fb42261
+    The EMA validated the Marketing Authorization Application for Pfizer and Valneva's Lyme disease vaccine candidate, a step towards potential market approval.
+
+article_id=369994bb0b36b4bc  ticker=PFE  event_type=product  (2 eventos)
+  [CONSERVAR] id=bccbee1dc471c6c8
+    Pfizer received FDA approval for a platinum-free Padcev-Keytruda regimen in muscle-invasive bladder cancer, expanding treatment options for patients.
+  [BORRAR]    id=b061ade4977fa6e4
+    Pfizer received FDA approval for a platinum-free Padcev-Keytruda regimen for muscle-invasive bladder cancer, expanding treatment options.
+
+article_id=4cd28a5528ec2c32  ticker=PFE  event_type=guidance  (2 eventos)
+  [CONSERVAR] id=1b52f55386c2a630
+    Valneva maintained its full-year sales outlook while emphasizing regulatory progress on its Lyme disease vaccine candidate with Pfizer, indicating confidence in future revenue streams.
+  [BORRAR]    id=3ab7aa24c4eec719
+    Valneva maintained its full-year sales outlook while emphasizing regulatory progress on its Lyme disease vaccine candidate with Pfizer, indicating confidence in future revenue.
+
+article_id=81370bdb8e7724c7  ticker=PFE  event_type=guidance  (2 eventos)
+  [CONSERVAR] id=cb5c01b62b130487
+    Pfizer raised its full-year 2026 revenue guidance to US$60.50–US$62.50 billion, suggesting improved expectations for financial performance.
+  [BORRAR]    id=1989a0a53637cfee
+    Pfizer raised its full-year 2026 revenue guidance to US$60.50–US$62.50 billion, suggesting improved expectations for future performance.
+
+article_id=c3b0e549380742dc  ticker=PFE  event_type=leadership  (2 eventos)
+  [CONSERVAR] id=e4216394c447bfd0
+    Pfizer CEO Albert Bourla purchased $1 million worth of Pfizer stock, signaling confidence in the company's future prospects.
+  [BORRAR]    id=072620efded2694e
+    Pfizer CEO Albert Bourla purchased $1 million worth of stock, indicating confidence in the company's future prospects.
+
+article_id=cb2dacf01ac046b3  ticker=PFE  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=10c235a73b3995d1
+    Pfizer is set to announce its second-quarter earnings next month, with Wall Street expecting a double-digit decline in profit.
+  [BORRAR]    id=dd8a657e653e4be3
+    Pfizer is set to announce its second-quarter earnings next month, with expectations of a double-digit decline in profit.
+
+article_id=eb6558b393afb800  ticker=PFE  event_type=product  (2 eventos)
+  [CONSERVAR] id=d7fbfd9eafa09ffc
+    The FDA expanded the use of Merck's Keytruda in combination with Pfizer's Padcev for bladder cancer treatment, enhancing market potential.
+  [BORRAR]    id=c34ee2e7ceb149e8
+    The FDA expanded the use of Merck's Keytruda in combination with Pfizer's Padcev for bladder cancer, enhancing its market potential.
+
+article_id=1e9be2546cbf8dca  ticker=TSLA  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=bae733a85f97657d
+    Tesla is expected to report second-quarter earnings per share of 55 cents, an increase from 40 cents a year ago.
+  [BORRAR]    id=ec727f0624eece05
+    Tesla is expected to report second-quarter earnings per share of 55 cents, up from 40 cents a year ago.
+
+article_id=23962f4d1bd8a08a  ticker=TSLA  event_type=legal  (2 eventos)
+  [CONSERVAR] id=b06630850d52676f
+    Tesla's Autopilot is under scrutiny following a crash involving NFL coach Kyle Shanahan, which could have implications for the company's liability and regulatory scrutiny.
+  [BORRAR]    id=d26ae360c8c516c3
+    Tesla's Autopilot is under scrutiny following a crash involving NFL coach Kyle Shanahan, which could have legal implications for the company.
+
+article_id=27b20b4a9f8cd5cb  ticker=TSLA  event_type=macro  (2 eventos)
+  [CONSERVAR] id=27d4990d9eac3993
+    Tesla shares surged about 6% as retail investors aggressively bought the drop, indicating strong retail investor influence on the stock's performance.
+  [BORRAR]    id=237e0b626ac54620
+    Tesla shares surged about 6% as retail investors aggressively bought the drop, indicating strong retail investor influence.
+
+article_id=3337283b83a0051b  ticker=TSLA  event_type=product  (2 eventos)
+  [CONSERVAR] id=f7dde932190fe9bb
+    Tesla needs to release new successful products to improve its stock performance, as it is currently down 26% and trailing its peers.
+  [BORRAR]    id=3d84155def9ca75d
+    Tesla needs to release new successful products to improve its stock performance, which is currently down 26%.
+
+article_id=3a95fe98f6ccb8ad  ticker=TSLA  event_type=legal  (2 eventos)
+  [CONSERVAR] id=9bedfcd1023c4f4e
+    Tesla's self-driving software may have been involved in an accident with the head coach of the San Francisco 49ers, raising legal and liability concerns for the company.
+  [BORRAR]    id=df416a8eaf0662f3
+    Tesla's Autopilot may have been involved in an accident with the head coach of the San Francisco 49ers, raising legal and liability concerns for the company.
+
+article_id=44420463800a1892  ticker=TSLA  event_type=product  (2 eventos)
+  [CONSERVAR] id=e0b671bf12fd8243
+    Elon Musk's comments about flying cars reignite speculation about Tesla's future product developments, particularly the long-awaited Roadster.
+  [BORRAR]    id=298875b30fb16399
+    Elon Musk's comments about flying cars have reignited speculation regarding Tesla's future product developments, particularly the Roadster.
+
+article_id=47931f3bfb498e4e  ticker=TSLA  event_type=macro  (2 eventos)
+  [CONSERVAR] id=202291ec16681ee9
+    Elon Musk claims Tesla is the 'most made in America' car brand amidst tariff discussions, which could influence consumer perception and sales in the domestic market.
+  [BORRAR]    id=0d31658e7140cfad
+    Elon Musk claims Tesla is the 'most made in America' car brand amidst tariff discussions, which could affect consumer perception and sales in the domestic market.
+
+article_id=47ba2c1e42b8332e  ticker=TSLA  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=5225a4ce329147e4
+    J.P. Morgan suggested that a merger between Tesla and SpaceX could be strategically coherent, although it cautioned that this does not imply a likely deal.
+  [BORRAR]    id=a63dc14276b57424
+    J.P. Morgan suggests that a merger between Tesla and SpaceX could be strategically coherent, although it cautions that this does not imply a likely deal.
+
+article_id=4da864bf1be7d29c  ticker=TSLA  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=e5a80958dc02009e
+    Tesla reported record deliveries but faced a significant drop in profitability, prompting investors to reassess the company's valuation.
+  [BORRAR]    id=60fbe545f4bc0235
+    Tesla posted record deliveries but faced a significant drop in profitability, prompting investors to reassess the company's valuation.
+
+article_id=541fd261a103ae64  ticker=TSLA  event_type=product  (2 eventos)
+  [CONSERVAR] id=86a7a2fe160077d7
+    Tesla's expansion into solar manufacturing, with a $10.1 billion investment, is seen as a strategic move towards nuclear energy, potentially reshaping its business model.
+  [BORRAR]    id=eaab0140e9e3fffe
+    Tesla's expansion into solar manufacturing, with a $10.1 billion investment, is seen as a strategic move towards nuclear energy.
+
+article_id=644cb1bc91aafc5b  ticker=TSLA  event_type=product  (2 eventos)
+  [CONSERVAR] id=8864d61126460bbb
+    Tesla confirmed the integration of Starlink into its Cybercab robotaxi, enhancing its product offering in the autonomous vehicle market.
+  [BORRAR]    id=5b95de688dd7cb38
+    Tesla confirmed the integration of Starlink into its Cybercab robotaxi, enhancing its product offering.
+
+article_id=64dffeffca928755  ticker=TSLA  event_type=other  (2 eventos)
+  [CONSERVAR] id=faf1acf8dbb66d9e
+    Tesla and SpaceX committed $16.8 billion to a chip plant, significantly exceeding Tesla's annual profit, highlighting the scale of their investment in semiconductor production.
+  [BORRAR]    id=e9237821488922b8
+    Tesla and SpaceX committed $16.8 billion to a chip plant, significantly exceeding Tesla's annual profit, highlighting the company's investment in future technology.
+
+article_id=7255071f95292645  ticker=TSLA  event_type=other  (2 eventos)
+  [CONSERVAR] id=c9cabea2a2902d27
+    Tesla has exhausted the funds allocated for California's EV rebate program within just four days, indicating strong demand for its vehicles.
+  [BORRAR]    id=adb986021e5f9cce
+    Tesla has exhausted the funds allocated for California's EV rebate program within just four days, indicating high demand for its vehicles.
+
+article_id=9e000c2efdc09d60  ticker=TSLA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=5ff7160d78328262
+    Cathie Wood's ARK Invest purchased $40 million worth of Tesla shares during the recent AI sell-off, indicating confidence in the company's future performance.
+  [BORRAR]    id=9c6008df9ba7c146
+    Cathie Wood's ARK Invest purchased $40 million of Tesla during the AI sell-off, indicating confidence in the company's future performance.
+
+article_id=a2a80e598ab53e8a  ticker=TSLA  event_type=other  (2 eventos)
+  [CONSERVAR] id=01255b04a3a1da8c
+    Elon Musk's semiconductor facility in Texas is set to be five times larger than the current largest building, addressing chip supply issues for Tesla.
+  [BORRAR]    id=446ddc059ceaee20
+    Elon Musk's semiconductor facility in Texas is set to be five times larger than the current largest building, aiming to alleviate chip supply issues.
+
+article_id=a2f2acf1b6d6862e  ticker=TSLA  event_type=earnings  (2 eventos)
+  [CONSERVAR] id=1889e8a6c8a55c1b
+    Tesla posted its strongest earnings inflection in years, raising questions about its future valuation and performance.
+  [BORRAR]    id=d38d4b4546ffdc98
+    Tesla reported its strongest earnings inflection in years, raising questions about its current stock valuation.
+
+article_id=b0f75a0cc12aa839  ticker=TSLA  event_type=analyst  (2 eventos)
+  [CONSERVAR] id=962ef6db08132de6
+    Analysts are leaning towards a 'hold' rating on Tesla despite increasing price targets, indicating a potential disconnect between analyst sentiment and market expectations.
+  [BORRAR]    id=9bf9102613deebdf
+    Analysts are leaning towards a 'hold' rating on Tesla despite increasing price targets, indicating a potential disconnect in market expectations.
+
+article_id=c6ccfcabd808c4a5  ticker=TSLA  event_type=other  (2 eventos)
+  [CONSERVAR] id=d9916ea6f535fe04
+    The end of a nearly 3-year strike by a Swedish union against Tesla's operations may improve labor relations and operational stability for the company.
+  [BORRAR]    id=a54e7daec98a5062
+    The end of a nearly 3-year strike by a Swedish union against Tesla's operations may improve labor relations and operational stability in the region.
+
+article_id=d02cf15c500e029d  ticker=TSLA  event_type=legal  (2 eventos)
+  [CONSERVAR] id=c3498809df7ab1aa
+    An NFL coach crashed his Tesla while using Autopilot, raising concerns about the safety and legal responsibilities of Tesla's self-driving technology.
+  [BORRAR]    id=140436d92db1111a
+    An NFL coach crashed his Tesla while using Autopilot, raising concerns about the safety and reliability of Tesla's self-driving technology.
+
+article_id=e21672ea9e5e354c  ticker=TSLA  event_type=m_and_a  (2 eventos)
+  [CONSERVAR] id=720aedebe85be5c1
+    Rumors suggest Tesla may separate its China business in preparation for a potential merger with SpaceX, which could reshape its operational strategy in Asia.
+  [BORRAR]    id=42d4caf350519e83
+    Rumors suggest Tesla may separate its China operations in preparation for a potential merger with SpaceX, which could reshape its business strategy in Asia.
+
+article_id=ee2146658908f2e7  ticker=TSLA  event_type=product  (2 eventos)
+  [CONSERVAR] id=017b2a7f4025c38f
+    Musk's plan for a $10 billion solar facility aims to significantly increase U.S. solar production, which could enhance Tesla's market position in renewable energy.
+  [BORRAR]    id=73d43c4c2adcca4b
+    Musk's plan for a $10 billion solar facility aims to significantly increase U.S. solar production, which could impact Tesla's market position.
+
+article_id=47c729e624894cc2  ticker=XOM  event_type=macro  (2 eventos)
+  [CONSERVAR] id=e47019b66fee7cdf
+    The indefinite closure of the Strait of Hormuz poses operational challenges and pricing risks for ExxonMobil, a major oil producer.
+  [BORRAR]    id=ce0c0bfa7d2ef328
+    The indefinite closure of the Strait of Hormuz poses operational challenges and pricing risks for ExxonMobil.
+
+======================================================================
+RESUMEN POR TICKER
+Ticker     Total ahora   A borrar   Quedarian
+----------------------------------------------
+AAPL               433         53         380 <-
+AMZN               123          9         114 <-
+GOOGL              155         23         132 <-
+JPM                227         17         210 <-
+META               217         18         199 <-
+MSFT               163         10         153 <-
+NVDA               188         17         171 <-
+PFE                 68          7          61 <-
+TSLA               228         21         207 <-
+XOM                 42          1          41 <-
+----------------------------------------------
+TOTAL             1844        176        1668
+
+IDs a borrar:
+  26e50c6b686412e9
+  f2200d54ff59345a
+  cb0ac2964ab9586a
+  e554f073ce47da16
+  8b5fd30f5bef07b7
+  8755ccd558e05a0b
+  96ac7beeb129472c
+  4f8360e63b186b5a
+  690f2e8931cea050
+  52b69d0cc01416e8
+  ef44c0063016ecba
+  7502f5fe15e35568
+  894984fe61323d03
+  903fa6bbba2a8954
+  ff9029beaba5c34d
+  b816718c3adcf2c2
+  fb8336364597d70a
+  9e7c011f6d296167
+  13e40bb558eaa232
+  15c55b73e364a840
+  7907172ffb512ec0
+  4e9984864c84374b
+  0c13f93ce721671e
+  b95b1c7af492622a
+  e15f3bef2a2b504d
+  e9a474d0bea5f934
+  d38a8130da18e8b2
+  1166420191f208f1
+  c64aa4ef6d0704a8
+  497b22e183a223e8
+  04fa822297fb045c
+  d3c95f9cd0b23973
+  78412484f5141759
+  8004479a898a9200
+  84c5cd04c2e3e3f3
+  ac5ff43f8cfd0853
+  67c59bf202a3fa7f
+  a94111ff483201e1
+  98e2d3692fdcb21e
+  ef16ac420e2b5b11
+  60ff5a6ae52a257b
+  e18e9c30265817d1
+  d3c1e83744aef38d
+  3bcf1a4b54976c6e
+  7860550ccd7795be
+  a6c21bddec7e028e
+  1e41d4c5b8377663
+  373023ebc5eca8f5
+  8ce5bd3ca5f249a4
+  7030ec5fc880ff68
+  c6857e3b3ef59835
+  65ec4f1ed270c371
+  82752b570577c779
+  741faa87287c9016
+  148ba259deb1c2de
+  d7528b176ac860c8
+  ee38a323666da44a
+  9fcaeb42a35a5156
+  8b009a55b3952ef7
+  4098941c4de63f60
+  5a7b88f597771911
+  0fd97691c4f893cb
+  28fcdb0984496313
+  eb495d8ce15129ee
+  4325249dec2fe698
+  997a1eaab0510eef
+  0820d6c468a8dba5
+  028d4bde3c65da33
+  82e8de4aac67a72d
+  22270172ed42f4b6
+  55cfc1efd3f57e8e
+  cf08f01c5cfad6ef
+  caf3846106fbcd7d
+  f14897bbdd6cf069
+  21aa61ace5ae0263
+  83cffd01b52c5d02
+  d8eacb2e856d10bc
+  601e40476ee608f9
+  394bbb5746d39b9a
+  47ca14eae7767dfc
+  3bc4b181ebe25f63
+  f85c28ffc758c454
+  0f717fbc4e2fc4ff
+  8a9e583c92bfc984
+  5a1c35afd98fe36a
+  67b3221c0ff19f7a
+  54d11f8e8f9956c9
+  69774ed2ef1340f3
+  af0a91e429d93913
+  74ffb3642f73ae83
+  c4beb3d8ed445e3e
+  f728de9ad2e32d53
+  d9a3ce4d88396e39
+  ee43205ca1555a44
+  bf2b2c4eab687ac2
+  153ab7789cacd8c6
+  30cbbf173b7de0f1
+  589c4c6492aa69b6
+  8c5fca510207c5ec
+  7c3709118d5f2d85
+  a3ca5a5b97679eab
+  5b222e5bafb6c14c
+  7a877a37b5b08c40
+  7079b0b2ea2ff8fc
+  7fe30133f6dcb9e3
+  cc7a6a161638b406
+  5c67b0e2bbf5360c
+  dc215ab71c5a335e
+  b963385d594cace0
+  e172b897ab8d863e
+  9cc7530e97b5d63f
+  1c6c3c1e932c2908
+  6b4875fde56ba5af
+  fa4ba9fa7491e3f9
+  3395ad838e7df3fe
+  017c8aeb4dccf9d4
+  2dfa19d4cfbf75f2
+  50b1823c4e0f1678
+  a19cee0fcdca0aec
+  a8c2a59be0cc18ef
+  d9463e22686b7567
+  2bcb772000508b17
+  9130a70ba6a79b4a
+  fc4665f51b91aa61
+  9ddf115616237018
+  5181f7d66239cd22
+  d8c96b37f4c49438
+  c97eba7eebea3ec1
+  01b6f1236f1e76a6
+  d29b794fa6e0cf1c
+  131cf0e53a37bd46
+  2e02f83f06b17921
+  6d523f24dfb07de7
+  9d18905ce9430b7c
+  dd9135e3fcdd084f
+  c409a1352259e323
+  054789bd8fba651d
+  2a975781658a0ae3
+  dfbddc75c1c99ee7
+  0c0a87f8d0932915
+  a2f56a6b2ea51def
+  ca87397bd03f572a
+  4c3666d29e9f07b7
+  290e7bc9fec06b9b
+  a6db98e5485fef4f
+  0b02e4e9620a7239
+  440765477bf027a7
+  d57b10919fb42261
+  b061ade4977fa6e4
+  3ab7aa24c4eec719
+  1989a0a53637cfee
+  072620efded2694e
+  dd8a657e653e4be3
+  c34ee2e7ceb149e8
+  ec727f0624eece05
+  d26ae360c8c516c3
+  237e0b626ac54620
+  3d84155def9ca75d
+  df416a8eaf0662f3
+  298875b30fb16399
+  0d31658e7140cfad
+  a63dc14276b57424
+  60fbe545f4bc0235
+  eaab0140e9e3fffe
+  5b95de688dd7cb38
+  e9237821488922b8
+  adb986021e5f9cce
+  9c6008df9ba7c146
+  446ddc059ceaee20
+  d38d4b4546ffdc98
+  9bf9102613deebdf
+  a54e7daec98a5062
+  140436d92db1111a
+  42d4caf350519e83
+  73d43c4c2adcca4b
+  ce0c0bfa7d2ef328

@@ -1,0 +1,80 @@
+1. TITULAR: These Stocks Are Today’s Movers: Microsoft, Meta, Tesla, IBM, SAP, Las Vegas Sands, Apple, and More
+   SUMMARY (131 chars): Microsoft shares tumble after Azure revenue growth slows, while Meta rises even as the Facebook parent ramps up its spending plans.
+   LABEL: negative
+
+2. TITULAR: Evercore ISI Group Maintains Outperform on Meta Platforms, Lowers Price Target to $820
+   SUMMARY (146 chars): Evercore ISI Group  analyst Mark Mahaney   maintains Meta Platforms (NASDAQ:META) with a Outperform and lowers the price target from $930 to $820.
+   LABEL: negative
+
+3. TITULAR: META Price Prediction: The Stock Will Hit $700 on This Date
+   SUMMARY (157 chars): Meta just crushed earnings by nearly 57% yet the stock sits flat on the year, and a specific date in fall 2026 is when our model says the dam finally breaks.
+   LABEL: negative
+
+4. TITULAR: AI Weekly: AI-fueled job fears and Big Tech's record investment
+   SUMMARY (2380 chars): STORY: From fears of AI-fueled unemployment, to Big Tech's record investment, this is AI Weekly. :: AI Weekly Fears of AI-fueled mass unemployment have unsettled global markets.That’s after a now-viral report on the disruptive potential of AI envisioned 2028 unemployment rising to 10.2%. It said as AI continues to rapidly turf out software and delivery applications it could prompt many layoffs. The markets have bet huge on the technology…And investors have now dumped the shares of software companies and those in sectors vulnerable to automation. AMD said Tuesday it’s agreed to sell up to $60 billion of AI chips to Meta over 5 years.It’s a deal that’ll allow the Facebook owner to purchase as much as 10% of the chip firm. It’s AMD’s second mega chip supply deal, having signed a similar pact with OpenAI last year. The move was considered a vote of confidence in AMD’s chips and software, significantly boosting its stock price. After the latest deal announcement, shares rose around 9% in pre-market trading. Three Chinese AI companies used chatbot Claude to improve their own models, its creator Anthropic said. It accused DeepSeek, Moonshot and MiniMax of creating more than 16 million interactions with Claude using roughly 24,000 fake accounts. Anthropic called this process “distillation” - which involves training a less capable model on the outputs of a stronger one.Anthropic warned that illicitly distilled models lacked necessary safeguards and created national security risks. The Trump administration plans to use a Pentagon-created AI program to help set reference prices for critical minerals. That’s according to three sources who spoke to Reuters. They said Washington will focus the AI pricing model on at least four critical minerals as it aims to build a global metals trading zone. That’s even as the AI technology has faced skepticism over whether it can retool how critical minerals are bought and sold.U.S. tech giants are expected to collectively invest $650 billion in AI in 2026. Bridgewater analysts said Alphabet, Amazon, Meta and Microsoft will scale up AI-related infrastructure…With investments marking a sharp increase from last year’s $410 billion. Analysts said the AI boom has entered a "more dangerous phase”. That’s as it’s marked by exponentially rising investments in physical infrastructure and growing reliance on outside capital.
+   LABEL: negative
+
+5. TITULAR: Mark Zuckerberg Threw $77 Billion 'Into The Toilet' On Metaverse, Says Economist Dean Baker: Asks If He Is Set To Waste Billions More On AI
+   SUMMARY (500 chars): Economist Dean Baker criticized Meta Platforms Inc. (NASDAQ:META) CEO Mark Zuckerberg's massive bet on the Metaverse, arguing the roughly $77 billion spent on the project represents not just a corporate loss, but a broader economic failure that carries real social costs. Zuckerberg Threw $77 Billion In his newsletter on Monday titled “Did Mark Zuckerberg Throw $77 Billion of Our Money into the Toilet?” Baker said that while Meta's Metaverse ambitions could be viewed as “just a mistaken investmen
+   LABEL: negative
+
+6. TITULAR: Why Is Meta Platforms (META) Down 2.9% Since Last Earnings Report?
+   SUMMARY (132 chars): Meta Platforms (META) reported earnings 30 days ago. What's next for the stock? We take a look at earnings estimates for some clues.
+   LABEL: negative
+
+7. TITULAR: Wall Street Resets Meta Price Targets After Earnings Shock
+   SUMMARY (70 chars): Meta Price Targets Cut as Analysts Flag Rising AI Costs After Earnings
+   LABEL: negative
+
+8. TITULAR: Meta's year of bold 'superintelligence' bets unlikely to pump profits
+   SUMMARY (549 chars): (Reuters) -It's crunch time for Mark Zuckerberg as he pulls out all the stops to stay relevant in Silicon Valley's intensifying advanced artificial intelligence race.  The Meta CEO has sparked a billion-dollar talent war, aggressively poaching researchers from rivals including OpenAI.  While Zuckerberg is no stranger to high-stakes pursuits - Meta's augmented-reality unit has burned more than $60 billion since 2020 - his latest push comes with added urgency because of the underwhelming performance of the company's large language Llama 4 model.
+   LABEL: negative
+
+9. TITULAR: Meta: Diminishing CapEx ROI Is Alarming (Rating Downgrade)
+   SUMMARY (108 chars): Meta Platforms' business momentum slows and fundamentals weaken. Click here to see why META stock is a Hold.
+   LABEL: negative
+
+10. TITULAR: Meta Stock Extends Historic Losing Streak After Weak Earnings Report
+   SUMMARY (120 chars): The social-media giant reports weaker-than-expected earnings and narrows its expectations for 2026 capital expenditures.
+   LABEL: negative
+
+11. TITULAR: Cantor Fitzgerald Maintains Overweight on Meta Platforms, Lowers Price Target to $750
+   SUMMARY (150 chars): Cantor Fitzgerald  analyst Deepak Mathivanan   maintains Meta Platforms (NASDAQ:META) with a Overweight and lowers the price target from $850 to $750.
+   LABEL: negative
+
+12. TITULAR: Is Meta Stock a Buy After Its Recent Drop From Glory?
+   SUMMARY (393 chars): One of the most interesting stocks to watch in the market right now (in my opinion) is that of Meta Platforms (NASDAQ:META). Shares of the social media and online advertising giant have been on a wild ride of late. A market selloff driven by concerns around artificial intelligence (AI) spending has sent shares of every major mega-cap ... Is Meta Stock a Buy After Its Recent Drop From Glory?
+   LABEL: negative
+
+13. TITULAR: Watch These ETFs to Tap Meta's 11% Slump Post Q3 Earnings Beat
+   SUMMARY (129 chars): Meta's post-earnings slump opens a window for investors to tap its upside through ETFs like IXP and XLC with heavy META exposure.
+   LABEL: negative
+
+14. TITULAR: Meta Beats Q1 Earnings but Revenue Miss and Capex Spike Hit NASDAQ:META
+   SUMMARY (154 chars): Meta beat Q1 earnings estimates but shares fell 5.6% on a slight revenue miss and raised capex outlook, as investor focus shifted to AI spending concerns.
+   LABEL: negative
+
+15. TITULAR: Meta's AI Strategy Looks Riskier Than Its Peers
+   SUMMARY (142 chars): Meta's costly AI strategy and Q3 tax charges led to a stock drop. Learn about META stock's monetization risks and what it means for investors.
+   LABEL: negative
+
+16. TITULAR: Stock Market Today: Dow Rises After Inflation Data; Meta Plunges On Earnings (Live Coverage)
+   SUMMARY (112 chars): Stock Market Today: The Dow Jones index rises Thursday after key inflation data. Meta stock plunges on earnings.
+   LABEL: negative
+
+17. TITULAR: Meta Stock Falls Sharply Despite Strong Earnings. Blame Higher Capex.
+   SUMMARY (103 chars): Shares of Facebook-parent Meta Platforms fell sharply in late trading Thursday despite strong earnings.
+   LABEL: negative
+
+18. TITULAR: Meta Stock Plunges 9.1% as Free Cash Flow Collapses 91%
+   SUMMARY (139 chars): Meta raised its minimum capital-spending forecast as its artificial-intelligence infrastructure expansion consumed substantially more cash.
+   LABEL: negative
+
+19. TITULAR: Meta Stock Slips After It Agrees To Buy AI Agent Startup Manus
+   SUMMARY (107 chars): Meta stock was slightly lower after the Facebook parent announced a deal to acquire AI agent startup Manus.
+   LABEL: negative
+
+20. TITULAR: Meta Vs. Palantir: Meta Platforms’ Deep Value Moats Crush Palantir’s Hyper-Inflatated Multiple
+   SUMMARY (251 chars): Meta and Palantir both crushed Q1 expectations, but their valuations now live in completely different universes. The case for owning one and merely renting the other comes down to a single uncomfortable question about what you are actually paying for.
+   LABEL: negative
+

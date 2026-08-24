@@ -1,0 +1,71 @@
+Pre-generating briefings: 9 tickers, days=7
+
+[AAPL] window 2026-08-10 to 2026-08-17 (newest article: 2026-08-17)
+  129 relevant articles in window [2026-08-10 -> 2026-08-17] (226 total)
+  Extracting events...
+  81 events extracted (76 material)
+[retrieval] Loading all-MiniLM-L6-v2...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 4077.60it/s]
+[retrieval] Embedder ready.
+  Saved -> reports\briefings\AAPL_2026-08-17.md
+C:\Users\rarra\Desktop\TFM\scripts\pregenerate_briefings.py:86: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  generated_at = datetime.utcnow().isoformat() + "Z"
+  OK saved (4498 chars)
+
+[AMZN] window 2026-08-10 to 2026-08-17 (newest article: 2026-08-17)
+  51 relevant articles in window [2026-08-10 -> 2026-08-17] (125 total)
+  Extracting events...
+  33 events extracted (25 material)
+  Saved -> reports\briefings\AMZN_2026-08-17.md
+  OK saved (4018 chars)
+
+[GOOGL] window 2026-08-11 to 2026-08-18 (newest article: 2026-08-18)
+  67 relevant articles in window [2026-08-11 -> 2026-08-18] (111 total)
+  Extracting events...
+  38 events extracted (36 material)
+  Saved -> reports\briefings\GOOGL_2026-08-18.md
+  OK saved (4195 chars)
+
+[JPM] window 2026-08-10 to 2026-08-17 (newest article: 2026-08-17)
+  48 relevant articles in window [2026-08-10 -> 2026-08-17] (73 total)
+  Extracting events...
+  32 events extracted (27 material)
+  Saved -> reports\briefings\JPM_2026-08-17.md
+  OK saved (3984 chars)
+
+[MSFT] window 2026-08-11 to 2026-08-18 (newest article: 2026-08-18)
+  60 relevant articles in window [2026-08-11 -> 2026-08-18] (163 total)
+  Extracting events...
+  36 events extracted (24 material)
+  Saved -> reports\briefings\MSFT_2026-08-18.md
+  OK saved (4043 chars)
+
+[NVDA] window 2026-08-11 to 2026-08-18 (newest article: 2026-08-18)
+  63 relevant articles in window [2026-08-11 -> 2026-08-18] (229 total)
+  Extracting events...
+  50 events extracted (29 material)
+  Saved -> reports\briefings\NVDA_2026-08-18.md
+  OK saved (3778 chars)
+
+[PFE] window 2026-08-11 to 2026-08-18 (newest article: 2026-08-18)
+  22 relevant articles in window [2026-08-11 -> 2026-08-18] (40 total)
+  Extracting events...
+  19 events extracted (18 material)
+  Saved -> reports\briefings\PFE_2026-08-18.md
+  OK saved (4130 chars)
+
+[TSLA] window 2026-08-10 to 2026-08-17 (newest article: 2026-08-17)
+  92 relevant articles in window [2026-08-10 -> 2026-08-17] (123 total)
+  Extracting events...
+  55 events extracted (47 material)
+  Saved -> reports\briefings\TSLA_2026-08-17.md
+  OK saved (4551 chars)
+
+[XOM] window 2026-08-10 to 2026-08-17 (newest article: 2026-08-17)
+  20 relevant articles in window [2026-08-10 -> 2026-08-17] (32 total)
+  Extracting events...
+  9 events extracted (7 material)
+  Saved -> reports\briefings\XOM_2026-08-17.md
+  OK saved (3957 chars)
+
+Done. 9 OK / 0 errors.

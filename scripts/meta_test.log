@@ -1,0 +1,15 @@
+Pre-generating briefings: 1 tickers, days=7
+
+[META] window 2026-08-11 to 2026-08-18 (newest article: 2026-08-18)
+  50 relevant articles in window [2026-08-11 -> 2026-08-18] (94 total)
+  Extracting events...
+  38 events extracted (28 material)
+[retrieval] Loading all-MiniLM-L6-v2...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 9792.67it/s]
+[retrieval] Embedder ready.
+  Saved -> reports\briefings\META_2026-08-18.md
+C:\Users\rarra\Desktop\TFM\scripts\pregenerate_briefings.py:86: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  generated_at = datetime.utcnow().isoformat() + "Z"
+  OK saved (4269 chars)
+
+Done. 1 OK / 0 errors.
