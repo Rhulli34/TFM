@@ -501,6 +501,25 @@ function renderEvents(events) {
 }
 
 // ── Render: briefing tab ──────────────────────────────────────────────────────
+function _applyBriefingSentimentBadges(bodyEl) {
+  bodyEl.querySelectorAll('table').forEach(table => {
+    const headerCells = [...table.querySelectorAll('thead th, tr:first-child th')];
+    const sentIdx = headerCells.findIndex(th =>
+      /sentim/i.test(th.textContent)
+    );
+    if (sentIdx < 0) return;
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      const td = tr.querySelectorAll('td')[sentIdx];
+      if (!td) return;
+      const raw = td.textContent.trim().toLowerCase();
+      const cls = /neg/.test(raw) ? 'sent-badge--neg'
+                : /pos/.test(raw) ? 'sent-badge--pos'
+                : 'sent-badge--neu';
+      td.innerHTML = `<span class="sent-badge ${cls}">${escapeHtml(td.textContent.trim())}</span>`;
+    });
+  });
+}
+
 async function setupBriefingTab(ticker) {
   const pane = document.getElementById('tab-briefing');
   pane.innerHTML = `<div class="briefing-loading"><div class="spinner"></div><span>Cargando informe…</span></div>`;
@@ -515,6 +534,7 @@ async function setupBriefingTab(ticker) {
       <div class="briefing-header">${escapeHtml(windowLabel)}</div>
       <div class="briefing-meta">Generado el ${dateLabel}</div>
       <div class="briefing-body">${marked.parse(brief.markdown)}</div>`;
+    _applyBriefingSentimentBadges(pane.querySelector('.briefing-body'));
   } catch (err) {
     const isNotFound = err.message.startsWith('404');
     pane.innerHTML = `<div class="error-state">${

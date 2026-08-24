@@ -24,31 +24,42 @@ load_dotenv(ROOT / ".env")
 _BRIEFING_DIR = REPORTS_DIR / "briefings"
 
 _SYNTHESIS_SYSTEM = """\
-You are a financial research analyst writing concise briefings for a portfolio management desk.
+Eres un analista de riesgo financiero. Redacta un briefing en ESPAÑOL sobre {ticker} para el \
+periodo {from_date}–{to_date}, a partir de los artículos y eventos que se te dan. Los titulares \
+y nombres de fuentes se mantienen en inglés. NO inventes datos: usa solo lo aportado.
 
-Write a structured markdown briefing for {ticker} covering {from_date} to {to_date}.
+Estructura obligatoria (mantén las cabeceras ## exactas):
 
-Use EXACTLY this structure (keep the ## headers verbatim):
+## Veredicto
+2–3 frases: ¿cuál es la situación de la empresa esta semana? Empieza por lo más material. \
+Si se ha disparado una alerta, explica en una frase por qué (sentimiento muy negativo u evento legal).
 
-## Executive Summary
-Two to three sentences on the most important developments in the period.
+## Termómetro de sentimiento
+Distribución Negativo/Neutro/Positivo (%). Una frase de interpretación.
 
-## Key Events
-Bulleted list. Each bullet: [event_type] one-sentence description.
-Include ALL extracted events provided. If none, write "No material events identified."
+## Temas clave
+AGRUPA los artículos por tema, NO listes eventos sueltos. Si varios artículos hablan del MISMO \
+hecho, es UN solo tema con el nº de artículos entre paréntesis. Ordena los temas por \
+materialidad/riesgo, marcando cada uno con 🔴 ALTO / 🟠 MEDIO / 🟢 BAJO. No uses una categoría \
+"otros" como cajón de sastre: reparte esos ítems en temas con sentido. Si dos artículos se \
+contradicen, reconcílialo explicando que son catalizadores distintos.
 
-## Sentiment Distribution
-One line with the figures (e.g. "Negative 20% | Neutral 42% | Positive 38%").
-One sentence of interpretation relevant to the portfolio desk.
+## Señales de riesgo
+Los 3–5 riesgos más materiales, ya deduplicados (no repitas el mismo hecho varias veces). \
+Si una cifra parece un máximo teórico, indícalo ("hasta X, máximo teórico") en vez de afirmarla \
+como si fuera segura. Distingue tono (sentimiento) de hecho (evento): aclara cuándo algo suena \
+mal pero no ha pasado nada material, y viceversa.
 
-## Risk Flags
-Bulleted list of negative, legal, or guidance-cut events only.
-If none, write "None identified."
+## Fuentes principales
+Tabla markdown con los artículos más relevantes: titular en inglés, fecha (YYYY-MM-DD), sentimiento.
 
-## Top Source Articles
-List up to 5 of the most relevant articles: headline, date (YYYY-MM-DD), sentiment label.
-
-Be factual, concise, and investment-focused. Do not add sections beyond the above five.
+Reglas de rigor:
+- Deduplica. Un hecho = una entrada + recuento de artículos entre paréntesis.
+- Etiquetas de sentimiento SIEMPRE en español: negativo / neutro / positivo (nunca en inglés).
+- Juicio federal contra Meta (si aplica): presenta SIEMPRE la cifra de daños como \
+"hasta 1,4 billones de dólares (máximo teórico legal)". Añade que las partes barajan \
+~200.000 millones de dólares como cifra realista y que el jurado es consultivo \
+(la decisión final corresponde a la jueza). Nunca la presentes como condena esperada.
 """
 
 
@@ -174,10 +185,10 @@ def generate_briefing(
 
     # ── 5. Assemble final markdown and save ───────────────────────────────────
     header = (
-        f"# Financial News Briefing: {ticker}\n"
-        f"**Period:** {from_str} to {to_str}  \n"
-        f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M')}  \n"
-        f"**Articles analysed:** {len(articles)}  \n\n"
+        f"# Informe de noticias: {ticker}\n"
+        f"**Periodo:** {from_str} a {to_str}  \n"
+        f"**Generado:** {datetime.now().strftime('%Y-%m-%d %H:%M')}  \n"
+        f"**Artículos analizados:** {len(articles)}  \n\n"
     )
     markdown = header + body
 
