@@ -294,13 +294,12 @@ def portfolio(
                         f" en {n} noticias (últimos {days} días)"
                     )
                 if legal_count > 0:
-                    first_desc = legal_rows[0]["description"][:160]
                     label = (
-                        "Evento legal detectado"
+                        f"1 evento legal detectado (últimos {days} días)"
                         if legal_count == 1
-                        else f"{legal_count} eventos legales detectados"
+                        else f"{legal_count} eventos legales detectados (últimos {days} días)"
                     )
-                    parts.append(f"{label}: {first_desc}")
+                    parts.append(label)
                 reason = ". ".join(parts)
 
             results.append(

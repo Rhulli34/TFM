@@ -186,31 +186,108 @@ def query_news_window(
     return [dict(r) for r in rows]
 
 
+_EVENT_SIM_THRESHOLD = 0.85
+
+
+def _dedup_event_list(items: list[dict]) -> list[dict]:
+    """Remove near-duplicate events within the same (article_id, event_type) group.
+
+    Two events are duplicates when SequenceMatcher similarity >= _EVENT_SIM_THRESHOLD.
+    The longer description is kept; on equal length the first occurrence wins.
+    Guarantees at least one survivor per input group.
+    """
+    from difflib import SequenceMatcher
+
+    if len(items) == 1:
+        return items
+    descs = [it["description"] for it in items]
+    drop: set[int] = set()
+    for i in range(len(items)):
+        for j in range(i + 1, len(items)):
+            if SequenceMatcher(None, descs[i], descs[j]).ratio() >= _EVENT_SIM_THRESHOLD:
+                if len(descs[i]) >= len(descs[j]):
+                    drop.add(j)
+                else:
+                    drop.add(i)
+    return [it for k, it in enumerate(items) if k not in drop]
+
+
 def upsert_events(events: list[dict[str, Any]], db_path: Path = DB_PATH) -> int:
-    """INSERT OR IGNORE event rows. Returns count of newly inserted rows."""
+    """Insert events, skipping near-duplicate descriptions for the same article+type.
+
+    Step 1 — deduplicate within the incoming batch (same article_id + event_type,
+              similarity >= _EVENT_SIM_THRESHOLD).
+    Step 2 — for each candidate, check existing DB rows for the same article_id +
+              event_type. If a near-duplicate exists and is longer, skip the new one.
+              If the new one is longer, delete the existing row and insert the new one.
+
+    Returns count of newly inserted rows.
+    """
+    from difflib import SequenceMatcher
+    from itertools import groupby
+
     if not events:
         return 0
-    rows = [
-        (
-            e["id"],
-            e["article_id"],
-            e["ticker"],
-            e["datetime"],
-            e["event_type"],
-            e.get("entities"),
-            e["description"],
-            int(e.get("is_material", 1)),
-        )
-        for e in events
-    ]
+
+    # Step 1: dedup within the batch
+    key = lambda e: (e["article_id"], e["event_type"])
+    deduped: list[dict] = []
+    for _, grp in groupby(sorted(events, key=key), key=key):
+        deduped.extend(_dedup_event_list(list(grp)))
+
+    inserted = 0
     with _connect(db_path) as conn:
-        cur = conn.executemany(
-            """INSERT OR IGNORE INTO events
-               (id, article_id, ticker, datetime, event_type, entities, description, is_material)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
-            rows,
-        )
-        return cur.rowcount
+        conn.row_factory = sqlite3.Row
+
+        # Step 2: check against existing DB rows per (article_id, event_type)
+        for (art_id, ev_type), grp in groupby(
+            sorted(deduped, key=key), key=key
+        ):
+            new_items = list(grp)
+            existing = conn.execute(
+                "SELECT id, description FROM events WHERE article_id=? AND event_type=?",
+                (art_id, ev_type),
+            ).fetchall()
+
+            to_insert: list[dict] = []
+            for new in new_items:
+                dup_found = False
+                for ex in existing:
+                    sim = SequenceMatcher(
+                        None, new["description"], ex["description"]
+                    ).ratio()
+                    if sim >= _EVENT_SIM_THRESHOLD:
+                        dup_found = True
+                        if len(new["description"]) > len(ex["description"]):
+                            # New is longer: replace existing (delete + insert)
+                            conn.execute("DELETE FROM events WHERE id=?", (ex["id"],))
+                            to_insert.append(new)
+                        # else: existing is longer or equal — discard new silently
+                        break
+                if not dup_found:
+                    to_insert.append(new)
+
+            for e in to_insert:
+                conn.execute(
+                    """INSERT OR IGNORE INTO events
+                       (id, article_id, ticker, datetime, event_type, entities, description, is_material)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                    (
+                        e["id"],
+                        e["article_id"],
+                        e["ticker"],
+                        e["datetime"],
+                        e["event_type"],
+                        e.get("entities"),
+                        e["description"],
+                        int(e.get("is_material", 1)),
+                    ),
+                )
+                inserted += conn.execute(
+                    "SELECT changes()"
+                ).fetchone()[0]
+
+    return inserted
 
 
 def populate_relevance(db_path: Path = DB_PATH) -> dict[str, dict[str, int]]:

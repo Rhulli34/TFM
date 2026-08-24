@@ -49,6 +49,8 @@ Rules:
 - Do not fabricate events not supported by the text.
 - Generic market commentary with no company-specific content -> events: []
 - One article may produce multiple events (e.g. earnings + guidance).
+- Do NOT emit two events of the same event_type for the same article if \
+they describe the same fact with different wording. Merge them into one.
 """
 
 

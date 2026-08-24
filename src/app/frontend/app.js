@@ -152,6 +152,30 @@ function renderPortfolio() {
   const loading = document.getElementById('grid-loading');
   if (loading) loading.classList.add('hidden');
 
+  // Guard: grid is critical — nothing to paint without it
+  if (!grid) {
+    console.warn('renderPortfolio: #company-grid not found in DOM');
+    return;
+  }
+
+  // Alerts strip (non-critical: grid still paints if strip is missing)
+  const strip   = document.getElementById('alerts-strip');
+  if (!strip) console.warn('renderPortfolio: #alerts-strip not found in DOM');
+  const alerted = state.portfolio.filter(i => i.alert);
+  if (strip) {
+    if (alerted.length === 0) {
+      strip.style.display = 'none';
+      strip.innerHTML = '';
+    } else {
+      const label = alerted.length === 1 ? '1 empresa en alerta' : `${alerted.length} empresas en alerta`;
+      const chips = alerted.map(i =>
+        `<button class="alert-chip" onclick="showCompany('${escapeHtml(i.ticker)}')">${escapeHtml(i.ticker)}</button>`
+      ).join('');
+      strip.innerHTML = `<span class="alerts-strip-label">⚠ ${label}</span>${chips}`;
+      strip.style.display = 'flex';
+    }
+  }
+
   if (!state.portfolio.length) {
     grid.innerHTML = '<div class="empty-state">No hay empresas seleccionadas.</div>';
     return;
@@ -445,6 +469,18 @@ function renderNews(news) {
 }
 
 // ── Render: events ────────────────────────────────────────────────────────────
+const EVENT_LABEL = {
+  earnings:   'Resultados',
+  guidance:   'Previsiones',
+  m_and_a:    'Fusiones y compras',
+  leadership: 'Cambios directivos',
+  legal:      'Legal',
+  product:    'Producto',
+  analyst:    'Opinión de analistas',
+  macro:      'Contexto de mercado',
+  other:      'Otros',
+};
+
 const EVENT_STYLE = {
   legal:      { bg: '#FEF2F2', border: '#FECACA', text: '#991B1B' },
   earnings:   { bg: '#FFFBEB', border: '#FDE68A', text: '#92400E' },
@@ -466,7 +502,7 @@ function eventItemHTML(ev) {
       <span class="event-date">${ev.datetime.slice(0, 10)}</span>
       <span class="event-type-badge"
             style="background:${s.bg};border-color:${s.border};color:${s.text}">
-        ${ev.event_type}
+        ${EVENT_LABEL[ev.event_type] || ev.event_type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}
       </span>
       <span class="event-material ${cls}">${dot}</span>
     </div>

@@ -890,6 +890,47 @@ button { font-family: var(--font); }
   flex-shrink: 0;
 }
 
+/* ── Alerts strip ─────────────────────────────────────────────────────────── */
+#alerts-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #FFF5F5;
+  border: 1px solid #FECACA;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.alerts-strip-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #991B1B;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+
+.alert-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: #FEE2E2;
+  border: 1px solid #FECACA;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #991B1B;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.alert-chip:hover {
+  background: #FECACA;
+  box-shadow: 0 1px 4px rgba(153,27,27,.15);
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .company-grid { grid-template-columns: repeat(2, 1fr); }
