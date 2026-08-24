@@ -513,6 +513,13 @@ function eventItemHTML(ev) {
 function renderEvents(events) {
   const pane   = document.getElementById('tab-events');
   const tabBtn = document.querySelector('[data-tab="events"]');
+
+  // Guard: if the DOM element is missing (e.g. stale cache), bail cleanly
+  if (!pane) {
+    console.warn('renderEvents: #tab-events not found in DOM');
+    return;
+  }
+
   if (!events.length) {
     if (tabBtn) tabBtn.classList.add('hidden');
     pane.innerHTML = '';
@@ -520,20 +527,68 @@ function renderEvents(events) {
   }
   if (tabBtn) tabBtn.classList.remove('hidden');
 
-  const material    = events.filter(e => e.is_material);
-  const nonMaterial = events.filter(e => !e.is_material);
-  let html = '';
+  // Alert state: reuse the flag already in state.portfolio
+  const pItem    = state.portfolio.find(p => p.ticker === state.detailTicker);
+  const hasAlert = pItem?.alert ?? false;
 
-  if (material.length) {
-    html += `<div class="events-section-label">Eventos materiales — ${material.length}</div>`;
-    html += material.map(eventItemHTML).join('');
+  // Group by event_type
+  const groups = {};
+  for (const ev of events) {
+    if (!groups[ev.event_type]) groups[ev.event_type] = [];
+    groups[ev.event_type].push(ev);
   }
-  if (nonMaterial.length) {
-    html += `<div class="events-section-label">No materiales — ${nonMaterial.length}</div>`;
-    html += nonMaterial.map(eventItemHTML).join('');
+
+  // Within each group: material first, then datetime DESC
+  for (const type in groups) {
+    groups[type].sort((a, b) => {
+      if (a.is_material !== b.is_material) return a.is_material ? -1 : 1;
+      return b.datetime.localeCompare(a.datetime);
+    });
+  }
+
+  // Group order: legal first, then by size DESC, 'other' last
+  const types = Object.keys(groups).sort((a, b) => {
+    if (a === 'legal' && b !== 'legal') return -1;
+    if (b === 'legal' && a !== 'legal') return  1;
+    if (a === 'other' && b !== 'other') return  1;
+    if (b === 'other' && a !== 'other') return -1;
+    return groups[b].length - groups[a].length;
+  });
+
+  const totalMaterial = events.filter(e => e.is_material).length;
+  let html = `<div class="events-summary">${events.length} eventos · ${totalMaterial} materiales</div>`;
+
+  for (const type of types) {
+    const items  = groups[type];
+    const label  = EVENT_LABEL[type] || type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const isOpen = hasAlert && type === 'legal';
+    const bodyId = `ev-group-${type}`;
+
+    html += `
+      <div class="ev-group">
+        <button class="ev-group-header" aria-expanded="${isOpen}" data-body="${bodyId}">
+          <span class="ev-group-arrow">${isOpen ? '▾' : '▸'}</span>
+          <span class="ev-group-label">${label}</span>
+          <span class="ev-group-count">${items.length}</span>
+        </button>
+        <div class="ev-group-body${isOpen ? '' : ' hidden'}" id="${bodyId}">
+          ${items.map(eventItemHTML).join('')}
+        </div>
+      </div>`;
   }
 
   pane.innerHTML = html;
+
+  // Wire collapse toggles
+  pane.querySelectorAll('.ev-group-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bodyEl = document.getElementById(btn.dataset.body);
+      const open   = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.querySelector('.ev-group-arrow').textContent = open ? '▸' : '▾';
+      bodyEl.classList.toggle('hidden', open);
+    });
+  });
 }
 
 // ── Render: briefing tab ──────────────────────────────────────────────────────

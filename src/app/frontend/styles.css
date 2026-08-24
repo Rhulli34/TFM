@@ -634,6 +634,59 @@ button { font-family: var(--font); }
   line-height: 1.5;
 }
 
+/* ── Event groups (collapsible) ───────────────────────────────────────────── */
+.events-summary {
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 12px;
+  padding-left: 2px;
+}
+.ev-group {
+  margin-bottom: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.ev-group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+.ev-group-header:hover { background: #F3F4F6; }
+.ev-group-arrow {
+  font-size: 11px;
+  color: var(--text-3);
+  width: 10px;
+  flex-shrink: 0;
+}
+.ev-group-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+  flex: 1;
+}
+.ev-group-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--border);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.ev-group-body {
+  padding: 8px 10px;
+  border-top: 1px solid var(--border);
+}
+.ev-group-body .event-item { margin-bottom: 6px; }
+.ev-group-body .event-item:last-child { margin-bottom: 0; }
+
 /* ── Briefing ─────────────────────────────────────────────────────────────── */
 .briefing-header {
   font-size: 15px;
