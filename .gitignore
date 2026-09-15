@@ -22,3 +22,7 @@ reports/briefings/
 
 # Memoria TFM: borradores locales de los capitulos (el documento final vive en Overleaf)
 capitulos/
+
+# Configuracion local de Claude Code (no se sube, permanece en disco)
+.claude/
+CLAUDE.md
