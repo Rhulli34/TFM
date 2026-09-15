@@ -19,3 +19,6 @@ reports/briefings/
 *.sqlite
 .DS_Store
 .vscode/
+
+# Memoria TFM: borradores locales de los capitulos (el documento final vive en Overleaf)
+capitulos/

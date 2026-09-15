@@ -1,0 +1,350 @@
+\chapter{Análisis exploratorio del corpus}
+\label{anx:eda}
+
+Este anexo recoge el detalle del análisis exploratorio del Financial PhraseBank
+resumido en el capítulo~\ref{cap:datos}. Las estadísticas del corpus proceden de
+\texttt{reports/results/eda\_corpus.json}, y el reparto de clases sobre las
+frases finalmente utilizadas se obtiene de los tres ficheros de partición
+generados a partir de él.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Composición de la variante empleada (acuerdo unánime entre anotadores).}
+  \label{tab:anx-corpus}
+  \begin{tabular}{lr}
+    \toprule
+    Concepto & Valor \\
+    \midrule
+    Frases totales del corpus       & 2.264 \\
+    Duplicados exactos eliminados   & 5 \\
+    Frases únicas utilizadas        & 2.259 \\
+    Registros nulos o vacíos        & 0 \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Reparto de clases sobre las 2.259 frases utilizadas}} \\
+    Frases negativas                & 303 (13,4\%) \\
+    Frases neutras                  & 1.386 (61,4\%) \\
+    Frases positivas                & 570 (25,2\%) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Los cinco duplicados exactos eliminados pertenecían todos a la clase neutra, de
+modo que su retirada no altera de forma apreciable las proporciones del corpus.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Longitud de las frases del corpus.}
+  \label{tab:anx-longitudes}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    Medida & Media & Mediana & Desv. típica & Mínimo & Máximo \\
+    \midrule
+    Palabras    & 22,4  & 21,0  & 10,1 & 2 & 81  \\
+    Caracteres  & 122,0 & 111,0 & 56,2 & 9 & 315 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+El corpus se distribuye en cuatro variantes según el grado de acuerdo exigido
+entre anotadores. La tabla~\ref{tab:anx-variantes} las compara. Se eligió la más
+exigente por ser la menos ambigua, asumiendo que es también la más pequeña.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Comparación de las cuatro variantes del Financial PhraseBank. Los
+           recuentos por clase corresponden al total de cada variante, antes de
+           eliminar duplicados exactos.}
+  \label{tab:anx-variantes}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    Variante & Totales & Únicas & Negativas & Neutras & Positivas \\
+    \midrule
+    Acuerdo unánime (100\%) & 2.264 & 2.259 & 303 & 1.391 & 570 \\
+    Acuerdo del 75\%        & 3.453 & 3.448 & 420 & 2.146 & 887 \\
+    Acuerdo del 66\%        & 4.217 & 4.211 & 514 & 2.535 & 1.168 \\
+    Acuerdo del 50\%        & 4.846 & 4.838 & 604 & 2.879 & 1.363 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{class_distribution.png}
+  \caption{Distribución de clases en la variante de acuerdo unánime. El
+           desequilibrio en contra de la clase negativa es el que obliga a
+           ponderar las clases durante el entrenamiento.}
+  \label{fig:anx-clases}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{text_length_distribution.png}
+  \caption{Distribución de la longitud de las frases, próxima al formato de un
+           titular.}
+  \label{fig:anx-longitud}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{text_length_boxplot.png}
+  \caption{Longitud de las frases por clase. Las tres clases presentan
+           longitudes comparables, de modo que la longitud no actúa como pista
+           espuria para el clasificador.}
+  \label{fig:anx-boxplot}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{config_comparison.png}
+  \caption{Tamaño y reparto de clases de las cuatro variantes del corpus.}
+  \label{fig:anx-variantes-fig}
+\end{figure}
+
+\chapter{Detalle del núcleo de modelado}
+\label{anx:modelado}
+
+Este anexo completa el capítulo~\ref{cap:modelado} con la configuración de los
+modelos y con el desglose por clases que allí se resume. Las cifras proceden de
+\texttt{reports/results/baseline.json}, \texttt{transformer.json} y
+\texttt{llm\_zeroshot.json}.
+
+\section{Hiperparámetros del entrenamiento}
+\label{anx:hiperparametros}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Configuración del ajuste fino de DeBERTa-v3-base.}
+  \label{tab:anx-hiper}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    Parámetro & Valor \\
+    \midrule
+    Modelo de partida           & \texttt{microsoft/deberta-v3-base} \\
+    Longitud máxima de entrada  & 128 unidades léxicas \\
+    Épocas                      & 10 \\
+    Tasa de aprendizaje         & 0,00002 \\
+    Tamaño de lote              & 16 \\
+    Acumulación de gradiente    & 1 \\
+    Proporción de calentamiento & 0,1 \\
+    Decaimiento de pesos        & 0,01 \\
+    Precisión numérica          & completa (32 bits; media precisión desactivada) \\
+    Peso de la clase negativa   & 2,4858 \\
+    Peso de la clase neutra     & 0,5433 \\
+    Peso de la clase positiva   & 1,3208 \\
+    Criterio de selección       & macro-F1 sobre validación \\
+    Tiempo de entrenamiento     & 3 minutos en GPU \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+La precisión numérica completa no es la opción habitual, ya que la media
+precisión acelera el entrenamiento, pero resultaba incompatible con la función
+de pérdida ponderada empleada para compensar el desequilibrio de clases.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Configuración del modelo base y del modelo de lenguaje sin
+           entrenamiento.}
+  \label{tab:anx-hiper-otros}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    Parámetro & Valor \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Modelo base: TF-IDF y LinearSVC}} \\
+    Rango de n-gramas            & 1 a 2 \\
+    Frecuencia mínima de término & 2 \\
+    Escalado sublineal           & activado \\
+    Tamaño del vocabulario       & 5.208 términos \\
+    Parámetro de regularización  & 0,5 \\
+    Alternativa descartada       & regresión logística (macro-F1 de 0,8547) \\
+    \midrule
+    \multicolumn{2}{l}{\textit{Modelo de lenguaje sin entrenamiento}} \\
+    Modelo                       & \texttt{gpt-4o-mini} \\
+    Temperatura                  & 0 \\
+    Frases evaluadas             & 339 \\
+    Respuestas no interpretables & 0 \\
+    Coste total                  & 0,0108 dólares \\
+    Tiempo total                 & 266,8 segundos \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Métricas por clase}
+\label{anx:por-clase}
+
+La tabla~\ref{tab:anx-porclase} recoge el desglose completo sobre el conjunto de
+prueba, 339 frases que ningún modelo utilizó durante su desarrollo. La columna de
+apoyo indica cuántas frases de cada clase contiene ese conjunto.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Precisión, cobertura y F1 por clase de los tres enfoques sobre el
+           conjunto de prueba.}
+  \label{tab:anx-porclase}
+  \begin{tabular}{llrrrr}
+    \toprule
+    Enfoque & Clase & Precisión & Cobertura & F1 & Apoyo \\
+    \midrule
+    \multirow{3}{*}{TF-IDF y LinearSVC}
+      & Negativa & 0,8750 & 0,7609 & 0,8140 & 46 \\
+      & Neutra   & 0,9050 & 0,9615 & 0,9324 & 208 \\
+      & Positiva & 0,8590 & 0,7882 & 0,8221 & 85 \\
+    \midrule
+    \multirow{3}{*}{DeBERTa-v3-base ajustado}
+      & Negativa & 0,9583 & 1,0000 & 0,9787 & 46 \\
+      & Neutra   & 0,9952 & 0,9904 & 0,9928 & 208 \\
+      & Positiva & 0,9762 & 0,9647 & 0,9704 & 85 \\
+    \midrule
+    \multirow{3}{*}{gpt-4o-mini sin entrenamiento}
+      & Negativa & 0,9583 & 1,0000 & 0,9787 & 46 \\
+      & Neutra   & 0,9623 & 0,9808 & 0,9714 & 208 \\
+      & Positiva & 0,9747 & 0,9059 & 0,9390 & 85 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Dos lecturas merecen destacarse. La primera es que el modelo base recupera solo
+el 76,09\% de las frases negativas, mientras que los otros dos las identifican
+todas. La segunda es que el modelo de lenguaje sin entrenamiento coincide con el
+ajustado en la clase negativa, cifra por cifra, y su diferencia se concentra por
+completo en la clase positiva, donde su cobertura baja al 90,59\%.
+
+\section{Matrices de confusión}
+\label{anx:confusion}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{baseline_confusion_matrix_linearsvc.png}
+  \caption{Matriz de confusión del modelo base sobre el conjunto de prueba.}
+  \label{fig:anx-cm-baseline}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{transformer_confusion_matrix_deberta.png}
+  \caption{Matriz de confusión de DeBERTa-v3-base ajustado. La fila de la clase
+           negativa no presenta ningún fallo.}
+  \label{fig:anx-cm-deberta}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{llm_zeroshot_confusion_matrix.png}
+  \caption{Matriz de confusión de gpt-4o-mini sin entrenamiento. Los errores se
+           concentran en frases positivas clasificadas como neutras.}
+  \label{fig:anx-cm-llm}
+\end{figure}
+
+\chapter{Contraste empírico: figuras}
+\label{anx:backtest}
+
+Este anexo recoge las figuras de los tres análisis del capítulo~\ref{cap:backtest},
+calculados sobre la ventana comprendida entre el 25 de junio de 2025 y el 24 de
+junio de 2026.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{backtest_leadlag.png}
+  \caption{Correlación entre la señal de sentimiento y el rendimiento del precio
+           a distintos desfases. Los desfases negativos comparan con días
+           anteriores y los positivos con días posteriores. La relación
+           detectable se sitúa a la izquierda del cero, es decir, hacia el
+           pasado.}
+  \label{fig:anx-leadlag}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{backtest_eventstudy.png}
+  \caption{Diferencia de rendimiento tras las jornadas de sentimiento más bajo,
+           a uno, tres y cinco días, por empresa y en conjunto. Ninguna
+           diferencia alcanza significación estadística.}
+  \label{fig:anx-eventstudy}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{backtest_casestudy.png}
+  \caption{Caso de estudio visual sobre dos valores de la cartera, con la
+           evolución conjunta de la señal de sentimiento y del precio.}
+  \label{fig:anx-casestudy}
+\end{figure}
+
+\chapter{Despliegue}
+\label{anx:despliegue}
+
+Este anexo detalla el empaquetado y los puntos de acceso del servidor descritos
+en el capítulo~\ref{cap:app}.
+
+\section{Empaquetado}
+\label{anx:empaquetado}
+
+La imagen parte de \texttt{python:3.12-slim} y se construye en capas ordenadas de
+menor a mayor frecuencia de cambio, de modo que una modificación del código no
+obligue a reinstalar las dependencias.
+
+La primera capa instala PyTorch desde el índice de distribución específico para
+procesadores convencionales, en lugar de la versión con soporte para tarjetas
+gráficas que se obtendría por defecto. En explotación no se entrena nada, y el
+trabajo pesado de clasificación y de extracción pertenece a la fase de
+preparación de los datos, no al servicio en funcionamiento, de modo que la
+variante para procesadores convencionales resulta suficiente y reduce el tamaño
+final de la imagen de forma apreciable. La segunda capa instala el resto de
+dependencias de ejecución desde un fichero de requisitos propio de producción,
+del que se han excluido las herramientas de análisis y experimentación. Se
+instala además la biblioteca del sistema que necesita el índice vectorial para
+paralelizar.
+
+La tercera capa copia el código fuente y la cuarta incorpora la base de datos
+SQLite dentro de la propia imagen, lo que permite que el contenedor arranque con
+todos sus datos sin depender de almacenamiento externo. La quinta descarga el
+modelo de clasificación desde Hugging Face Hub durante la construcción y lo deja
+en la caché local, evitando así una descarga de varios cientos de megabytes en
+cada reactivación del servicio.
+
+El contenedor se ejecuta con un usuario sin privilegios de administrador y
+escucha en el puerto 7860 por defecto, valor que puede sustituirse mediante una
+variable de entorno, que es el mecanismo por el que la plataforma de despliegue
+asigna el suyo.
+
+\section{Puntos de acceso de la API}
+\label{anx:endpoints}
+
+El servidor expone cinco puntos de acceso de datos y sirve además la interfaz
+web desde la raíz.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Puntos de acceso del servidor.}
+  \label{tab:anx-endpoints}
+  \begin{tabularx}{\textwidth}{lX}
+    \toprule
+    Ruta & Función \\
+    \midrule
+    \texttt{/health} & Comprueba que el servicio responde y devuelve el entorno activo. \\
+    \texttt{/catalog} & Lista las empresas disponibles con su volumen y rango de fechas. \\
+    \texttt{/portfolio} & Resumen por empresa y bandera de alerta para la ventana elegida. \\
+    \texttt{/company/\{ticker\}} & Serie de sentimiento, noticias recientes y eventos de una empresa. \\
+    \texttt{/company/\{ticker\}/briefing} & Devuelve el informe pre-generado de esa empresa. \\
+    \texttt{/} & Sirve la interfaz web. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+El catálogo es dinámico: cualquier empresa con noticias relevantes en la base de
+datos aparece en él sin necesidad de modificar el código. El punto de acceso de
+la cartera admite dos parámetros, uno para fijar la ventana de observación y
+otro para seleccionar el subconjunto de empresas que se desea consultar. Los
+ficheros estáticos de la interfaz se sirven desde la ruta \texttt{/static}.
+
+\section{Repositorio y modelo}
+\label{anx:repositorio}
+
+El código completo del proyecto, incluidos los cuadernos de análisis, los
+scripts de ingesta y la aplicación, está disponible en el repositorio público
+\texttt{github.com/Rhulli34/TFM}.
+
+El clasificador de sentimiento ajustado en el capítulo~\ref{cap:modelado} está
+publicado como modelo público en Hugging Face Hub, bajo el identificador
+\texttt{Rhulli/financial-news-radar-deberta}, y puede descargarse y reutilizarse
+de forma independiente al resto del sistema.

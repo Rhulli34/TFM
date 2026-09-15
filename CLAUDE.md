@@ -58,7 +58,7 @@ transparente y open de plataformas tipo RavenPack / AlphaSense.
   - signal.py: señal diaria neta (raw + weighted + MA3/MA5), solo is_relevant=1
   - returns.py: retornos forward log a t+1, t+3, t+5 desde precios
   - notebooks/04_backtest.ipynb: lead-lag, event study, caso de estudio TSLA+NVDA
-  - Hallazgo clave: señal REACTIVA, no predictiva (correlación máx. en lag=-1)
+  - Hallazgo clave: señal REACTIVA, no predictiva (correlación máx. en lag=-4: 0.0756, p=0.0002)
   - Valor del sistema: cualitativo (flagging de noticias negativas), no cuantitativo
   - Resultados en reports/results/backtest.json, figuras en reports/figures/
 - F6 App + despliegue  ← EN CURSO

@@ -1,0 +1,239 @@
+{
+  "description": "Leakage audit of the Financial PhraseBank splits used to train and evaluate the sentiment classifier.",
+  "split_sizes": {
+    "train": 1581,
+    "val": 339,
+    "test": 339
+  },
+  "exact_overlap": {
+    "test_vs_train": {
+      "n_shared": 0,
+      "examples": []
+    },
+    "test_vs_val": {
+      "n_shared": 0,
+      "examples": []
+    },
+    "val_vs_train": {
+      "n_shared": 0,
+      "examples": []
+    }
+  },
+  "normalized_overlap": {
+    "test_vs_train": {
+      "n_shared": 0,
+      "examples": []
+    },
+    "test_vs_val": {
+      "n_shared": 0,
+      "examples": []
+    },
+    "val_vs_train": {
+      "n_shared": 0,
+      "examples": []
+    }
+  },
+  "near_duplicates_default_tokenizer": {
+    "counts": {
+      "above_0.80": 11,
+      "above_0.90": 4,
+      "above_0.95": 2,
+      "above_0.99": 1
+    },
+    "pct_of_test": {
+      "above_0.80_pct": 3.24,
+      "above_0.90_pct": 1.18,
+      "above_0.95_pct": 0.59,
+      "above_0.99_pct": 0.29
+    },
+    "mean_max_cosine": 0.2734,
+    "median_max_cosine": 0.1864,
+    "max_cosine": 1.0,
+    "top_pairs": [
+      {
+        "cosine": 1.0,
+        "test_text": "Operating profit totaled EUR 6.7 mn , down from EUR 7.2 mn in the corresponding period in 2005 .",
+        "train_text": "Operating profit totaled EUR 3.8 mn , down from EUR 4.5 mn in the corresponding period in 2005 .",
+        "test_label": "negative",
+        "train_label": "negative",
+        "same_label": true
+      },
+      {
+        "cosine": 0.9508,
+        "test_text": "Closing of such transaction took place today .",
+        "train_text": "The closing of such transaction took place today .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.9335,
+        "test_text": "3 February 2011 - Finnish broadband data communication systems provider Teleste Oyj HEL : TLT1V said yesterday its net profit rocketed to EUR4 .8 m in 2010 from EUR416 ,000 in 2009 and it lifted its dividend proposal .",
+        "train_text": "4 February 2011 - Finnish broadband data communication systems provider Teleste Oyj HEL : TLT1V said Wednesday its net profit rocketed to EUR4 .8 m in 2010 from EUR416 ,000 in 2009 and it lifted its dividend proposal .",
+        "test_label": "positive",
+        "train_label": "positive",
+        "same_label": true
+      },
+      {
+        "cosine": 0.9033,
+        "test_text": "In the Czech Republic , the smaller profiling unit at Ostrava will be closed and the machinery will be gradually relocated to Ruukki 's bigger plants in Hungary , Poland and Romania by the end of the first quarter of 2009 .",
+        "train_text": "In the Czech Republic , the profiling unit at Ostrava will be closed and the machinery will be relocated to Ruukki 's bigger plants in Hungary , Poland and Romania by the end of the first quarter of 2009 .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8902,
+        "test_text": "The floor area of the Yliopistonrinne project will be 7,900 sq m and the building 's gross area will total 12,800 sq m. A total 25.1 % of the facilities have been let .",
+        "train_text": "The floor area of the Yliopistonrinne project will be 7,900 sq m 85,030 sq ft and the building 's gross area will total 12,800 sq m. A total 25.1 % of the facilities have been let .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8891,
+        "test_text": "Operating profit , excluding non-recurring items , totalled EUR 1.0 mn , down from EUR 1.6 mn .",
+        "train_text": "Operating profit , excluding non-recurring items , totalled EUR 2.2 mn , down from EUR 2.7 mn in the corresponding period in 2008 .",
+        "test_label": "negative",
+        "train_label": "negative",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8783,
+        "test_text": "Terms were not disclosed .",
+        "train_text": "Financial terms were not disclosed .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.875,
+        "test_text": "Honkarakenne also decided yesterday to sell 88,500 of its B series shares to key staff members for EUR2 .9 per share .",
+        "train_text": "Honkarakenne also decided yesterday to sell 88,500 of its B-series shares to key staff members for EUR 2.90 per share .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8301,
+        "test_text": "The company is listed on the Nordic Exchange in Helsinki .",
+        "train_text": "Raute is listed on the Nordic exchange in Helsinki .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.823,
+        "test_text": "The EBRD is using its own funds to provide a 21.6 mln A loan while the B portion of 10 mln Euros has been syndicated to two Finnish commercial banks , Nordea Bank Finland Plc 7.7 mln Euros and Pohjola Bank Plc 2.3 mln Euros .",
+        "train_text": "The EBRD is using its own funds to provide a 21.6 million A loan while the B portion of 10 million Euros has been syndicated to two Finnish commercial banks , Nordea Bank Finland Plc and Pohjola Bank Plc. .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      }
+    ]
+  },
+  "near_duplicates_number_aware": {
+    "counts": {
+      "above_0.80": 8,
+      "above_0.90": 4,
+      "above_0.95": 1,
+      "above_0.99": 0
+    },
+    "pct_of_test": {
+      "above_0.80_pct": 2.36,
+      "above_0.90_pct": 1.18,
+      "above_0.95_pct": 0.29,
+      "above_0.99_pct": 0.0
+    },
+    "mean_max_cosine": 0.2581,
+    "median_max_cosine": 0.1825,
+    "max_cosine": 0.9508,
+    "top_pairs": [
+      {
+        "cosine": 0.9508,
+        "test_text": "Closing of such transaction took place today .",
+        "train_text": "The closing of such transaction took place today .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.9107,
+        "test_text": "The floor area of the Yliopistonrinne project will be 7,900 sq m and the building 's gross area will total 12,800 sq m. A total 25.1 % of the facilities have been let .",
+        "train_text": "The floor area of the Yliopistonrinne project will be 7,900 sq m 85,030 sq ft and the building 's gross area will total 12,800 sq m. A total 25.1 % of the facilities have been let .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.9097,
+        "test_text": "3 February 2011 - Finnish broadband data communication systems provider Teleste Oyj HEL : TLT1V said yesterday its net profit rocketed to EUR4 .8 m in 2010 from EUR416 ,000 in 2009 and it lifted its dividend proposal .",
+        "train_text": "4 February 2011 - Finnish broadband data communication systems provider Teleste Oyj HEL : TLT1V said Wednesday its net profit rocketed to EUR4 .8 m in 2010 from EUR416 ,000 in 2009 and it lifted its dividend proposal .",
+        "test_label": "positive",
+        "train_label": "positive",
+        "same_label": true
+      },
+      {
+        "cosine": 0.9054,
+        "test_text": "In the Czech Republic , the smaller profiling unit at Ostrava will be closed and the machinery will be gradually relocated to Ruukki 's bigger plants in Hungary , Poland and Romania by the end of the first quarter of 2009 .",
+        "train_text": "In the Czech Republic , the profiling unit at Ostrava will be closed and the machinery will be relocated to Ruukki 's bigger plants in Hungary , Poland and Romania by the end of the first quarter of 2009 .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8783,
+        "test_text": "Terms were not disclosed .",
+        "train_text": "Financial terms were not disclosed .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8525,
+        "test_text": "Honkarakenne also decided yesterday to sell 88,500 of its B series shares to key staff members for EUR2 .9 per share .",
+        "train_text": "Honkarakenne also decided yesterday to sell 88,500 of its B-series shares to key staff members for EUR 2.90 per share .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8301,
+        "test_text": "The company is listed on the Nordic Exchange in Helsinki .",
+        "train_text": "Raute is listed on the Nordic exchange in Helsinki .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.8249,
+        "test_text": "The EBRD is using its own funds to provide a 21.6 mln A loan while the B portion of 10 mln Euros has been syndicated to two Finnish commercial banks , Nordea Bank Finland Plc 7.7 mln Euros and Pohjola Bank Plc 2.3 mln Euros .",
+        "train_text": "The EBRD is using its own funds to provide a 21.6 million A loan while the B portion of 10 million Euros has been syndicated to two Finnish commercial banks , Nordea Bank Finland Plc and Pohjola Bank Plc. .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.7711,
+        "test_text": "Pharmaceutical market in Poland Global Research & Data Services published recently a market analysis about the pharmaceutical markets in Poland .",
+        "train_text": "Pharmaceutical market in Belgium Global Research & Data Services published recently a market analysis about the pharmaceutical markets in Belgium .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      },
+      {
+        "cosine": 0.7489,
+        "test_text": "The value of the orders is about EUR 70mn .",
+        "train_text": "The value of the orders is about EUR 25mn .",
+        "test_label": "neutral",
+        "train_label": "neutral",
+        "same_label": true
+      }
+    ]
+  },
+  "verdict": {
+    "exact_overlap_clean": true,
+    "normalized_overlap_clean": true,
+    "n_test_near_duplicates_above_095": 1
+  }
+}
